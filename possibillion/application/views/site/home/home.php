@@ -1,0 +1,291 @@
+<script src="<?php echo base_url();?>site/js/jquery.counterup.min.js"></script>
+<script src="<?php echo base_url();?>site/js/waypoints.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>site/js/jquery.simplyscroll.js"></script>
+<link rel="stylesheet" href="<?php echo base_url();?>site/css/jquery.simplyscroll.css" media="all" type="text/css">
+<script>
+    jQuery(document).ready(function( $ ) {
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });mail
+    });
+</script>
+<script type="text/javascript">
+(function($) {
+	$(function() {
+		$("#scroller").simplyScroll({orientation:'vertical',customClass:'vert'});
+		$("#scroller123").simplyScroll({orientation:'vertical',customClass:'vert'});
+	});
+})(jQuery);
+</script>
+
+
+		
+        <!-- end fixedmenu -->
+		<?php $ses_data=$this->session->userdata('user_details'); ?>
+          <!-- end servicesbox -->
+		
+		<section class="strip-colors">
+		<div class="container">
+			<div>
+				<div class="col-md-4 text-center workshop-run">
+					<div class="icon-box-top">
+					<div class="value-disp">
+						<p align="left" class="value-list">
+							<span class="counter" style="display:inline-block; color:#fff;"><?php echo $workshoprun; ?></span><span class="resu-top">WORKSHOPS RUN</span>
+						</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center labs-taken">
+					<div class="icon-box-top">
+						<div class="value-disp">
+						<p align="left" class="value-list">
+							<span class="counter" style="display: inline-block;color:#fff;"><?php echo $labstakencount['labstaken']; ?></span><span class="resu-top">LABS TAKEN</span>
+						</p>
+					</div></div>
+				</div>
+				<div class="col-md-4 text-center node-centers">
+					<div class="icon-box-top">
+						<div class="value-disp">
+						<p align="left" class="value-list">
+							<span class="counter" style="display: inline-block;color:#fff;"><?php echo $nodalcenters; ?></span><span class="resu-top">NODEL CENTERS
+
+</span>
+						</p>
+					</div></div>
+				</div>
+				
+			</div>
+		</div>
+        
+		</section>
+		</br>
+		<!-- end homerecentportfolio -->
+        <div class="container">
+      
+        <section class="homeslider fullwidth flexslider col-md-9" id="home-slider" style="height:350px;"> <!--fullwidth  -->
+		<div id="map" style="width:auto;height:740px;color:#000;"></div>
+
+        </section>
+ 
+ 
+<style>
+	.margin-bottom-less{
+		margin-bottom:0px;
+	}
+	
+	.title-border-line{
+	  margin-bottom: 23px;
+  	  border-bottom: 1px solid #fff;
+  	  color:#fff;
+  	  font-size: 16px;font-weight: normal;
+  	  }
+	  h1{
+		  font-weight: normal;
+		  font-size: 16px;
+	  }
+  	
+  	  .form-horizontal .form-group {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+</style> 
+ 
+        
+        <!--------- Banner right panel ------>
+        <section class="fullwidth right-panel-height col-md-3">
+		
+<div class="margin-top-bottom">
+<?php $ses_data=$this->session->userdata('user_details');
+						
+		if (empty($ses_data)){ ?><?php if ($this->session->flashdata('error') !== FALSE) { echo $this->session->flashdata('error'); } ?>
+	<?php if(isset($msg)){
+			?>
+			<strong><font color="red"><?php echo $msg; ?></font></strong> 
+			<?php
+			}
+			?>
+<div><h4 class="view-all-size portal-head">Portal Login </h4></div>
+
+<form action="<?php echo base_url(); ?>Login" id="student_login"class="form-horizontal" method="post" name="student_login">
+<div class="form-group margin-bottom-less">
+<div class="form-group margin-bottom-less">
+<label class="col-md-12  label-class">User Name:</label>
+<div class="col-md-12  label-class"><input type="text" name="email" id="email" placeholder="Username" value="" class="form-control text-field" >
+<span style="color:red"></span>    </div>
+</div>
+</div> 
+
+
+<div class="form-group margin-bottom-less" >
+<label class="col-md-12 label-class">Password:</label>
+<div class="col-md-12 label-class"><input type="password" name="password" id="password" placeholder="Password"  value="" class="form-control text-field">
+<span style="color:red"></span>    </div>
+</div>
+
+<div class="form-group margin-bottom-less">
+<div class=" col-md-12  label-class" style="padding-left: 23px;padding-top: 15px">
+<input type="submit" id="submit" class="btn btn-primary orange-btn" value="Submit"></br>
+<a class="margin-forgot" href="http://testingserver.website/outreach/
+Forgot-Password">Forgot Password</a>
+</div>
+</div>
+
+</div> 
+
+</form>
+
+</section>
+
+</form>		
+               
+			   <?php
+			   }
+			   ?>
+            
+           
+         </section>
+        
+		<!-- end homeslider -->	
+<div class="container placement-top-new">
+<div>
+<h2 class="head-events">Upcoming Workshops</h2>
+</div>
+
+<style>
+
+</style>
+	
+			<?php
+											foreach($get_workshop_upcoming as $workshopdata){
+												$newDate = strtoupper(date("M", strtotime($workshopdata['date'])));												
+												$newDated = date("d", strtotime($workshopdata['date']));	
+												$newyear = date("Y", strtotime($workshopdata['date']));	
+														?>
+												
+			<div class="col-md-12 align-top-botm">
+				
+				<div class="col-md-1">
+					<div class="month-box"><span><?php echo $newDated; ?> <?php echo $newDate; ?><br/><?php echo $newyear; ?></span></div>				
+				</div>
+				
+				<div class="col-md-3 mid-align"><?php echo $workshopdata['location']; ?></div>
+				
+				<div class="col-md-4 mid-align"><?php echo $workshopdata['name']; ?></div>
+			</div>
+			<?php
+											} 
+			?>
+</div>
+</div>
+        
+		<script
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
+ type="text/javascript"></script>
+<script
+ src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
+ type="text/javascript"></script>
+<script
+ src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"
+ type="text/javascript"></script>
+   <script>
+$(document).ready(function() {
+// validate signup form on keyup and submit
+	$("#student_login").validate({
+		rules: {
+			
+			email: {
+				required: true,
+				email: true
+			},
+			
+			password: {
+				required: true,
+				minlength: 6
+			}
+			
+		},
+		messages: {
+			
+			email: "Please enter a valid email address",
+			
+			
+			password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			}
+			
+		}
+	});
+	
+		//$('.error').hasOwnProperty
+	
+});
+</script>
+
+<style>
+  .college-name{
+  	font-size:18px;
+  	font-weight:600;
+  	color: rgb(50, 163, 218);
+  	text-shadow:none;
+  }
+ .addres-tag{
+ 	color:#000;
+  	text-shadow:none;
+  	background:#f1f1f1;
+  	padding:8px;
+  	font-weight:300;
+  	font-size:13px;
+ } 
+</style>
+
+<?php 
+//$test= array_map(function($key){ return array_values($key); }, $mapaa);              
+
+$i=0;  foreach($mapaa as $colleges){
+$data['locations'][$i][0]="<p class='college-name'>".$colleges['name']."</p><p class='addres-tag'><span style='color: #C76135;font-weight: bold!important;'>Details from Google Maps</span></br>".$colleges['location']."&nbsp;".$colleges['address']."</p>";
+$data['locations'][$i][1]=$colleges['latitude'];
+$data['locations'][$i][2]=$colleges['longitude'];
+$data['locations'][$i][3]=$colleges['id'];
+$i++;
+}
+$mapdatanew =json_encode($data['locations']);
+ ?>
+<script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+		<script type="text/javascript">
+		
+    var locations = <?php echo $mapdatanew; ?>;
+console.log(locations);
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: new google.maps.LatLng(8.5074,76.9730),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    //var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 300
+  });
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+	j=i+1;
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+		icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld='+j+'|FF0000|000000'
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+  

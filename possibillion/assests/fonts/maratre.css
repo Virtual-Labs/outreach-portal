@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: 'maratremedium';
+    src: url('maratre.eot');
+    src: url('maratre.eot?#iefix') format('embedded-opentype'),
+         url('maratre.woff2') format('woff2'),
+         url('maratre.woff') format('woff'),
+         url('maratre.ttf') format('truetype'),
+         url('maratre.svg#maratremedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

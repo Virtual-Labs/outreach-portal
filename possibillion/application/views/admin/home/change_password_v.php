@@ -1,0 +1,141 @@
+	<div id="main-content">
+			<div class="container">
+				<div class="row">
+					<div id="content" class="col-lg-12">
+						<!-- PAGE HEADER-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-header">
+									<!-- STYLER -->
+									
+									<!-- /STYLER -->
+									<!-- BREADCRUMBS -->
+									<ul class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a href="<?php echo base_url();?>">Home</a>
+										</li>
+										<li>Change Password</li>
+									</ul>
+									<!-- /BREADCRUMBS -->
+									<div class="clearfix">
+										<h3 class="content-title pull-left">Change Password</h3>
+									</div>
+									<div class="description"></div>
+								</div>
+							</div>
+						</div>
+						<!-- /PAGE HEADER -->
+						<!-- FORMS -->
+						<div class="row">
+							<div class="col-md-12">
+								
+								<div class="row">
+									<!-- product details -->								
+									<div class="col-md-6">
+										<div class="box border dark gray">
+											<div class="box-title">
+												<h4><i class="fa fa-bars"></i>Change Password</h4>
+											</div>
+											<div class="box-body big">
+											<?php if(isset($msg)){ echo "<span class='error'>".$msg."</span><br/>"; } ?>
+												<form method = "post" class="form-horizontal" name="changePasswordForm" id="changePasswordForm" role="form" action="<?php echo base_url('admin/home/changePassword');?>">
+												  
+												  <!-- Existing Password -->
+												  <div class="form-group">
+													<label class="col-sm-4">Existing Password</label>
+													<div class="col-sm-8">
+													  <input type="password" style="
+    WIDTH: 95PX;
+" class="form-control" name="curr_password" id="curr_password" maxlength="12" value="<?php  echo set_value('curr_password');?>">
+														<?php echo "<span style='color:red'>".form_error('curr_password')."</span>"; ?>
+													</div>
+												  </div>
+												 
+												  <!-- New Password -->
+												  <div class="form-group">
+													<label class="col-sm-4">New Password</label>
+													<div class="col-sm-8">
+													  <input type="password"  style="
+    WIDTH: 95PX;
+"class="form-control"  name="new_password" id="new_password" maxlength="12"  value="<?php  echo set_value('new_password');?>"> <span style="
+    float: right;
+    margin-top: -27px;
+    margin-right: 51px;
+">Minimum 5 Characters</span>
+														<?php echo "<span style='color:red'>".form_error('new_password')."</span>"; ?>
+													</div>
+												  </div>
+												  <!-- Confirm Password -->
+												  <div class="form-group">
+													<label class="col-sm-4">Confirm Password</label>
+													<div class="col-sm-8">
+													  <input type="password"  style="
+    WIDTH: 95PX;
+"  maxlength="12" class="form-control" name="retype_password" id="retype_password"   value="<?php  echo set_value('retype_password');?>">
+														<?php echo "<span style='color:red'>".form_error('retype_password')."</span>"; ?>
+													</div>
+											  </div>	
+												
+												  </div>												  
+												
+											</div>
+										</div>
+									</div>
+									
+				
+							<!-- Save -->	
+						<p class="btn-toolbar">							
+							<button class="btn btn-success">Save</button> 
+							<button type="reset" class="btn btn-grey">Reset</button> </form>&nbsp;
+							<a href="<?php echo base_url('admin/home/dashboard');?>"><button class="btn">Cancel</button>	</a>
+						</p>
+						
+						<!-- /Save -->												
+				
+					</div><!-- /CONTENT-->
+				</div>
+			</div>
+		</div>
+<script>
+
+	$(document).ready(function() {
+		// validate signup form on keyup and submit
+		$("#changePasswordForm").validate({
+			rules: {
+				curr_password: {
+					required: true,
+					minlength: 5,
+				},
+				
+				new_password: {
+					required: true,
+					minlength: 5
+				},
+				retype_password: {
+					required: true,
+					minlength: 5,
+					equalTo: "#new_password"
+				}
+				
+			},
+			messages: {
+				curr_password: {
+					required: "Please provide  current password",
+					minlength: "Your password must be at least 5 characters long"
+				},
+				new_password: {
+					required: "Please provide  new password",
+					minlength: "Your password must be at least 5 characters long"
+				},
+				retype_password: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 5 characters long",
+					equalTo: "Please enter the same password as above"
+				}
+			}
+		});
+
+	
+	});
+</script>

@@ -1,0 +1,162 @@
+	<div id="main-content">
+			<div class="container">
+				<div class="row">
+					<div id="content" class="col-lg-12">
+						<!-- PAGE HEADER-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-header">
+									<!-- STYLER -->
+									
+									<!-- /STYLER -->
+									<!-- BREADCRUMBS -->
+									<ul class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a href="<?php echo site_url('admin/home/dashboard');?>">Home</a>
+										</li>
+										<li><a href="<?php echo site_url('admin/home/coordinator');?>">outreach coordinator</a></li>
+										<li>Add new outreach coordinator</li>
+									</ul>
+									 <?php if($this->session->flashdata('msg')!=NULL) { ?>
+								<div class="alert col-md-12 alert-success display-none" style="display: block;">
+									<a data-dismiss="alert" href="#" aria-hidden="true" class="close">�</a>
+									<?php  echo $this->session->flashdata('msg');?>
+								</div>
+								<?php } ?>
+									<!-- /BREADCRUMBS -->
+									<div class="clearfix">
+										<h3 class="content-title pull-left">Add new outreach coordinator</h3>
+									</div>
+									<div class="description"></div>
+								</div>
+							</div>
+						</div>
+						<!-- /PAGE HEADER -->
+						<!-- FORMS -->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="row">
+									<!-- product details -->								
+									<div class="col-md-6">
+										<div class="box border dark gray">
+											<div class="box-title">
+												<h4><i class="fa fa-bars"></i>Add new outreach coordinator </h4>
+											</div>
+											<div class="box-body big">
+											<span id="error" class='error'></span>
+												<form class="form-horizontal" method="post" name="addStaff" id="addStaff" action="<?php echo site_url('admin/home/addCoordinator');?>" role="form">
+												  
+												  <!-- Product Name -->
+												    <div class="form-group">
+													<label class="col-sm-4 control-label">Name of Coordinator</label>
+													<div class="col-sm-8">
+													  <input type="text" onkeypress="return onlyAlphabets(event,this);" name = "last_name" id = "last_name" class=" form-control" value="<?php echo set_value('last_name');?>">
+													  <?php echo "<span style='color:red'>".form_error('last_name')."</span>"; ?>
+													</div>
+												  </div>
+												  <!-- <div class="form-group">
+													<label class="col-sm-4 control-label">Nodal Center</label>
+													<div class="col-sm-8">
+													  <input type="text" onkeypress="return onlyAlphabets(event,this);" name = "nodalcenter" id = "nodalcenter" class=" form-control" >
+													  <?php echo "<span style='color:red'>".form_error('nodalcenter')."</span>"; ?>
+													</div>
+												  </div>-->
+												  <div class="form-group">
+													<label class="col-sm-4 control-label">Email Id</label>
+													<div class="col-sm-8">
+													  <input type="email" name = "email" id = "email" class="required form-control" value="<?php echo set_value('email');?>">
+													  <?php echo "<span style='color:red'>".form_error('email')."</span>"; ?>
+													</div>
+												  </div>	
+												 <!-- <div class="form-group">
+													<label class="col-sm-4 control-label">Role</label>
+													<div class="col-sm-8">
+													  <select name="permission_id" id="permission_id" class="required form-control">
+															<option value=""> - Select Role -</option>
+															
+															<option value="nodal">nodal coordinator</option>
+															<option value="outreach">Outreach</option>
+															
+													  </select>
+													  <?php echo "<span style='color:red'>".form_error('permission_id')."</span>"; ?>
+													</div>
+												  </div>-->
+												  
+												<?php /* */?>
+												  
+											</div>
+										</div>
+									</div>
+									<!-- product details -->
+						
+							
+					
+	
+			</div>		
+		</div>
+	</div>		<!-- /FORMS -->
+					
+						
+						<!-- Save -->	
+						<p class="btn-toolbar">							
+							<button class="btn btn-success">Add  Nodal Center</button></form>
+					<a href="<?php echo site_url('admin/home/coordinator');?>">	<button class="btn">Cancel</button>	</a>
+						</p>
+						<!-- /Save -->												
+						</form>
+					</div><!-- /CONTENT-->
+				</div>
+			</div>
+		</div>
+	<script>
+	$(document).ready(function(){
+		$('#addStaff').validate();
+		
+		$("#permission_id").change(function(){
+			var permission_id = $(this).val();
+			<?php foreach($superadminPermissionList as $value) { ?>
+			var id=<?php echo $value['permission_id'] ;?>;
+			if (permission_id ==id)
+			{
+			$('#'+permission_id).css('display', 'inline-flex');
+			}
+			else{
+			$('#'+id).css('display', 'none');
+			}
+			<?php }?>
+			 
+		});
+		
+	});
+	</script>
+	<script language="Javascript" type="text/javascript">
+ 
+       function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 7 && charCode < 9) || (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode > 6 && charCode < 8) || (charCode > 31 && charCode < 33))
+                {
+					return true;
+				}
+                else
+				{
+					$('#error').html('only character allowed');
+					setTimeout(function() {
+						$('#error').fadeOut('fast');
+					}, 2000);
+                    return false;
+				}
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+
+    </script>

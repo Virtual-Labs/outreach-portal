@@ -1,0 +1,174 @@
+	<div id="main-content">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div id="content" class="col-lg-12">
+
+						<!-- PAGE HEADER-->
+
+						<div class="row">
+
+							<div class="col-sm-12">
+
+								<div class="page-header">
+
+									<!-- STYLER -->
+
+									
+
+									<!-- /STYLER -->
+
+									<!-- BREADCRUMBS -->
+
+									<ul class="breadcrumb">
+
+										<li>
+
+											<i class="fa fa-home"></i>
+
+											<a href="<?php echo site_url('admin/home/dashboard');?>">Home</a>
+
+										</li>
+
+										<li>
+
+											<a href="<?php echo site_url('admin/contacts');?>">Contacts</a>
+
+										</li>
+
+										
+
+										<li> Contacts Detail View</li>
+
+									</ul>
+
+									<!-- /BREADCRUMBS -->
+
+
+
+									<div class="description"></div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<!-- /PAGE HEADER -->
+
+						<!-- ADVANCED -->
+
+						<div class="row">
+
+							<div class="col-md-12">
+
+								<!-- BOX -->
+
+								<div class="box border green">
+
+									<div class="box-title">
+
+										<h4><i class="fa fa-bars"></i> Contacts Detail View</h4>
+
+									</div>
+
+									<div class="box-body"> <?php /*?> action="<?php echo base_url();?>agents/updateagents"<?php */?>
+
+         <form id='agents-form' class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+
+
+
+			<div class="form-group">
+
+	             <label class="col-sm-2 control-label">Name</label>
+
+                <div class="col-sm-8">
+
+				    		<?php echo $contacts[0]['name'];?>
+
+    			
+
+	            </div>			
+
+             </div>
+			 
+			 <div class="form-group">
+
+	             <label class="col-sm-2 control-label">E-Mail</label>
+
+                <div class="col-sm-8">
+
+				    		<?php echo $contacts[0]['email'];?>
+
+    			
+
+	            </div>			
+
+             </div>
+
+
+			 <div class="form-group">
+
+	             <label class="col-sm-2 control-label">Message</label>
+
+                <div class="col-sm-8">
+
+				    		<?php echo $contacts[0]['comment'];?>
+
+    			
+
+	            </div>			
+
+             </div>
+
+         <div class="form-group">
+
+                <label class="col-sm-2 control-label"> Created On</label>
+
+ 				<div class="col-sm-8">
+
+    			<?php echo date('M jS Y',strtotime( $contacts[0]['created_on']));?>
+
+    			
+
+	            </div>	
+
+		 </div>
+
+
+
+
+
+									   </form>
+
+									</div>
+
+								</div>
+
+                               
+
+								<!-- /BOX -->
+
+							</div>
+
+						</div>
+
+						<!-- /ADVANCED -->
+
+						
+
+					</div><!-- /CONTENT-->
+
+				</div>
+
+			</div>
+
+		</div>
+
+        
+
+         
+
+  

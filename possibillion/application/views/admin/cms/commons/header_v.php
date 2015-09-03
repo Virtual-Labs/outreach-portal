@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Volyty Admin | Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assests/css/cloud-admin.css" >
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url();?>assests/css/themes/default.css" id="skin-switcher" >
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url();?>assests/css/responsive.css" >
+	<!-- STYLESHEETS --><!--[if lt IE 9]><script src="<?php echo base_url();?>assests/js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+	<link href="<?php echo base_url();?>assests/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- ANIMATE -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assests/css/animatecss/animate.min.css" />
+	<!-- DATE RANGE PICKER -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assests/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<!-- TODO -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assests/js/jquery-todo/css/styles.css" />
+	<!-- FULL CALENDAR -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assests/js/fullcalendar/fullcalendar.min.css" />
+	<!-- GRITTER -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assests/js/gritter/css/jquery.gritter.css" />
+	<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- HEADER -->
+	<header class="navbar clearfix" id="header">
+		<div class="container">
+				<div class="navbar-brand">
+					<!-- COMPANY LOGO -->
+					<a href="index.html">
+						<img src="<?php echo base_url();?>assests/img/logo/logo.png" alt="Cloud Admin Logo" class="img-responsive" height="30" width="120">
+					</a>
+					<!-- /COMPANY LOGO -->
+					<!-- SIDEBAR COLLAPSE -->
+					<div id="sidebar-collapse" class="sidebar-collapse btn">
+						<i class="fa fa-bars" 
+							data-icon1="fa fa-bars" 
+							data-icon2="fa fa-bars" ></i>
+					</div>
+					<!-- /SIDEBAR COLLAPSE -->
+				</div>
+				<!-- BEGIN TOP NAVIGATION MENU -->					
+				<ul class="nav navbar-nav pull-right">
+					<!-- BEGIN USER LOGIN DROPDOWN -->
+					<!--<li class="dropdown" id="header-notification"></li>
+					<li class="dropdown" id="header-message"></li>
+					<li class="dropdown" id="header-tasks"></li> -->
+					<li class="dropdown user" style="float:right" id="header-user">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<img alt="" src="<?php echo base_url();?>assests/img/avatars/avatar3.jpg" />
+							<span class="username">John Doe</span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="<?php echo base_url('home/profile');?>"><i class="fa fa-user"></i> My Profile</a></li>
+							<li><a href="<?php echo base_url('home/change_password');?>"><i class="fa fa-cog"></i> Account Settings</a></li>
+							<li><a href="<?php echo base_url('home');?>"><i class="fa fa-power-off"></i> Log Out</a></li>
+						</ul>
+					</li>
+					<!-- END USER LOGIN DROPDOWN -->
+				</ul>
+				<!-- END TOP NAVIGATION MENU -->
+		</div>
+	</header>

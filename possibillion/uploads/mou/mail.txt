@@ -1,0 +1,21 @@
+Dear Prof. <Prof.Name>
+
+I am Soujanya from Virtual Labs IIIT-Hyderabad team. I am writing to you in connection with <lab_name> Lab.
+
+As part of Virtual Labs integration process we need the sources of labs i.e including the source code of the simulations to help us deploy, update, and maintain the labs.
+
+Currently, we have only the executable's of the simulations and not the source code (such as ......).  We need the <source_file_type> either for fixing the bugs or for further enhancement. 
+
+Without the source code it will be impossible to either maintain or host your labs on Virtual Labs. Could you please share the complete sources of <lab-name> lab as early as possible. 
+
+Thanks and Regards
+Soujanya J
+Project Engineer
+Virtual Labs Engineering and Architecture Division (VLEAD)
+Vindhya B6-204, IIIT-H Campus
+Gachibowli, Hyderabad 500 032
+vlead.vlabs.ac.in
+
+
+
+

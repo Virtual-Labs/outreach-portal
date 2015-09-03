@@ -1,0 +1,243 @@
+#+TITLE:     Outreach Portal Model 
+#+AUTHOR:    Sandeep and Amulya Sri Pulijala
+#+EMAIL:     sandeep@vlabs.ac.in and amulya@vlabs.ac.in
+#+DATE:      2015-04-27
+#+PROPERTY: session *scratch*
+#+PROPERTY: results output
+#+PROPERTY: exports code
+#+SETUPFILE: org-templates/level-0.org
+#+options: ^:nil
+
+* Introduction 
+  This document describes the model of outreach portal.
+* Objective
+ The Outreach portal is the single point of contact for feedback,
+resource management related to outreach activities. The objective of
+this model is to develop outreach portal which can be accessed by outreach team.
+     
+* Requirements
+** Functional Requirements
+*** Users of the System
+
+The various users of the system are:
+
+    + Nodal Co-ordinator 
+    + Outreach coordinator
+
+*** Functionality
+    The following are the main functionality of outreach portal.
+    + FEEDBACK 
+    + BUGS 
+    + PLANNING 
+    + RESOURCE MANAGEMENT
+    + ANALYTICS AND REPORTS
+
+* Design
+  
+** User Roles
+In this section, we are elaborating the user roles and the work flow
+of each user along with their state diagrams.
+
+*** Outreach coordinator
+
+After logging in to the outreach portal, outreach coordinator will be
+able to edit/view the following details.
+
++ Calendar of Events
++ Workshop Reports
++ Analytics
+
+Calendar include, Workshop dates, place, number of participants,
+Department name and number of sessions held for the workshop.
+
+Workshop reports consists of attendance forms, feedback forms.
+
+Analytics include, usage of labs, experiments, analytics related to
+workshops conducted, colleges coverage.
+
+The use-case diagram of outreach co-ordinator is as follows:
+
+[[./images/outreach-coordinator.jpeg]]
+
+* Role of Outreach coordinator Prior to workshop:
+
+Outreach coordiator shares the checklist with nodal coordinator,
+providing them all materials required(brochure, flyers, templates,
+word documents etc) prior conducting any workshop
+
+* Role of OC during workshop
+Outreach coordinator might have suddent visits to workshops. He might attend few workshops in order to know the status and standard of the workshop.
+However, Nodal coordinator himself takes care of handling the workshop.
+
+* Role of OC after the workshop
+The outreach coordinator can view the analytics about participating students, feedback given, attendance and other reports.
+He also has the responsibility to add nodal centres and to monitor nodal coordinators.
+
+The state diagram of outreach coordinator and flow diagrams are as follows:
+[[./images/basic-state-diagram.pdf]]
+[[./images/oc-workflow.jpg]]
+
+* Nodal Center Coordinator 
+This document explains the workflow of Nodal Coordinator. The Nodal
+Coordinator is the point of contact between the college and the
+Participating Institutes (IITD, IIITH, IITB etc). Every nodal center
+has a target defined to conduct workshops per semister. The outlook of
+the interaction between nodal center coordinator and the participating
+institute is as follows
+1. Planning and execution of the workshop is done by Nodal Coordinator
+2. Outreach coordiator shares the checklist with nodal coordinator,
+   providing them all materials required(brochure, flyers, templates,
+   word documents etc) prior conducting any workshop
+3. After the workshop the nodal coordinator shares the worshop
+   reports(attendence, feedback forms etc) with outreach coordinator
+
+** How does the Outreach Portal helps the Nodal Center Co-ordinator?
++ Outreach Portal acts as a single point of contact to participate in outreach
+  activities happening in and accross all the institutes
++ Outreach Portal provides a platform to access and exchange the
+  materials and resources needed for any workshop
+
+** Primary role of Nodal Coordinator:
+*** Before workshop
++ Plan the workshop
+  - College details
+  - Schedule/Calender the event
+  - Map the syllabus[happens offline]
+  - Access resources[Marketing material, feedback form etc]
+  - Coordinating with other institutes
+  - Define agenda for the workshop       
+*** During workshop
++ Update attendence[hard copy]
++ Account the labs being used in the workshop
++ Cumulative count of experiments covered/attempted during workshop
++ Download the feedback forms and circulate in the workshop
+*** Post workshop
++ Update following details:
+    - IP address of the workshop center
+    - Count on the labs and usage of experiments accessed during the workshop
++ Upload reports:
+    - Certification by the college for conducting workshop
+    - Photos of the workshop sessions, at a central location on outreach portal
+    - Attendence sheet, feedback forms etc onto the outreach portal
+The workflow design of nodal coordinator is as follows:
+[[./images/nodal-coordinator.jpg]]
+* Code
+#+BEGIN_SRC  python :tangle upload.py :eval no
+import os
+from flask import Flask, request, redirect, url_for
+from werkzeug import secure_filename
+
+UPLOAD_FOLDER = '/home/amulya/outreach-portal-code/outreach-portal/folder'
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+@app.route('/', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('uploaded_file',
+                                    filename=filename))
+    return '''
+    <!doctype html>
+    
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form action="" method=post enctype=multipart/form-data>
+
+     <table> 
+      <tr> 
+         <td> <label for="fname">File Name</label> </td>
+         <td><input type="text" name="fname"> </td>
+      </tr> 
+      <tr>
+           <td><label for="field">Field</label></td>
+           <td><select>
+           <option value="flyer">Flyer</option>
+           <option value="brochure">Brochure</option>
+           <option value="handout">Handout</option>
+           <option value="banner">Banner</option>
+           <option value="standee">Standee</option>
+           <option value="report">Report</option>
+           <option value="attendance-form">Attendance Form</option>
+           <option value="feedback-form">Feedback form</option>
+           <option value="checklist">Checklist</option> 
+    </select>  </td>   
+      </tr>
+      <tr> <td><label for="author">Author</label></td>
+        <td><input type="text" name="authorName"> </td> </tr>
+ 
+     <tr> <td> <label for="date">Workshop Date</label></td>
+          <td> <input type="date" name="workshopDate"> </td></tr>
+
+     <tr> <td> <label for="place">Workshop Place</label></td>
+        <td><input type="text" name="workshopPlace"> </td> </tr>
+
+         <tr> <td> <label for="cname">Name of the College</label></td>
+        <td><input type="text" name="collegeName"> </td> </tr>
+
+</table>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+    </body>
+</html>
+    '''
+
+
+@app.route('/photo/<id>')
+def show(id):
+    photo = Photo.load(id)
+    if photo is None:
+        abort(404)
+   url = photos.url(photo.filename)
+    return  #render_template('show.html', url=url, photo=photo)
+''' <title>Upload/Search new File</title>
+    <h1>Upload/Search new File</h1>
+    <form action="" method=post enctype=multipart/form-data>
+
+<tr> <td><label for="author">Author</label></td>
+        <td><input type="text" name="authorName"> </td> </tr>
+
+
+    </form>
+    </body>
+</html>
+
+'''
+if __name__ == '__main__':
+    app.run('0.0.0.0')
+#+END_SRC  
+
+* Releases
+** Release 0.1
+   ** Release 0.1
+
+ This release will have a database to which a predefined set of users
+ can login and then logout.  The system allows its database to be
+ backed up and also restored.  
+
+The login will be done using an openid. The userid will be validated against 
+the database and only predefined set of users can login and logout. The database 
+will be mongo db and Apache the web server. The database can be backed up and restored
+by the DBA.
+
+The DBA creates the users from the back end.
+ 
+** Release 0.2 
+The DBA creates an admin user in the database. admin logs in using his
+credentials, login credentials get validated in the database and admin logs in.
+The admin user upon login can add, update or delete other users.
+
+** Release 0.3
+
+This release will have a facility to upload documents, search
+documents, and tag documents.

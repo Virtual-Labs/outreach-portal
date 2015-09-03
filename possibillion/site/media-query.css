@@ -1,0 +1,184 @@
+@media screen and (max-width:1024px) {
+  .serach-width{
+	  width: 76.5% !important;
+  }
+  
+ .serach-width-full{	
+  	width: 94.7%;
+	}
+	.login-widht{
+	width: 80.5%;
+	}
+
+ .lead.ib{
+	 font-size:27px;
+	 }
+	 	
+.right-panel-height {
+  background: #efefef;
+  height: 308px;
+}
+
+.margin-top-bottom {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.view-all-size{
+	font-size:13px;
+	}
+.navbar-collapse .nav>li>a:after{
+	padding-left: 2px;
+	}
+.nav>li>a {
+  padding: 16px 3px !important;
+}	
+.btn-no-padding{
+	padding-top:0px;
+	}	
+.boxcontainer {
+	height:203px;
+	}
+.wrapcaption{
+	top:41%;
+	}				 			 
+}
+
+@media screen and (max-width:768px) {
+a.navbar-brand img {
+  margin-top: -23px;
+}
+.college-top{
+  margin-top: 25px;	
+	}
+.navbar.pull-right {
+  bottom: -51px;
+	}
+.register-right {
+  margin-bottom: 5px;
+}	
+.serach-width {
+  width: 92.8% !important;
+}
+.serach-width-full {
+  width: 92.8%;
+}	
+
+.name-class-768{
+	width:50%;
+	float:left;
+	}
+.space-line{
+	height:25px;
+	}
+.address-class{
+	width: 50%;
+  	float: left;
+	}
+.text-float{
+	float:left;
+	}
+.align-right{
+	  float: right;
+	  margin-top: -35px;
+	}
+.nav-margin-top {
+  margin-top: -27px;
+}	
+.task-title {
+  background: #e5e3e3;
+  margin-top: 46px;
+}
+
+.view-all-size{
+	font-size:18px;
+    padding-top: 20px;
+	}
+.middle-col{
+	margin-left:0;
+	margin-right:0	;
+	}
+.links-pad{
+	padding-left: 0px;
+	}
+.home-align{
+	padding-left:0px;
+	}
+.footermenu li:before{
+	margin-right:0px;
+	}	
+ul.footermenu li {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.college-ad{
+	width:50%;
+	float:left;
+	}
+.college-ad-2{
+	width:80%;
+	float:left;
+	}	
+.content-top{
+	margin-top: 10px;
+	}
+.text-width{
+	width:100%;
+	}
+.in-width{
+	width:50%;
+	}
+.right-infom{
+	float:left;
+	}
+.footer-left{
+	padding-left:20px;
+	}												
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+.align-right{
+	  float: right;
+	}
+.nav-margin-top {
+  margin-top: -27px;
+}
+.college-ad{
+	width:50%;
+	float:left;
+	}
+.in-width{
+	width:100% !important;
+	}
+.vert .simply-scroll-clip{
+	height: 80px !important;
+	}
+.lead.ib{
+	font-size:18px !important;
+	}
+.btn-padding {
+  padding-top: 0px;
+}		
+}
+
+@media screen and (min-width:480px) {
+.lead.ib{
+	margin-top:20px !important;	
+}
+}
+
+
+@media screen and (min-width:320px) {
+.lead.ib{
+	margin-top:-4px;	
+}
+.fullwidth.flexslider .flex-direction-nav a{
+	  margin-top: -77px !important;
+	}
+.infoareawrap{
+	height:287px;
+	}
+.footer-left{
+	padding-left:29px;
+	}	
+}
