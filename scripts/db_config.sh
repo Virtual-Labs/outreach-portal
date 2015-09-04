@@ -13,7 +13,7 @@ cd ../Documents/
 # Replace "emt.sql" file with your file
 # Note: If you have more than one .sql file repeat below command w.r.t to database and file name
 
-mysql -u root outreach < outreachnew.sql
+mysql -u root outreach < servdmsp_outreach.sql
 
 
 
