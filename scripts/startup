@@ -9,4 +9,5 @@
 
 # starts the Apache service
 service apache2 start
-
+# starts the mysql service
+server mysql start
