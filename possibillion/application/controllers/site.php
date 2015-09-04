@@ -79,9 +79,6 @@ public function __construct(){
 						);
 						$upd=$this->home_site_m->forgot_password($det);
 					if($upd>0){
-							$this->load->library('amazon_ses');
-							$this->amazon_ses->to($res['email']);
-							$this->amazon_ses->subject("Request Password");
 							$message="<html><head><META http-equiv='Content-Type' content='text/html; charset=utf-8'>
 									   </head><body>
 										  <div style='margin:0;padding:0'>
@@ -100,11 +97,15 @@ public function __construct(){
 							</table>  
 						 </div>
 						</body></html>";
-							$this->amazon_ses->message($message);//exit;
-						if($this->amazon_ses->send()){
+							$to = $email;
+				$subject = "Your Nodal  account Password";
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+						if(mail($to, $subject, $message, $headers)){
 							$this->session->set_flashdata('msg', 'Please check Your Email to receive Password');
-							$this->load->view('site/home/signin',$data);
+							redirect('', 'refresh');
 						}else{
+							echo "iam here forgot password page"; die();
 							$this->session->set_flashdata('msg', 'Your Request Failed.Please Re-Try.');
 							$this->load->view('site/home/forgot_password',$data);
 						}
@@ -136,9 +137,10 @@ public function __construct(){
 				if (empty($ses_data)){
 						redirect('');
 				}
-					$this->form_validation->set_rules('password', 'Password', 'required');
-					$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');			
+					$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[12]');
+					$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|min_length[6]|max_length[12]');			
 				if ($this->form_validation->run() == FALSE ){
+					$this->session->set_flashdata('msg', validation_errors());
 				$this->load->view('site/header',$data);
 				$data['coordinator_details']=$ses_data;
 				$this->load->view('site/home/change_profile',$data);
@@ -151,9 +153,11 @@ public function __construct(){
 				move_uploaded_file($_FILES["profile_image"]["tmp_name"], $target_file);
 				$postdata['profile_image'] = ($_FILES['profile_image']['name']);
 				$res=$this->home_site_m->profileedit($postdata);
-				if($res){
-					$this->logout();
-				}
+				if($ses_data['user_type']==1){
+				redirect('manage-workshop');
+			}else{
+				redirect('nodal-coordinator');
+			}
 				}
 		}
 /**

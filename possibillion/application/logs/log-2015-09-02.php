@@ -23606,3 +23606,701 @@ DEBUG - 2015-09-02 14:38:34 --> Model Class Initialized
 DEBUG - 2015-09-02 14:38:34 --> Model Class Initialized
 DEBUG - 2015-09-02 14:38:34 --> Form_validation class already loaded. Second attempt ignored.
 ERROR - 2015-09-02 14:38:34 --> 404 Page Not Found --> site/inc
+DEBUG - 2015-09-02 15:49:03 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:03 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> No URI present. Default controller set.
+DEBUG - 2015-09-02 15:49:03 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:03 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:03 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:03 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:03 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:03 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:03 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:03 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:03 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:03 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:03 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:03 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:03 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:03 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:03 --> Layout class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:03 --> File loaded: application/views/site/header.php
+ERROR - 2015-09-02 15:49:04 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:04 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:04 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:04 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+DEBUG - 2015-09-02 15:49:04 --> File loaded: application/views/site/home/home.php
+DEBUG - 2015-09-02 15:49:04 --> File loaded: application/views/site/footer.php
+DEBUG - 2015-09-02 15:49:04 --> Final output sent to browser
+DEBUG - 2015-09-02 15:49:04 --> Total execution time: 0.1270
+DEBUG - 2015-09-02 15:49:04 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:04 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:04 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:04 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:04 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:04 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:04 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:04 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:04 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:04 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:04 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:04 --> Form_validation class already loaded. Second attempt ignored.
+ERROR - 2015-09-02 15:49:04 --> 404 Page Not Found --> site/inc
+DEBUG - 2015-09-02 15:49:05 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:05 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:05 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:05 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:05 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:05 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:05 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:05 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:05 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:05 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:05 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:05 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:05 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:05 --> Form_validation class already loaded. Second attempt ignored.
+ERROR - 2015-09-02 15:49:05 --> 404 Page Not Found --> site/img
+DEBUG - 2015-09-02 15:49:14 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:14 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:14 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:14 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:14 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:14 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:14 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:14 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:14 --> File loaded: application/views/site/header.php
+DEBUG - 2015-09-02 15:49:14 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:14 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:14 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:14 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:14 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:14 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:14 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:14 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:14 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:14 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:14 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:14 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:14 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:14 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:14 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:14 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:14 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:14 --> File loaded: application/views/site/header.php
+ERROR - 2015-09-02 15:49:14 --> Severity: Notice  --> Undefined variable: pagination C:\xampp\htdocs\outreach\application\views\site\outreachcoordinator\manage_workshop.php 1092
+DEBUG - 2015-09-02 15:49:14 --> File loaded: application/views/site/outreachcoordinator/manage_workshop.php
+DEBUG - 2015-09-02 15:49:14 --> File loaded: application/views/site/footer.php
+DEBUG - 2015-09-02 15:49:14 --> Final output sent to browser
+DEBUG - 2015-09-02 15:49:14 --> Total execution time: 0.0680
+DEBUG - 2015-09-02 15:49:15 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:15 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:15 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:15 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:15 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:15 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:15 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:15 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:15 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:15 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:15 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:15 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:15 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:15 --> Form_validation class already loaded. Second attempt ignored.
+ERROR - 2015-09-02 15:49:15 --> 404 Page Not Found --> site/inc
+DEBUG - 2015-09-02 15:49:18 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:18 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:18 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:18 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:18 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:18 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:18 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:18 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:18 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:18 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:18 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> No URI present. Default controller set.
+DEBUG - 2015-09-02 15:49:18 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:18 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:18 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:18 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:18 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:18 --> A session cookie was not found.
+DEBUG - 2015-09-02 15:49:18 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:18 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:18 --> Layout class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:18 --> File loaded: application/views/site/header.php
+ERROR - 2015-09-02 15:49:18 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:18 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:18 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:18 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+DEBUG - 2015-09-02 15:49:18 --> File loaded: application/views/site/home/home.php
+DEBUG - 2015-09-02 15:49:18 --> File loaded: application/views/site/footer.php
+DEBUG - 2015-09-02 15:49:18 --> Final output sent to browser
+DEBUG - 2015-09-02 15:49:18 --> Total execution time: 0.3780
+DEBUG - 2015-09-02 15:49:18 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:18 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:18 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:18 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:18 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:18 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:18 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:18 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:18 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:18 --> Form_validation class already loaded. Second attempt ignored.
+ERROR - 2015-09-02 15:49:18 --> 404 Page Not Found --> site/inc
+DEBUG - 2015-09-02 15:49:19 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:19 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:19 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:19 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:19 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:19 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:19 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:19 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:19 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:19 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:19 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:19 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:19 --> Form_validation class already loaded. Second attempt ignored.
+ERROR - 2015-09-02 15:49:19 --> 404 Page Not Found --> site/img
+DEBUG - 2015-09-02 15:49:23 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:23 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:23 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:23 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:23 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:23 --> Session garbage collection performed.
+DEBUG - 2015-09-02 15:49:23 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:23 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:23 --> File loaded: application/views/site/header.php
+DEBUG - 2015-09-02 15:49:23 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:23 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:23 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:23 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:23 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:23 --> Session garbage collection performed.
+DEBUG - 2015-09-02 15:49:23 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:23 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:23 --> File loaded: application/views/site/header.php
+DEBUG - 2015-09-02 15:49:23 --> File loaded: application/views/site/nodal-coordinator/nodal_workshop.php
+DEBUG - 2015-09-02 15:49:23 --> File loaded: application/views/site/footer.php
+DEBUG - 2015-09-02 15:49:23 --> Final output sent to browser
+DEBUG - 2015-09-02 15:49:23 --> Total execution time: 0.0760
+DEBUG - 2015-09-02 15:49:23 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:23 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:23 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:23 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:23 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:23 --> Session garbage collection performed.
+DEBUG - 2015-09-02 15:49:23 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:23 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:23 --> Form_validation class already loaded. Second attempt ignored.
+ERROR - 2015-09-02 15:49:23 --> 404 Page Not Found --> site/inc
+DEBUG - 2015-09-02 15:49:27 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:27 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:27 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:27 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:27 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:27 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:27 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:27 --> Session garbage collection performed.
+DEBUG - 2015-09-02 15:49:27 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:27 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:27 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:27 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:27 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> No URI present. Default controller set.
+DEBUG - 2015-09-02 15:49:27 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:27 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:27 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:27 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:27 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:27 --> A session cookie was not found.
+DEBUG - 2015-09-02 15:49:27 --> Session garbage collection performed.
+DEBUG - 2015-09-02 15:49:27 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:27 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:27 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:27 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:27 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:27 --> Layout class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:27 --> File loaded: application/views/site/header.php
+ERROR - 2015-09-02 15:49:27 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:27 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:27 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+ERROR - 2015-09-02 15:49:27 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\outreach\application\views\site\home\home.php 251
+DEBUG - 2015-09-02 15:49:27 --> File loaded: application/views/site/home/home.php
+DEBUG - 2015-09-02 15:49:27 --> File loaded: application/views/site/footer.php
+DEBUG - 2015-09-02 15:49:27 --> Final output sent to browser
+DEBUG - 2015-09-02 15:49:27 --> Total execution time: 0.1100
+DEBUG - 2015-09-02 15:49:28 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:28 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:28 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:28 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:28 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:28 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:28 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:28 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:28 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:28 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:28 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:28 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:28 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:28 --> Form_validation class already loaded. Second attempt ignored.
+ERROR - 2015-09-02 15:49:28 --> 404 Page Not Found --> site/inc
+DEBUG - 2015-09-02 15:49:30 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:30 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:30 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:30 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:30 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:30 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:30 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:30 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:30 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:30 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:30 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:30 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:30 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:30 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:30 --> File loaded: application/views/admin/home/login_v.php
+DEBUG - 2015-09-02 15:49:30 --> Final output sent to browser
+DEBUG - 2015-09-02 15:49:30 --> Total execution time: 0.1528
+DEBUG - 2015-09-02 15:49:37 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:37 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:37 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:37 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:37 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:37 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:37 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:37 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:37 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:37 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:37 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:37 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:37 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:37 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Router Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Output Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Security Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Input Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:37 --> XSS Filtering completed
+DEBUG - 2015-09-02 15:49:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-02 15:49:37 --> Language Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Loader Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: url_helper
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: form_helper
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: html_helper
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: array_helper
+DEBUG - 2015-09-02 15:49:37 --> Session Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Helper loaded: string_helper
+DEBUG - 2015-09-02 15:49:37 --> Database Driver Class Initialized
+ERROR - 2015-09-02 15:49:37 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\outreach\system\database\drivers\mysql\mysql_driver.php 181
+DEBUG - 2015-09-02 15:49:37 --> Session routines successfully run
+DEBUG - 2015-09-02 15:49:37 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:37 --> Cart Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Form Validation Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Controller Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2015-09-02 15:49:37 --> Model Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> File loaded: application/views/admin/home/dashboard_v.php
+DEBUG - 2015-09-02 15:49:37 --> File loaded: application/views/layout_main.php
+DEBUG - 2015-09-02 15:49:37 --> Final output sent to browser
+DEBUG - 2015-09-02 15:49:37 --> Total execution time: 0.0600
+DEBUG - 2015-09-02 15:49:37 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:37 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Router Class Initialized
+ERROR - 2015-09-02 15:49:37 --> 404 Page Not Found --> assests
+DEBUG - 2015-09-02 15:49:37 --> Config Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Hooks Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Utf8 Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> UTF-8 Support Enabled
+DEBUG - 2015-09-02 15:49:37 --> URI Class Initialized
+DEBUG - 2015-09-02 15:49:37 --> Router Class Initialized
+ERROR - 2015-09-02 15:49:37 --> 404 Page Not Found --> assests

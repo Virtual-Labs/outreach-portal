@@ -128,16 +128,16 @@ error_reporting(0);
      */	
 	
 			
-		public function edit($workshop_materialData="",$id,$postdata) {
-	$id=base64_decode($this->uri->segment(4));
-	$workshop_materialData['menu'] = "documents";
+		public function edit($workshop_materialData,$id,$postdata) {
+	 $id=base64_decode($this->uri->segment(4));
+		$workshop_materialData['menu'] = "documents";
 		$workshop_materialData['certification']=$this->workshop_material_m->getworkshop_material($id);
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('document_name', 'Name', 'required|xss_clean');
 		$this->form_validation->set_error_delimiters('<span class="error">', '</span>');
 		if ($this->form_validation->run() == FALSE )
 		{
-			$this->layout->view('workshop_material/edit',$workshop_materialData);
+			$this->layout->view('admin/workshop_material/edit',$workshop_materialData);
 		}
 		else if ($this -> input ->post())
 		{

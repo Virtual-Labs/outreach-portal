@@ -140,8 +140,7 @@ class home extends CI_Controller
 			$this->form_validation->set_rules('participants', 'No of Participants', 'required');
 			$this->form_validation->set_rules('experiments', 'No of experiments', 'required');
 		if ($this->form_validation->run() == FALSE ){
-			$this->session->set_flashdata('msg', validation_errors());
-			redirect('manage-workshop', 'refresh');
+			echo validation_errors();
 		}elseif ($this -> input ->post()){
 			$postdata = $this->input->post();
 			$target_dir = 'uploads/mou/';
@@ -180,14 +179,14 @@ class home extends CI_Controller
 				$subject = "Your Nodal  account Password";
 				$headers  = 'MIME-Version: 1.0' . "\r\n";
 				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				mail($to,$subject,$message,$headers);
-				$page = ucfirst($this -> input -> post('las_name'))." has been added. ";
-				$notification = array('subject' => $page, 'type' => 'Staff', 'msg_type' => 'success');			
+				mail($to,$subject,$message,$headers);	
 				$this->session->set_flashdata('msg', 'Nodalcenter Added Successfully');
-				redirect('manage-workshop', 'refresh');
+				echo "success";
+				exit;
 			}else{
-				$this->session->set_flashdata('msg', 'Nodalcenter already Exists');
-				redirect('manage-workshop', 'refresh'); // on failure   				
+				//$this->session->set_flashdata('msg', 'Nodalcenter already Exists');
+				echo "Nodalcenter already Exists";
+				exit;
 			}
 		}
 	} 

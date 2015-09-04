@@ -5,6 +5,15 @@
       <link href="<?php echo base_url(); ?>assests/bootstrap/style.css" rel="stylesheet" />
    <link href="<?php echo base_url(); ?>assests/bootstrap/style-responsive.css" rel="stylesheet" />
    <link href="<?php echo base_url(); ?>assests/bootstrap/style-default.css" rel="stylesheet" id="style_color" />
+   <link href="<?php echo base_url();?>site/css/animate.css" rel="stylesheet"><link href="<?php echo base_url();?>site/inc/shortcodes/css/shortcodes.css" rel="stylesheet"><link href="<?php echo base_url();?>site/css/animate.css" rel="stylesheet"><link href="<?php echo base_url();?>site/style.css" rel="stylesheet"><link href="<?php echo base_url();?>site/css/fullwidth.css" rel="stylesheet">	
+	<script type='text/javascript' src='<?php echo base_url();?>site/js/bootstrap.js'></script>	
+		<script type='text/javascript' src='<?php echo base_url();?>site/js/jquery.fitvids.js'></script>
+				<script type='text/javascript' src='<?php echo base_url();?>site/js/jquery.easing.1.3.js'></script>		
+						<script type='text/javascript' src='<?php echo base_url();?>site/js/common.js'></script>
+								<script type='text/javascript' src='<?php echo base_url();?>site/js/flexslider.js'></script>
+										<script type='text/javascript' src='<?php echo base_url();?>site/js/flexsliderhome.js'></script>	
+											<script type='text/javascript' src='<?php echo base_url();?>site/js/carouselrecentportfolio.js'></script>	
+												<script type='text/javascript' src='<?php echo base_url();?>site/js/carousel.js'></script>
    <style>#sidebar{
    	width: 180px!important;
    }

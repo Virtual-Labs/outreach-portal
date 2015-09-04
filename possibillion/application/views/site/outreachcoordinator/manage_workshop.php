@@ -850,13 +850,13 @@ foreach($workshopdataa as $workshopdataget){
 												  <div class="form-group">
 													<label class="col-sm-4">Number of participants attended:<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="text"  required name = "participants_attended" id = "participants_attended" style="width: 10%;">
+													  <input type="number"  required name = "participants_attended" id = "participants_attended" style="width: 10%;">
 													</div>
 												  </div>
 												    <div class="form-group">
 													<label class="col-sm-4">Number of experiments conducted:<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="text" required  name = "experiments_conducted" id = "experiments_conducted" style="width: 10%;">
+													  <input type="number" required  name = "experiments_conducted" id = "experiments_conducted" style="width: 10%;">
 													 
 													</div>
 												  </div>
@@ -893,6 +893,7 @@ foreach($workshopdataa as $workshopdataget){
 												  </div>
 												  <div class="form-group">
 													<div class="col-sm-6">
+													
 														<?php
 														$ses_data= $this->session->userdata("user_details"); 
 														?>
@@ -900,10 +901,12 @@ foreach($workshopdataa as $workshopdataget){
 													  
 													</div>
 												  </div>
+												  
 												  <div class="form-group">
 												  <label class="col-sm-4">&nbsp;</label><div class="col-sm-6">
 												 <input type="submit" name="submit" value="submit">
 												  </div><div class="col-sm-2">
+												  
 												  <a href="<?php echo base_url('nodal-coordinator')?>">	<button class="btn btn-warning" style="    float: right;    background-color: #000;    color: #fff;">Cancel</button>	</a>
 												  </div>
 												  </div> 
@@ -936,6 +939,7 @@ foreach($workshopdataa as $workshopdataget){
 								<div class="box solid gray">
 									<div class="box-title">
 										<h4>Manage Nodal Centers</h4>
+										<div  style="color: #0B8422;"></div>
 										<div class="tools hidden-xs" style="margin-top: -49px; float: right;">
 											<a id="addnodalcenterdrop" style="cursor: pointer;"><span id="iconform">►</span>+New Nodal Center</a>
 										</div>
@@ -954,27 +958,27 @@ foreach($workshopdataa as $workshopdataget){
 											<span id="error" class='error'></span>
 											
 											
-<form class="form-horizontal" method="post" name="addStaff" id="addStaff" action="<?php echo site_url('home/addNodalcenter');?>" role="form" enctype="multipart/form-data">
-												  
+											<form class="form-horizontal" method="post" name="addStaff" id="addStaff"  role="form" enctype="multipart/form-data">
+												  <input type="hidden" name="outreach_id" name="outreach_id" id="outreach_id" value="<?php echo $ses_data['id']; ?>">
 												  <!-- Product Name -->
 												  <div class="form-group">
 													<label class="col-sm-4">Name of the Center<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="text" required onkeypress="return onlyAlphabets(event,this);" name = "fname" id = "first_name" class="required form-control" value="<?php echo set_value('first_name');?>">
+													  <input type="text" required onkeypress="return onlyAlphabets(event,this);" name = "fname" id = "fname" class="required form-control" value="<?php echo set_value('first_name');?>">
 													  <?php echo "<span style='color:red'>".form_error('first_name')."</span>"; ?>
 													</div>
 												  </div>
 												    <div class="form-group">
 													<label class="col-sm-4">Name of Coordinator<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="text" required onkeypress="return onlyAlphabets(event,this);" name = "lastname" id = "last_name" class=" form-control" value="<?php echo set_value('last_name');?>">
+													  <input type="text" required onkeypress="return onlyAlphabets(event,this);" name = "lastname" id = "lastname" class=" form-control" value="<?php echo set_value('last_name');?>">
 													  <?php echo "<span style='color:red'>".form_error('last_name')."</span>"; ?>
 													</div>
 												  </div>
 												  <div class="form-group">
 													<label class="col-sm-4">Email Id<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-<input type="email" name="email">												  <?php echo "<span style='color:red'>".form_error('email')."</span>"; ?>
+<input type="email" name="email" id="email">												  <?php echo "<span style='color:red'>".form_error('email')."</span>"; ?>
 													</div>
 												  </div>
 												  
@@ -993,9 +997,7 @@ foreach($workshopdataa as $workshopdataget){
 												  <div class="form-group">
 													<label class="col-sm-4">No of Workshops<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="text" required   style="
-    width: 10%;
-"name = "workshop" id = "works" class="required  required-width" value="<?php echo set_value('works');?>">
+													  <input type="text" required   style="width: 10%;" name = "workshop" id ="workshop" class="required  required-width" value="<?php echo set_value('works');?>">
 													  <?php echo "<span style='color:red'>".form_error('works')."</span>"; ?>
 													</div>
 												  </div>
@@ -1009,24 +1011,23 @@ foreach($workshopdataa as $workshopdataget){
 												  <div class="form-group">
 													<label class="col-sm-4">No of experiments<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-														<?php
-														$ses_data= $this->session->userdata("user_details"); 
-														?>
-														<input type="hidden" name="outreach_id" name="outreach_id" value="<?php echo $ses_data['id']; ?>">
-													  <input type="text" name = "experiments" id = "experiments" class="required required-width"  value="<?php echo set_value('experiments');?>">
-													  <?php echo "<span style='color:red'>".form_error('experiments')."</span>"; ?>
+													 <input type="text" name="experiments" id="experimentsnew" class="required required-width" >
 													</div>
 												  </div>
+												   <div id="failure" style="color: red;"></div>
 												  <div class="form-group">
 												  <label class="col-sm-4">&nbsp;</label><div class="col-sm-6">
-												  <button class="btn btn-success clr-btn">Add  Nodal Center</button>
-												  </div><div class="col-sm-2">
-												  <a href="<?php echo base_url('nodal-coordinator')?>">	<button class="btn btn-warning" style="    float: right;    background-color: #000;    color: #fff;">Cancel</button>	</a>
+												 
+												  <a class="btn btn-success clr-btn" id="add_nodal_center">Add  Nodal Center</a>
 												  </div>
+												  
 												  </div> 
 												<?php /* */?>
+												  </form>
+												    <a id= "hide_form_nodal"style="float: right;    background-color: #000; color: #fff;padding: 5px;">Cancel	</a>
 												  
 											</div>
+											
 										</div>
 									</div>
 									<!-- product details -->
@@ -1040,7 +1041,10 @@ foreach($workshopdataa as $workshopdataget){
 			</div>		
 		</div>
 	</div>														
-						</form>
+						
+						
+												</br>
+												 
 						</div>
 									</div>
 									<div class="box-body">
@@ -1111,6 +1115,12 @@ foreach($workshopdataa as $workshopdataget){
 		    $('#iconform').html("►");
 		}
 	});
+	$("#hide_form_nodal").click(function(){
+		
+		   $('#displaynodalform').hide('slow'); 
+		    $('#iconform').html("►");
+	});
+	
 </script>
 <script type="text/javascript">
 	$("#addnodaltraininglink").click(function(){
@@ -1130,7 +1140,38 @@ foreach($workshopdataa as $workshopdataget){
         
         </div>
         
-		
+		<script>
+		$("#add_nodal_center").click(function(){
+   	$.ajax({
+						type: "POST",
+						url: "<?php echo site_url('home/addNodalcenter');?>",
+						data: {
+								"fname" : $("#fname").val(),
+								"lastname" : $("#lastname").val(),
+								"email" : $("#email").val(),
+								"mou" : $("#mou").val(),
+								"workshop" : $("#workshop").val(),
+								"participants" : $("#participants").val(),
+								"outreach_id" : $("#outreach_id").val(),
+								"experiments" : $("#experimentsnew").val()
+							  },
+							success: function(data) {
+								if($.trim(data) == 'success'){
+									location.reload();
+									/* $("#displaynodalform").hide();
+									$("#failure").hide();
+									  $('#iconform').html("►");
+									$('#success').html("Nodalcenter Added Successfully"); */
+									
+								}else{
+									$('#failure').html(data)
+								}
+							
+								
+							}
+		});
+	});
+		</script>
 		
         
         

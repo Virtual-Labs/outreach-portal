@@ -13,19 +13,11 @@
 				<div class="row">
 					
 					<!-- col right -->
-					<div class="col-md-9 foote-gap">
-						<div class="pull-left smaller"> <!-- pull-right smaller -->
-							<ul id="menu-footer" class="footermenu">
-								<li class="right-infom"><a data-target="#" href="<?php echo base_url(); ?>Cms/About-outreach';?>">About outreach</a></li>
-								 <li class="right-infom footer-left"><a data-target="#" href="<?php echo base_url(); ?>Contact">Contact</a></li>
-							</ul>
-						</div>
-						
-					</div>
+					
 					<!-- end col right -->                    
                     
                     <!-- col left -->
-					<div class="col-md-3 foote-gap">
+					<div class="col-md-12 foote-gap">
 						<p id="back-top">
 							<a href="#top"><span><i class="fa fa-chevron-up"></i></span></a>
 						</p>

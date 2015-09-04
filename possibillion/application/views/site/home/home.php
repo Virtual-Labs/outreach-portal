@@ -99,13 +99,17 @@
 <div class="margin-top-bottom">
 <?php $ses_data=$this->session->userdata('user_details');
 						
-		if (empty($ses_data)){ ?><?php if ($this->session->flashdata('error') !== FALSE) { echo $this->session->flashdata('error'); } ?>
-	<?php if(isset($msg)){
+		if (empty($ses_data)){ ?>
+		<?php if ($this->session->flashdata('error') !== FALSE) { echo $this->session->flashdata('error'); } ?>
+	<?php 
+	if(isset($msg)){
 			?>
 			<strong><font color="red"><?php echo $msg; ?></font></strong> 
 			<?php
 			}
 			?>
+			 
+			
 <div><h4 class="view-all-size portal-head">Portal Login </h4></div>
 
 <form action="<?php echo base_url(); ?>Login" id="student_login"class="form-horizontal" method="post" name="student_login">
@@ -127,8 +131,7 @@
 <div class="form-group margin-bottom-less">
 <div class=" col-md-12  label-class" style="padding-left: 23px;padding-top: 15px">
 <input type="submit" id="submit" class="btn btn-primary orange-btn" value="Submit"></br>
-<a class="margin-forgot" href="http://testingserver.website/outreach/
-Forgot-Password">Forgot Password</a>
+<a class="margin-forgot" href="<?php echo base_url(); ?>forgot-password">Forgot Password</a>
 </div>
 </div>
 

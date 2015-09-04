@@ -10,7 +10,7 @@
 								</div>
 								<?php } ?>
 
-	<form action="<?php echo base_url();?>Forgot-Password" class="form-horizontal" method="post" name="student_login">
+	<form action="<?php echo base_url();?>site/forgot_password" class="form-horizontal" method="post" name="student_login">
   <div class="form-group">
   <div class="form-group">
 <label class="col-sm-offset-4 col-sm-6 control-label"><h3 align="left">Forgot Password</h3></label>
