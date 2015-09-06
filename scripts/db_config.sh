@@ -16,7 +16,7 @@ mysql -u root $database_name < servdmsp_outreach.sql
 cd /var/www/application/config/
 #sed "s/$db['default']['database'] = 'outreachvlabs';/$db['default']['database'] = '$database_name';/g" database.php
 #sed -i "s/\['database'\] = .*./\['database'\] = '$database_name';/" database.php
-sed -i "s/\['database'\] = '*'/\['database'\] = '$database_name';/" database.php
-
+#sed -i "s/\['database'\] = '*'/\['database'\] = '$database_name';/" database.php
+sed -i "s/\['database'\] = '*'/\['database'\] = '$database_name'/" database.php
 
 
