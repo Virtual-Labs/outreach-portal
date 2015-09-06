@@ -13,9 +13,10 @@ cd ../possibillion/Documents/
 # Note: If you have more than one .sql file repeat below command w.r.t to database and file name
 
 mysql -u root $database_name < servdmsp_outreach.sql
-cd ../application/config/
+cd /var/www/application/config/
 #sed "s/$db['default']['database'] = 'outreachvlabs';/$db['default']['database'] = '$database_name';/g" database.php
-sed -i "s/\['database'\] = .*./\['database'\] = '$database_name';/" database.php
+#sed -i "s/\['database'\] = .*./\['database'\] = '$database_name';/" database.php
+sed -i "s/\['database'\] = '*'/\['database'\] = '$database_name';/" database.php
 
 
 
