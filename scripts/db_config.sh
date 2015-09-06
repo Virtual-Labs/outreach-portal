@@ -18,5 +18,4 @@ cd /var/www/application/config/
 #sed -i "s/\['database'\] = .*./\['database'\] = '$database_name';/" database.php
 #sed -i "s/\['database'\] = '*'/\['database'\] = '$database_name';/" database.php
 sed -i "s/\['database'\] = '*'/\['database'\] = '$database_name'/" database.php
-
-
+service apache2 restart
