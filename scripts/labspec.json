@@ -67,7 +67,7 @@
                 "lab_actions": {
                     "backup": [], 
                     "clean": [], 
-                    "init": ["cp -r ../build/* /var/www/","mv /var/www/index.html index.html.default", "sh db_config.sh", "sh email.sh"], 
+                    "init": ["cp -r ../build/* /var/www/","cp ../build/.htaccess /var/www/","mv /var/www/index.html index.html.default", "sh db_config.sh", "sh email.sh"], 
                     "pause": [], 
                     "publish": [], 
                     "restore": [], 
