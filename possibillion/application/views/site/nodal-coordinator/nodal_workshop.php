@@ -284,14 +284,14 @@ foreach($workshopdataa as $workshopdataget){
 												  <div class="form-group">
 													<label class="col-sm-3 label-names">Number of participants attended:<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="number" onkeypress="return onlyAlphabets(event,this);"name = "participate_attend" id = "participate_attend" class="required form-control no-radius required-width" >													
+													  <input type="number" min="1" onkeypress="return onlyAlphabets(event,this);"name = "participate_attend" id = "participate_attend" class="required form-control no-radius required-width" >													
 													    <?php echo "<span style='color:red'>".form_error('participate_attend')."</span>"; ?>
 													</div>
 												  </div>
 												    <div class="form-group">
 													<label class="col-sm-3 label-names">Number of experiments conducted:<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="number" onkeypress="return onlyAlphabets(event,this);" name = "participate_experiment" id = "participate_experiment" class=" form-control no-radius required-width" >
+													  <input type="number"  min="1" onkeypress="return onlyAlphabets(event,this);" name = "participate_experiment" id = "participate_experiment" class=" form-control no-radius required-width" >
 													  <?php echo "<span style='color:red'>".form_error('participate_experiment')."</span>"; ?>
 													</div>
 												  </div>
@@ -457,7 +457,7 @@ From the faculty and students of the participating institutes</span></div>
 												  <div class="form-group">
 													<label class="col-sm-3 label-names">Number of participants</label>
 													<div class="col-sm-8">
-													  <input type="number" name = "number_of_participants" id = "participants" class="required required-width no-radius" value="<?php echo set_value('participants');?>">
+													  <input type="number"  min="1" name = "number_of_participants" id = "participants" class="required required-width no-radius" value="<?php echo set_value('participants');?>">
 													  <?php echo "<span style='color:red'>".form_error('participants')."</span>"; ?>
 													</div>
 												  </div>
@@ -507,7 +507,7 @@ From the faculty and students of the participating institutes</span></div>
 												
 										
 								<div class="col-sm-3 label-names">&nbsp;</div><div class="col-sm-6">				
-							<button   class="btn btn-success clr-btn">submit</button> <button name="submit" value="save" class="btn btn-warning clr-btn-org">Save</button></div>
+							<button   class="btn btn-success clr-btn">submit</button> <!--<button name="submit" value="save" class="btn btn-warning clr-btn-org">Save</button>--></div>
 				<div class="col-sm-3">	<a href="<?php echo base_url('nodal-coordinator')?>">	<button class="btn btn-warning" style="
     float: right;
     background-color: #000;

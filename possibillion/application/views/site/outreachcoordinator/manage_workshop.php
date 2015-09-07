@@ -850,13 +850,13 @@ foreach($workshopdataa as $workshopdataget){
 												  <div class="form-group">
 													<label class="col-sm-4">Number of participants attended:<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="number"  required name = "participants_attended" id = "participants_attended" style="width: 10%;">
+													  <input type="number" min="1"  required name = "participants_attended" id = "participants_attended" style="width: 10%;">
 													</div>
 												  </div>
 												    <div class="form-group">
 													<label class="col-sm-4">Number of experiments conducted:<span style="color:red">*</span></label>
 													<div class="col-sm-6">
-													  <input type="number" required  name = "experiments_conducted" id = "experiments_conducted" style="width: 10%;">
+													  <input type="number" min="1" required  name = "experiments_conducted" id = "experiments_conducted" style="width: 10%;">
 													 
 													</div>
 												  </div>
@@ -1059,9 +1059,7 @@ foreach($workshopdataa as $workshopdataget){
 													<th>Workshops</th>
 													<th>Participants</th>
 													<th>Experiments</th>
-																
-													<th>Status</th>													
-													<th>Action</th>
+														
 												</tr>
 											</thead>
 											<tbody>
@@ -1076,15 +1074,7 @@ foreach($workshopdataa as $workshopdataget){
 													<td><?php echo $coordinator['workshop'];?></td>													
 													<td><?php echo $coordinator['participants'];?></td>													
 													<td><?php echo $coordinator['experiments'];?></td>													
-													<td>
 													
-													<a style="text-decoration:none;cursor:pointer;" id="s-<?php echo  $coordinator['id'];?>"   class="activeclass btn-xs <?php if($coordinator['status'] == 1) { ?>btn-success <?php }else{ echo "btn-danger"; }?>" > <?php if($coordinator['status'] == 1) { ?> Active <?php }elseif($coordinator['status'] == 2){ echo "In Active"; }else{ echo "delete";} ?></a>
-													
-													</td>
-													<td>
-														<!--<a href="<?php echo site_url('admin/home/editCoordinator/'.base64_encode($coordinator['id']));?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;-->
-												<?php if($coordinator['status'] != 3){ ?> <a onclick = "return confirm('are you sure you want to delete the coordinator');" href="<?php echo base_url('home/deleteNodalcenter/'.base64_encode($coordinator['id']));?>"><button class="btn btn-xs btn-danger"><i class="fa fa-exclamation-circle"></i> Delete</button></a> <?php } ?>
-													</td>
 												</tr>
 												<?php  } ?>
 

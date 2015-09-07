@@ -245,7 +245,7 @@ public function __construct(){
 			} else {
 				$college_report=$report_data[0]['college_report'];
 			}
-					$filea = array(
+					$inputdatas = array(
 						'attendance_sheet'=>$upload_attend_sheet,
 						'training_photos'=>$college_report,
 						'participants_attended'=>$inputdata['participants_attended'],
@@ -254,7 +254,7 @@ public function __construct(){
 						'negative'=>$inputdata['negative'],
 						'outreachid'=>$inputdata['outreach_id']
 						);
-						$res=$this->home_site_m->traininging($traininginputs);
+						$res=$this->home_site_m->traininging($inputdatas);
 			if($res>0){
 				$this->session->set_flashdata('msg', 'Submit Reports Successfully');
 				redirect('nodal-coordinator',"refresh");
