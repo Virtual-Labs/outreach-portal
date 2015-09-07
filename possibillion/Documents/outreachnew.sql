@@ -118,6 +118,10 @@ CREATE TABLE `role` (
   `updated_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   KEY `index` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `role` (`role_id`, `role_name`, `created_on`, `updated_on`) VALUES
+(1, 'outreach', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'nodal', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
