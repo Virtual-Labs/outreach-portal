@@ -12,7 +12,7 @@ cd ../possibillion/Documents/
 # Replace "emt.sql" file with your file
 # Note: If you have more than one .sql file repeat below command w.r.t to database and file name
 
-mysql -u root $database_name < servdmsp_outreach.sql
+mysql -u root $database_name < outreachnew.sql
 cd /var/www/application/config/
 #sed "s/$db['default']['database'] = 'outreachvlabs';/$db['default']['database'] = '$database_name';/g" database.php
 #sed -i "s/\['database'\] = .*./\['database'\] = '$database_name';/" database.php
