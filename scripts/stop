@@ -1,4 +1,4 @@
-# stop script stops all the services on the container started by the lab.
+# stop script stops all the services on the container started by the outreach portal.
 
 # Usage of the Script
 
@@ -7,4 +7,9 @@
 
 # stops the Apache service
 service apache2 stop
+if [ $? -ne 0 ]
+then
+echo "Failed to stop apache server"
+exit
+fi
 
