@@ -8,7 +8,7 @@
 	<script src="<?php echo base_url();?>assests/date/datepicker.js"></script>
 	<script>
 		$(function(){
-			$( "#mou" ).datepicker();
+			$( "#mou" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
 		})
 	</script>
 <script>
