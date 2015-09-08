@@ -16,13 +16,13 @@ echo "Sendmail configuration is failed"
 exit
 fi
 #Setting up email configuration
-echo "Setting up sendmail configuration"
-echo "define(\`SMART_HOST',\`smtp.admin.iiit.ac.in')" >> /etc/mail/sendmail.mc
-if [ $? -ne 0 ]
-then
-echo "Sendmail configuration is failed"
-exit
-fi
+#echo "Setting up sendmail configuration"
+#echo "define(\`SMART_HOST',\`smtp.admin.iiit.ac.in')" >> /etc/mail/sendmail.mc
+#if [ $? -ne 0 ]
+#then
+#echo "Sendmail configuration is failed"
+#exit
+#fi
 #Restarting sendmail service
 echo "Restarting sendmail service"
 service sendmail restart
