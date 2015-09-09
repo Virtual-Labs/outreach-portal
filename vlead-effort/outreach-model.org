@@ -1,6 +1,4 @@
 #+TITLE:     SRS for outreach portal
-#+AUTHOR:    VLEAD
-#+EMAIL:     
 #+DATE:      2015-09-08 Tue
 #+options: ^:nil
 
@@ -40,7 +38,7 @@
     + Last Active
   
       This time stamp reveals when the coordinator last made any
-      changes in the system/used the portal. - ?
+      changes in the system/used the portal.
 
 *** Nodal Coordinators
     
@@ -67,7 +65,7 @@
     + Last Active
 
       A time stamp that tells when the coordinator last made changes in
-      the system/used the portal ?
+      the system/used the portal.
 
     + Target Workshop
 
@@ -146,9 +144,13 @@
 
       No of sessions planned.
 
-    + Duration ? what is this
+    + Duration Of Sessions
+    
+      Duration of each session.
 
     + Discipline
+
+      Discipline on which session is being conducted.
 
     + Labs Planned
 
@@ -173,7 +175,7 @@
     + Last Updated
 
       A time stamp that indicates when this workshop was last
-      edited/updated - ? what is the need when we have a TS in reports too.
+      updated. 
 
 *** Workshop Documents
 
@@ -194,10 +196,12 @@
 
     + Attendance Sheet
 
-      Attendance sheet scanned and uploaded for a workshop.
+      Attendance sheet scanned and uploaded for a
+      workshop. Preferably, it should be a pdf.
 
     + College Report
 
+      College report as uploaded by a nodal coordinator.
 
     + Participants Attended
 
@@ -336,6 +340,7 @@
   + Complete code should be properly indented.
   + There should be relevant comments in the code.
   + The database tables should be normalized.
-  + Foreign key. ?
   + The application should be properly secured from common web attacks
     such as SQL injection.
+  + The directory structure of the different folders should be proper
+    and the documents should be checked in relevant folders only.
