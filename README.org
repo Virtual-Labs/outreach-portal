@@ -11,6 +11,5 @@
      + Edit the file =outreach-portal/scripts/db_config.sh= and uncoment line =#echo         "define(\`SMART_HOST',\`smtp.mydomain.ac.in')" >> /etc/mail/sendmail.mc= and define your smtp server domain address or ip_address
 Example :
 #+begin_src
-
- + echo "define(\`SMART_HOST',\`smtp.mydomain.ac.in')" >> /etc/mail/sendmail.mc
+echo "define(\`SMART_HOST',\`smtp.mydomain.ac.in')" >> /etc/mail/sendmail.mc
 #+end_src
