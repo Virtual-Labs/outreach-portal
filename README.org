@@ -8,7 +8,7 @@
  #+end_src
 ** Setting up email configuration
 *Note:* If your using your own smtp server to send emails follow the below step otherwise ignore this step. 
-     + Edit the file =outreach-portal/scripts/db_config.sh= and uncoment line =#echo         "define(\`SMART_HOST',\`smtp.admin.iiit.ac.in')" >> /etc/mail/sendmail.mc= and define your smtp server domain address or ip_address
+     + Edit the file =outreach-portal/scripts/db_config.sh= and uncoment line =#echo         "define(\`SMART_HOST',\`smtp.mydomain.ac.in')" >> /etc/mail/sendmail.mc= and define your smtp server domain address or ip_address
 Example :
 #+begin_src
 
