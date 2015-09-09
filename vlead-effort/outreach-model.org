@@ -1,4 +1,4 @@
-#+TITLE:     SRS for outreach portal
+#+TITLE:     Model for outreach portal
 #+DATE:      2015-09-08 Tue
 #+options: ^:nil
 
