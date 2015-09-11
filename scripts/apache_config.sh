@@ -12,7 +12,31 @@ then
     exit
 fi
 #Application database settings
-sed -i "s/\['database'\] = '*'/\['database'\] = '$DATABASE_NAME'/" $PATH_FOR_DB_CONFIG_FILE
+sed -i "s/\['hostname'\] = ['a-z']*/\['hostname'\] = '$HOST_NAME'/" $PATH_FOR_DB_CONFIG_FILE
+if [ $? -ne 0 ]
+then
+    echo "Failed to configure host name in application"
+    echo "##### exiting #####"
+    exit
+fi
+
+sed -i "s/\['username'\] = ['a-z']*/\['username'\] = '$USER_NAME'/" $PATH_FOR_DB_CONFIG_FILE
+if [ $? -ne 0 ]
+then
+    echo "Failed to configure user name in application"
+    echo "##### exiting #####"
+    exit
+fi
+
+sed -i "s/\['password'\] = ['a-z']*/\['password'\] = '$PASSWORD'/" $PATH_FOR_DB_CONFIG_FILE
+if [ $? -ne 0 ]
+then
+    echo "Failed to configure password in application"
+    echo "##### exiting #####"
+    exit
+fi
+
+sed -i "s/\['database'\] = ['a-z']*/\['database'\] = '$DATABASE_NAME'/" $PATH_FOR_DB_CONFIG_FILE
 if [ $? -ne 0 ]
 then
     echo "Failed to configure database name in application"
