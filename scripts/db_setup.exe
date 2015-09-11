@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+set host_name [lindex $argv 0]
+set user_name [lindex $argv 1]
+set password [lindex $argv 2]
+set database_name [lindex $argv 3]
+set sql_file_path [lindex $argv 4]
+spawn mysql -h $host_name -u $user_name -p -Bse "create database $database_name"
+expect "Enter password:"
+send "$password\n"
+spawn mysql -h $host_name -u $user_name -p $database_name -Bse "source $sql_file_path"
+expect "Enter password:"
+send "$password\n"
+interact
