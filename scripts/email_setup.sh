@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #Reading variable from config file
 source config.sh
 #Install sendmail

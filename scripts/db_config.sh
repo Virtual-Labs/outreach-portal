@@ -6,8 +6,8 @@ echo "Installing mysql-server"
 apt-get -q -y install mysql-server
 if [ $? -ne 0 ]
 then
-echo "Mysql installation is failed"
-exit
+    echo "Mysql installation is failed"
+    exit
 fi
 #Choose your database name here
 database_name="outreach"
@@ -16,11 +16,10 @@ echo "Creating database $database_name"
 mysql -u root -Bse "create database $database_name;"
 if [ $? -ne 0 ]
 then
-echo "Failed to created database $database_name"
-exit
+    echo "Failed to created database $database_name"
+    exit
 fi
-#Looking for directory which contains .sql for 
-cd ../possibillion/Documents/
+
 # Replace "outreach.sql" file with your file
 # Note: If you have more than one .sql file repeat below command w.r.t to database and file name
 mysql -u root $database_name < outreach.sql
