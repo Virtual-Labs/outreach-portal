@@ -67,7 +67,7 @@
                 "lab_actions": {
                     "backup": [], 
                     "clean": [], 
-                    "init": ["cp -r ../build/* /var/www/","cp ../build/.htaccess /var/www/","chmod -R 777 /var/www","mv /var/www/index.html index.html.default", "bash db_setup.sh", "bash email_setup.sh","bash apache_config.sh","bash restart_services.sh"], 
+                    "init": ["cp -r ../build/* /var/www/","cp ../build/.htaccess /var/www/","chmod -R 777 /var/www","mv /var/www/index.html index.html.default","chmod +x *", "./db_setup","./email_setup","./apache_setup","./restart_services"], 
                     "pause": [], 
                     "publish": [], 
                     "restore": [], 
