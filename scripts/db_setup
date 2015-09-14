@@ -1,6 +1,6 @@
 #!/bin/bash
 # Load the  config.sh using source comamnd
-source config.sh
+source config
 apt-get install expect -y
 export DEBIAN_FRONTEND=noninteractive
 #mysql server installation
