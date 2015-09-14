@@ -1,5 +1,5 @@
 #!/bin/bash
-source config.sh
+source config
 #Apache server configuration
 #Which allows to read .htaccess file for apache directory
 echo "Setting up Apache server configuration"

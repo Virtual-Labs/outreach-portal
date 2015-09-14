@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Reading variable from config file
-source config.sh
+source config
 #Install sendmail
 echo "Installing sendmail MTA....."
 apt-get install sendmail

@@ -4,7 +4,6 @@
 
 HOST_NAME=localhost
 USER_NAME=root
-PASSWORD=password
 DATABASE_NAME=outreach
 
 ######## Eamil (Sendmail) Configuration #######
@@ -20,5 +19,5 @@ APACHE_DEFAULT_CONFIG_PATH=/etc/apache2/sites-available/default
 
 ####### Outreach application configuration #######
 
-PATH_FOR_SQL_FILE="/var/www/Documents/outreach.sql"
-PATH_FOR_DB_CONFIG_FILE="/var/www/application/config/database.php"
+PATH_FOR_SQL_FILE=/root/labs/outreach-portal/possibillion/Documents/outreach.sql
+PATH_FOR_DB_CONFIG_FILE=/var/www/application/config/database.php
