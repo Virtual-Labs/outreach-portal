@@ -4,7 +4,6 @@
 
 HOST_NAME=localhost
 USER_NAME=root
-PASSWORD=password
 DATABASE_NAME=outreach
 
 ######## Eamil (Sendmail) Configuration #######
