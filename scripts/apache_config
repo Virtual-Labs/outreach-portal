@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 source config.sh
 #Apache server configuration
 #Which allows to read .htaccess file for apache directory
