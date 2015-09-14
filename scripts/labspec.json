@@ -7,7 +7,7 @@
                     "build": ["make"], 
                     "configure": [], 
                     "post_build": ["service apache2 restart"], 
-                    "pre_build": ["sudo apt-get update","sudo apt-get install -y php5 apache2 php5-mysql", "sudo a2enmod rewrite"], 
+                    "pre_build": ["cd /root/labs/outreach-portal;git checkout develop","sudo apt-get update","sudo apt-get install -y php5 apache2 php5-mysql", "sudo a2enmod rewrite"], 
                     "status": []
                 }, 
                 "installer": [], 
