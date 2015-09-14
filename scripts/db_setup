@@ -1,5 +1,6 @@
 #!/bin/bash
 # Load the  config.sh using source comamnd
+echo "PASSWORD:$(echo date +%s | sha256sum | base64 | head -c 10)" >> config 
 source config
 apt-get install expect -y
 export DEBIAN_FRONTEND=noninteractive
