@@ -40,14 +40,6 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 -- Dumping data for table `ci_sessions`
 --
 
-INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('834c98fff35249217f072ea2fbc91f66', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1441177804, 'a:2:{s:12:"user_details";a:16:{s:2:"id";s:2:"63";s:4:"name";s:9:"karunakar";s:5:"email";s:36:"karunakar.reddy@possibilliontech.com";s:13:"mobile_number";s:10:"7416542049";s:8:"password";s:32:"e10adc3949ba59abbe56e057f20f883e";s:9:"user_type";s:1:"1";s:6:"center";N;s:6:"status";s:1:"1";s:11:"outreach_id";s:1:"0";s:8:"workshop";N;s:12:"participants";s:0:"";s:11:"experiments";N;s:13:"profile_image";s:10:"Desert.jpg";s:14:"createworkshop";N;s:10:"created_on";s:19:"2015-07-19 15:52:38";s:13:"last_loggedin";s:19:"2015-09-02 07:09:28";}s:13:"flash:new:msg";s:23:"Passwords do not match!";}'),
-('8c6f1d379558d2be4c04add0ee0a48c8', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1441183855, ''),
-('8ce6a4645f2d46fbb59e414a713d92a3', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1441183856, ''),
-('a2a7e7f1203075b21975e00b85ca1ee6', '::1', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 1441193504, 'a:2:{s:9:"user_data";s:0:"";s:12:"adminDetails";a:5:{s:13:"permission_id";s:1:"1";s:8:"admin_id";s:1:"1";s:10:"first_name";s:8:"outreach";s:9:"last_name";s:5:"Admin";s:5:"image";s:18:"14376608481103.jpg";}}'),
-('ca1e75489dee06f348dd6ce3d8031905', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1441204714, ''),
-('ec7f322e5b69fb5276e82f604051058c', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1441183854, 'a:2:{s:9:"user_data";s:0:"";s:12:"user_details";a:16:{s:2:"id";s:2:"63";s:4:"name";s:9:"karunakar";s:5:"email";s:36:"karunakar.reddy@possibilliontech.com";s:13:"mobile_number";s:10:"7416542049";s:8:"password";s:32:"e10adc3949ba59abbe56e057f20f883e";s:9:"user_type";s:1:"1";s:6:"center";N;s:6:"status";s:1:"1";s:11:"outreach_id";s:1:"0";s:8:"workshop";N;s:12:"participants";s:0:"";s:11:"experiments";N;s:13:"profile_image";s:10:"Desert.jpg";s:14:"createworkshop";N;s:10:"created_on";s:19:"2015-07-19 15:52:38";s:13:"last_loggedin";s:19:"2015-09-02 08:05:26";}}');
-
 -- --------------------------------------------------------
 
 --
