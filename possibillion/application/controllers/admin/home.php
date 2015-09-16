@@ -343,7 +343,8 @@ class home extends CI_Controller {
 			$result = $this->homemodel->addCoordinator($postdata);
 			if($result > 0)			
 			{
-				$message = "Hi								
+				$message = "Hi	
+				Please login here URL:  ".base_url()."
 Your Outreach Admin Email-id is : ".$postdata['email']."
 Your Outreach Admin Password is : ".$postdata['password']."
 
