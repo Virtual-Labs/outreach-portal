@@ -163,7 +163,7 @@ class home extends CI_Controller
 				                        <td valign='top'><p> Hi Nodal Coordinator,</p></td>
 		                           </tr>
 		                           <tr>
-				                        <td valign='top'><p> Your   follow the below details to login</p></td>
+				                        <td valign='top'><p> Your   follow the below details to login here ".base_url()."</p></td>
 		                           </tr>
 		                          <tr>
 				                       <td valign='top'><p><strong>User Name :</strong> ".$postdata['email']."</p></td>
