@@ -85,7 +85,7 @@ public function __construct(){
 										<table border='0' cellspacing='0' cellpadding='0'>
 									   <tbody>
 									   <tr>
-											<td valign='top'><p>".$res['name']." please click bellow link to activate your TASK Account.</p></td>
+											<td valign='top'><p>".$res['name']." please click bellow link to activate your outreach Account.</p></td>
 									   </tr>
 									  <tr>
 										   <td valign='top'><p><strong>User Name :</strong> ".$email."</p></td>
