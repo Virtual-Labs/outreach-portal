@@ -1,4 +1,4 @@
-* Setting up the outreach portal
+//test* Setting up the outreach portal
 
 ** Setting up database configuration
  + To setup database name edit the file =outreach-portal/scripts/db_config.sh= and change database_name variable value.
