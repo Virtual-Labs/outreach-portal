@@ -30,6 +30,7 @@ class homesitemodel extends CI_Model {
 		return $row;
 	}
 
+	/********************************nodal*******************/
 	/**
 	 * NodalLogin method: check user availability
 	 * @param   string $postdata
@@ -49,6 +50,8 @@ class homesitemodel extends CI_Model {
 		}
 		return $row;
 	}
+
+	/********************************nodal*******************/
 
 	/**
 	 * checkEmail method: check user email availability
@@ -117,12 +120,12 @@ class homesitemodel extends CI_Model {
 		}
 	}
 
-	/**fetchNodalCoordinator method fetch the nodal center information
+	/**fatchNodalCoordinator method fatch the nodal center information
 	 * @param   string $value
 	 * @return array values
 	 */
 
-	public function fetchNodalCoordinator($value = '') {
+	public function fatchNodalCoordinator($value = '') {
 		$ses_data = $this -> session -> userdata('user_details');
 		$this -> db -> select('nodalcoordinators.*,nodalcentres.*');
 		$this -> db -> from('nodalcentres');
@@ -187,7 +190,7 @@ class homesitemodel extends CI_Model {
 		return $submitreportid = $this -> db -> insert_id();
 	}
 
-	/**displayMap method  fetch the workshop data related to map
+	/**displayMap method  fatch the workshop data related to map
 	 * @param   integer $id
 	 * @return array value
 	 */
@@ -197,7 +200,7 @@ class homesitemodel extends CI_Model {
 		return $query -> result_array();
 	}
 
-	/**getActiveWorkshop method  fetch the upcoming workshops
+	/**getActiveWorkshop method  fatch the upcoming workshops
 	 * @param   integer $ses_dataid
 	 * @return array values
 	 */
@@ -211,7 +214,7 @@ class homesitemodel extends CI_Model {
 
 	}
 
-	/**getActiveWorkshopOutreach method  fetch the upcoming workshops
+	/**getActiveWorkshopOutreach method  fatch the upcoming workshops
 	 * @param   integer $ses_dataid
 	 * @return array values
 	 */
@@ -228,7 +231,7 @@ class homesitemodel extends CI_Model {
 
 	}
 
-	/**getPendingWorkshopOutreach method  fetch the upcoming workshops
+	/**getPendingWorkshopOutreach method  fatch the upcoming workshops
 	 * @param   integer $ses_dataid
 	 * @return array values
 	 */
@@ -245,7 +248,7 @@ class homesitemodel extends CI_Model {
 
 	}
 
-	/**getPendingWorkshopHistory method  fetch the  workshops history
+	/**getPendingWorkshopHistory method  fatch the  workshops history
 	 * @param   integer $ses_dataid
 	 * @return array values
 	 */
@@ -263,7 +266,7 @@ class homesitemodel extends CI_Model {
 		return $query -> result_array();
 	}
 
-	/**getWorkshopHistoryNodal method  fetch the  Nodal workshops history
+	/**getWorkshopHistoryNodal method  fatch the  Nodal workshops history
 	 * @param   integer $ses_dataid
 	 * @return array values
 	 */
@@ -280,7 +283,7 @@ class homesitemodel extends CI_Model {
 		return $query -> result_array();
 	}
 
-	/**getworkshopupcoming method  fetch the upcoming workshops
+	/**getworkshopupcoming method  fatch the upcoming workshops
 	 * @param   integer $ses_dataid
 	 * @return array values
 	 */
@@ -291,7 +294,7 @@ class homesitemodel extends CI_Model {
 
 	}
 
-	/**getHomeWorkshop method  fetch the all upcoming workshops for home page
+	/**getHomeWorkshop method  fatch the all upcoming workshops for home page
 	 * @param   Null
 	 * @return array values
 	 */
@@ -371,10 +374,15 @@ class homesitemodel extends CI_Model {
 		return $query -> num_rows();
 	}
 
-	/**cancelWorkshop method  cancel Workshop
-	 * @param  string $inputdata
+	
+	/**outreachcount method  facth the outreach coordinators count
+	 * @param  integer $status
 	 * @return integer values
 	 */
+	public function outreachcount() {
+		$query = $this -> db -> get('outreachcoordinators');
+		return $query -> num_rows();
+	}
 	public function cancelWorkshop($inputdata = "") {
 		$value = array('status' => 3, 'reason' => $inputdata['reason']);
 		$this -> db -> where('workshops.workshop_id', $inputdata['workshop_id']);
@@ -383,28 +391,18 @@ class homesitemodel extends CI_Model {
 
 	}
 
-	/**traininging method nodal coordinators training insert records into nodalcoordinatorstraining table
-	 * @param  string $inputdata
-	 * @return integer values
-	 */
 	public function traininging($postdata) {
 		$this -> db -> insert('nodalcoordinatorstraining', $postdata);
 		return $submitreportid1 = $this -> db -> insert_id();
 	}
 
-	/**fetchTrainingingCoordinator method  fetch traininging nodal coordinators
-	 * @return  array values
-	 */
-	public function fetchTrainingingCoordinator() {
+	public function fatchTrainingingCoordinator() {
 		$ses_data = $this -> session -> userdata("user_details");
 		$outreachid = $ses_data['outreach_id'];
 		$query = $this -> db -> get_where('nodalcoordinatorstraining', array('outreach_id' => $outreachid));
 		return $query -> result_array();
 	}
 
-	/**nodalcoordinatorworkshopcount method  count the nodal coordinator workshop
-	 * @return  integer values
-	 */
 	public function nodalcoordinatorworkshopcount() {
 		$ses_data = $this -> session -> userdata("user_details");
 		$nodal_id = $ses_data['nodal_id'];
@@ -412,27 +410,18 @@ class homesitemodel extends CI_Model {
 		return $query -> num_rows();
 	}
 
-	/**getGuidesMaterial method  fetch records fetch records from guides material
-	 * @return  array values
-	 */
 	public function getGuidesMaterial() {
 		$query = $this -> db -> get_where('workshopdocuments', array('category' => guidance_metirial));
 		$query = $this -> db -> get('workshopdocuments');
 		return $query -> result_array();
 	}
 
-	/**getWorkshopMetirial method  fetch records fetch records from workshop metirial
-	 * @return  array values
-	 */
 	public function getWorkshopMetirial() {
 		$query = $this -> db -> get_where('workshopdocuments', array('category' => workshop_material));
 		$query = $this -> db -> get('workshopdocuments');
 		return $query -> result_array();
 	}
 
-	/**getPresentationReporting method  fetch records fetch records from Presentation Reporting
-	 * @return  array values
-	 */
 	public function getPresentationReporting() {
 		$query = $this -> db -> get_where('workshopdocuments', array('category' => workshop_material));
 		$query = $this -> db -> get('workshopdocuments');

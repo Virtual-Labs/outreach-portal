@@ -10,7 +10,7 @@
 									<ul class="breadcrumb">
 										<li>
 											<i class="fa fa-home"></i>
-											<a href="<?php echo site_url('admin'); ?>">Home</a>
+											<a href="<?php echo site_url('admin/home/dashboard'); ?>">Home</a>
 										</li>
 										<li> Outreach Coordinator</li>
 									</ul>
@@ -37,7 +37,7 @@
 									<div class="box-title">
 										<h4><i class="fa fa-table"></i>Manage Outreach Coordinator</h4>
 										<div class="tools hidden-xs">
-											<a href="<?php echo site_url('admin/addCoordinator'); ?>" style="color: #fff;background-color: #309CD1;padding: 2px;border-radius: 8px;">Add New Outreach Coordinator</a>
+											<a href="<?php echo site_url('admin/addCoordinator'); ?>">Add New Outreach Coordinator</a>
 										</div>
 									</div>
 									<div class="box-body">
@@ -48,7 +48,9 @@
 													<th>Outreach Coordinator</th>
 																								
 													 <th>Email id</th> 
-													<th>Created</th>												
+													<th>Created on</th>
+																
+													<th>Status</th>													
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -59,8 +61,12 @@
 													<td><?php echo ucfirst($coordinator['name']); ?>	</td>
 																									
 													<td><?php echo $coordinator['email']; ?></td>													
-													<td><?php echo $coordinator['created']; ?></td>													
+													<td><?php echo $coordinator['created_on']; ?></td>													
+													<td>
 													
+													<a style="text-decoration:none;cursor:pointer;" id="s-<?php echo $coordinator['id']; ?>"   class="activeclass btn-xs <?php if($coordinator['status'] == 1) { ?>btn-success <?php }else{ echo "btn-danger"; } ?>" > <?php if($coordinator['status'] == 1) { ?> Active <?php }else{ echo "In Active"; } ?></a>
+													
+													</td>
 													<td>
 														<a href="<?php echo site_url('admin/editCoordinator/' . base64_encode($coordinator['outreach_id'])); ?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;
 														

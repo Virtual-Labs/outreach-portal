@@ -13,7 +13,7 @@
 									<ul class="breadcrumb">
 										<li>
 											<i class="fa fa-home"></i>
-											<a href="<?php echo site_url('admin'); ?>">Home</a>
+											<a href="<?php echo site_url('admin/admin/dashboard'); ?>">Home</a>
 										</li>
 										<li>Guidance & Material</li>
 									</ul>
@@ -45,7 +45,7 @@
 									<div class="box-title">
 										<h4><i class="fa fa-table"></i>Guidance & Material</h4>
 									<div class="tools hidden-xs">
-											<a href="<?php echo site_url('admin/guidance_metirial/add'); ?>"><button class="btn btn-xs btn-inverse">Add New Guidance & Material</button></a>
+											<a href="<?php echo site_url('admin/guidance_metirial_add'); ?>"><button class="btn btn-xs btn-inverse">Add New Guidance & Material</button></a>
 										</div>
 									</div>
 									<div class="box-body">
@@ -55,7 +55,6 @@
                                                 	<th>S.No</th>
 													<th>Name</th>
 													<th>Document</th>
-													<th>Created On</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -64,31 +63,28 @@
 								foreach ($guidance_metirial_details as $row) {$i++;  ?>
 													<tr class="gradeX">
                                                     <td><?php echo $i; ?></td>
-													<td><?php echo $row['document_name']; ?></td>
-													<td><a target="_blank" href="<?php echo base_url() . "uploads/guidance_metirial/" . $row['document_path']; ?>">
-													<?PHP   $extension = pathinfo($row['document_path'], PATHINFO_EXTENSION); 
+													<td><?php echo $row['name']; ?></td>
+													<td><a target="_blank" href="<?php echo base_url() . "uploads/guidance_metirial/" . $row['path']; ?>">
+													<?PHP   $extension = pathinfo($row['path'], PATHINFO_EXTENSION); 
 													if($extension=="doc"){ ?>
-													<img src="<?php echo base_url(); ?>images/word.jpg"></img>
+													<img src="<?php echo base_url(); ?>assests/img/word.jpg"></img>
 													<?php }elseif($extension=="pdf"){ ?>
-													<img src="<?php echo base_url(); ?>images/pdf.jpg"></img>
+													<img src="<?php echo base_url(); ?>assests/img/pdf.jpg"></img>
 													<?php
 													//echo "PDF";
-													}elseif($extension=="JPEG"){
+													}elseif($extension=="jpg"){
  ?>
-													<img src="<?php echo base_url(); ?>images/notepad.png"></img>
+													<img src="<?php echo base_url(); ?>assests/img/notepad.png"></img>
 													<?php
-													echo "JPEG";
+													//echo "JPEG";
 													}
  ?>
 													</a></td>
-													<td><?php echo date('M jS Y', strtotime($row['created_on'])); ?></td>
 													<td>
-                          <!--  <a href="<?php //echo site_url('admin/guidance_metirial/detailview/'.base64_encode($row['document_id']));?>">
-                                <button class="btn btn-xs btn-success"><i class="fa fa-check"></i> View</button></a>&nbsp;
-                                -->
-                                <a href="<?php echo site_url('admin/guidance_metirial/edit/' . base64_encode($row['document_id'])); ?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;
+                        
+                                <a href="<?php echo site_url('admin/guidance_metirial_edit/' . base64_encode($row['id'])); ?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;
 &nbsp;
-								<a onclick = "return confirm('are you sure want to delete the guidance metirial ?');" href="<?php echo site_url('admin/guidance_metirial/Delete/' . base64_encode($row['document_id'])); ?>"><button class="btn btn-xs btn-danger"><i class="fa fa-exclamation-circle"></i> Delete</button></a>
+								<a onclick = "return confirm('are you sure want to delete the guidance metirial ?');" href="<?php echo site_url('admin/guidance_metirial_delete/' . base64_encode($row['id'])); ?>"><button class="btn btn-xs btn-danger"><i class="fa fa-exclamation-circle"></i> Delete</button></a>
 													</td>
 												</tr>
 								<?php }
@@ -100,7 +96,6 @@
                                                 	<th>S.No</th>
 													<th>Name</th>
 													<th>Document</th>
-													<th>Created On</th>
 													<th>Action</th>
 												</tr>
 											</tfoot>
@@ -124,62 +119,3 @@
 			</div>
 		</div>
 
-<script>
-	$(document).ready(function(){	});
-    $(".activeclass").click(function(){
-    var staidstr   = $(this).attr('document_id');
-
-    var staid      = staidstr.split("-");
-    var staid      = staid[1];
-    var staobj      = $(this).attr('class');
-//  alert(staobj);
-if(confirm('are you sure want to change the status?')) {
-    if(staid>0){
-		$.ajax({ 	
-                    type: "POST",
-                    url: "<?php echo base_url(); ?>
-						guidance_metirial / Status",
-						data: {"status_bus_id" : staid
-						},
-						success: function(data) {
-						//	alert(data);
-
-						if(data == 1)
-						{
-						if(staobj.search("btn-success") > -1)
-						{
-						$('#'+staidstr).removeClass('btn-success');
-						$('#'+staidstr).addClass('btn-danger');
-						$('#'+staidstr).html('In Active');
-						}
-						if(staobj.search("btn-danger") > -1)
-						{
-						$('#'+staidstr).removeClass('btn-danger');
-						$('#'+staidstr).addClass('btn-success');
-						$('#'+staidstr).html('Active');
-						}
-						}
-
-						}
-
-						});
-
-						}
-						}
-
-						});
-
-</script>
-
-<!--Date Range picker-->
-<script>
-	$(document).ready(function() {
-		$('#date_range').daterangepicker({
-			timePicker : true,
-			timePickerIncrement : 30,
-			format : 'DD-MM-YYYY hh:mm:ss',
-			timePicker12Hour : false,
-			separator : '_'
-		});
-	}); 
-</script>

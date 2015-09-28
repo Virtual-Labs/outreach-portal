@@ -1,35 +1,4 @@
-<script src="<?php echo base_url(); ?>assests/site/js/jquery.counterup.min.js"></script>
-<script src="<?php echo base_url(); ?>assests/site/js/waypoints.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assests/site/js/jquery.simplyscroll.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assests/site/css/jquery.simplyscroll.css" media="all" type="text/css">
-<script>
-	jQuery(document).ready(function($) {
-		$('.counter').counterUp({
-			delay : 10,
-			time : 1000
-		});
-		mail
-	}); 
-</script>
-<script type="text/javascript">
-	(function($) {
-		$(function() {
-			$("#scroller").simplyScroll({
-				orientation : 'vertical',
-				customClass : 'vert'
-			});
-			$("#scroller123").simplyScroll({
-				orientation : 'vertical',
-				customClass : 'vert'
-			});
-		});
-	})(jQuery); 
-</script>
-
-
-		
-        <!-- end fixedmenu -->
-		<?php $ses_data = $this -> session -> userdata('user_details'); ?>
+<?php $ses_data = $this -> session -> userdata('user_details'); ?>
           <!-- end servicesbox -->
 		
 		<section class="strip-colors">
@@ -169,7 +138,34 @@
 			?>
 </div>
 </div>
-        
+        <script src="<?php echo base_url(); ?>assests/site/js/jquery.counterup.min.js"></script>
+<script src="<?php echo base_url(); ?>assests/site/js/waypoints.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assests/site/js/jquery.simplyscroll.js"></script>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assests/site/css/jquery.simplyscroll.css" media="all" type="text/css">
+<script>
+	jQuery(document).ready(function($) {
+		$('.counter').counterUp({
+			delay : 10,
+			time : 1000
+		});
+		mail
+	}); 
+</script>
+<script type="text/javascript">
+	(function($) {
+		$(function() {
+			$("#scroller").simplyScroll({
+				orientation : 'vertical',
+				customClass : 'vert'
+			});
+			$("#scroller123").simplyScroll({
+				orientation : 'vertical',
+				customClass : 'vert'
+			});
+		});
+	})(jQuery); 
+</script>
+
 		<script
  src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
  type="text/javascript"></script>
@@ -227,6 +223,9 @@
 		padding: 8px;
 		font-weight: 300;
 		font-size: 13px;
+	}
+	.flex-direction-nav {
+		display: none;
 	}
 </style>
 

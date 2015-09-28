@@ -1,8 +1,9 @@
 <?php 
 foreach ($Workshopedit as $editWorkshop) {
+
 ?>
 <div role="tabpanel" class="tab-pane container" id="messages" style="
-margin-top: 70px;
+    margin-top: 70px;
 ">
 	<!-- FORMS -->
 	<div class="row">
@@ -37,7 +38,7 @@ margin-top: 70px;
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Participating institutes</label>
 									<div class="col-sm-6">
-										<textarea  class=" form-control" name="institutes"><?php echo $editWorkshop['institutes']; ?></textarea>																				
+										<textarea  class=" form-control" name="institutes"><?php echo $editWorkshop['institutes']; ?></textarea>										
 													  <?php echo "<span style='color:red'>" . form_error('participate_institute') . "</span>"; ?>
 									</div>
 								</div>
@@ -67,13 +68,6 @@ margin-top: 70px;
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 label-names">Duration of sessions</label>
-									<div class="col-sm-8">
-										<input type="text" name = "duration_of_session" id = "duration_of_session" class="required no-radius required-width" value="<?php echo set_value('durationofsession'); ?>">
-										<?php echo "<span style='color:red'>" . form_error('durationofsession') . "</span>"; ?>
-									</div>
-								</div>
-								<div class="form-group">
 									<label class="col-sm-3 control-label">discipline</label>
 									<div class="col-sm-6">
 										<input type="text" name = "discipline" id = "discipline" class="required form-control" value="<?php echo $editWorkshop['discipline']; ?>">
@@ -90,7 +84,7 @@ margin-top: 70px;
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Other details</label>
 									<div class="col-sm-6">
-										<textarea class="form-control" rows="3" name="other_details"><?php echo $editWorkshop['other_details']; ?></textarea>																				
+										<textarea class="form-control" rows="3" name="other_details"><?php echo $editWorkshop['other_details']; ?></textarea>										
 													  <?php echo "<span style='color:red'>" . form_error('other_details') . "</span>"; ?>
 									</div>
 								</div>

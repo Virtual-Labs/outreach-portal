@@ -13,18 +13,18 @@
 									<ul class="breadcrumb">
 										<li>
 											<i class="fa fa-home"></i>
-											<a href="<?php echo site_url('admin');?>">Home</a>
+											<a href="<?php echo site_url('admin/home/dashboard'); ?>">Home</a>
 										</li>
-										<li>Presentation & Reporting</li>
+										<li>Workshop Material</li>
 									</ul>
 									<!-- /BREADCRUMBS -->
 									<div class="clearfix">
-										<h3 class="content-title pull-left">Presentation & Reporting</h3>
+										<h3 class="content-title pull-left">Workshop Material</h3>
 									</div>
                                 <?php if($this->session->flashdata('msg')!=NULL) { ?>
 								<div class="alert alert-success display-none" style="display: block;">
 									<a data-dismiss="alert" href="#" aria-hidden="true" class="close">×</a>
-									<?php  echo $this->session->flashdata('msg');?>
+									<?php  echo $this -> session -> flashdata('msg'); ?>
 								</div>
 								<?php } ?>
 									<div class="description"></div>
@@ -43,9 +43,9 @@
 								<!-- BOX -->
 								<div class="box solid gray">
 									<div class="box-title">
-										<h4><i class="fa fa-table"></i>Presentation & Reporting</h4>
+										<h4><i class="fa fa-table"></i>Workshop Material</h4>
 									<div class="tools hidden-xs">
-											<a href="<?php echo site_url('admin/presentation_reporting_add');?>" style="color: #fff;background-color: #309CD1;padding: 2px;border-radius: 8px;">Add New Presentation & Reporting</a>
+											<a href="<?php echo site_url('admin/workshop_material_add'); ?>"><button class="btn btn-xs btn-inverse">Add New Workshop Material</button></a>
 										</div>
 									</div>
 									<div class="box-body">
@@ -59,49 +59,51 @@
 												</tr>
 											</thead>
 											<tbody>
-                     <?php $i=0; if(!empty($presentation_reporting_details)) {
-								foreach ($presentation_reporting_details as $row) {$i++;  ?>
+                     <?php $i=0; if(!empty($workshop_material_details)) {
+								foreach ($workshop_material_details as $row) {$i++;  ?>
 													<tr class="gradeX">
-                                                    <td><?php echo $i;?></td>
-													<td><?php echo $row['name'];?></td>
-													<td><a target="_blank" href="<?php echo base_url()."assests/uploads/guidance_metirial/".$row['path'];
-													
-													?>">
+                                                    <td><?php echo $i; ?></td>
+													<td><?php echo $row['name']; ?></td>
+													<td><a target="_blank" href="<?php echo base_url() . "uploads/guidance_metirial/" . $row['path']; ?>">
 													<?PHP   $extension = pathinfo($row['path'], PATHINFO_EXTENSION); 
 													if($extension=="doc"){ ?>
-													<img src="<?php echo base_url();?>assests/img/word.jpg"></img>
-													<?php }elseif($extension=="pdf"){?>
-													<img src="<?php echo base_url();?>assests/img/pdf.jpg"></img>
+													<img src="<?php echo base_url(); ?>assests/img/word.jpg"></img>
+													<?php }elseif($extension=="pdf"){ ?>
+													<img src="<?php echo base_url(); ?>assests/img/pdf.jpg"></img>
 													<?php
-													}elseif($extension=="docx"){ ?>
-													<img src="<?php echo base_url();?>assests/img/notepad.png"></img>
+													//echo "PDF";
+													}elseif($extension=="JPEG"){
+ ?>
+													<img src="<?php echo base_url(); ?>assests/img/notepad.png"></img>
 													<?php
-													} ?>
+													echo "JPEG";
+													}
+ ?>
 													</a></td>
-													
 													<td>
                         
-                                <a href="<?php echo site_url('admin/presentation_reporting_edit/'.base64_encode($row['id']));?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;
+                                <a href="<?php echo site_url('admin/workshop_metirial_edit/' . base64_encode($row['id'])); ?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;
 &nbsp;
-								<a onclick = "return confirm('are you sure want to delete the Presentation & Reporting ?');" href="<?php echo site_url('admin/presentation_reporting_delete/'.base64_encode($row['id']));?>"><button class="btn btn-xs btn-danger"><i class="fa fa-exclamation-circle"></i> Delete</button></a>
+								<a onclick = "return confirm('are you sure want to delete the Workshop Material ?');" href="<?php echo site_url('admin/workshop_metirial_delete/' . base64_encode($row['id'])); ?>"><button class="btn btn-xs btn-danger"><i class="fa fa-exclamation-circle"></i> Delete</button></a>
 													</td>
 												</tr>
 								<?php }
-					 } else {echo '<tr class="gradeX"><td colspan="6" align="left">No Workshop Material Records found</td></tr>'; }?>
+													} else {echo '<tr class="gradeX"><td colspan="6" align="left">No Workshop Material Records found</td></tr>'; }
+												?>
 											</tbody>
 											<tfoot>
 												<tr>
                                                 	<th>S.No</th>
 													<th>Name</th>
 													<th>Document</th>
-													<th>Actions</th>
+													<th>Action</th>
 												</tr>
 											</tfoot>
 										</table>
 									</div>
 								</div>
                                        <div class="row" style="float:right">
-                                        <?php echo $pagination;?>
+                                        <?php echo $pagination; ?>
                              		   </div>
 								<!-- /BOX -->
 							</div>
@@ -116,4 +118,3 @@
 				</div>
 			</div>
 		</div>
-

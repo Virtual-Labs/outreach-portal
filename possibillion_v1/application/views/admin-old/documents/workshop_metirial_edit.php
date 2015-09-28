@@ -13,9 +13,9 @@
 									<ul class="breadcrumb">
 										<li>
 											<i class="fa fa-home"></i>
-											<a href="<?php echo site_url('admin');?>">Home</a>
+											<a href="<?php echo site_url('admin/home/dashboard');?>">Home</a>
 										</li>
-										<li><a href="<?php echo site_url('admin/workshop_material');?>">Workshop Material</a></li>
+										<li><a href="<?php echo site_url('admin/home/workshop_material');?>">Workshop Material</a></li>
 										<li>Edit Workshop Material</li>
 									</ul>
 									<!-- /BREADCRUMBS -->
@@ -39,7 +39,7 @@
 											</div>
 											<div class="box-body big">
 											<span id="error" class='error'></span>
-												<form class="form-horizontal" method="post" name="editworkshop" id="editworkshop" action="<?php echo site_url('admin/workshop_metirial_edit/'.base64_encode($workshop_material_data[0]['id']));?>" role="form" onsubmit="return Checkfiles();" enctype="multipart/form-data">
+												<form class="form-horizontal" method="post" name="editworkshop" id="editworkshop" action="<?php echo site_url('admin/workshop_metirial_edit/'.base64_encode($workshop_material_data[0]['id']));?>" role="form" enctype="multipart/form-data">
 											
 												  <div class="form-group">
 													<label class="col-sm-4 control-label">Name</label>
@@ -67,7 +67,7 @@
 						
 						<!-- Save -->	
 						<p class="btn-toolbar">							
-							<button class="btn btn-success">update</button></form>
+							<button class="btn btn-success">Save</button></form>
 					<a href="<?php echo base_url('admin/workshop_material')?>">	<button class="btn">Cancel</button>	</a>
 						</p>
 						<!-- /Save -->												
@@ -76,21 +76,3 @@
 				</div>
 			</div>
 		</div>
-<script language="javascript">
-function Checkfiles()
-{
-var fup = document.getElementById('document_path');
-var fileName = fup.value;
-var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
-if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "pdf")
-{
-return true;
-} 
-else
-{
-alert("Upload Gif or Jpg images and pdf only");
-fup.focus();
-return false;
-}
-}
-</script>

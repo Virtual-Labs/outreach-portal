@@ -1,9 +1,9 @@
+<br/>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
 			</br>
-			<?php if($this->session->flashdata('msg')!=NULL) {
-			?>
+			<?php if($this->session->flashdata('msg')!=NULL) { ?>
 			<div class="alert col-md-12 alert-success display-none" style="display: block;">
 				<a data-dismiss="alert" href="#" aria-hidden="true" class="close">�</a>
 				<?php  echo $this -> session -> flashdata('msg'); ?>
@@ -52,9 +52,9 @@
 						</table>
 						<?php
 
-					$ses_data=$this->session->userdata('user_details');
+$ses_data=$this->session->userdata('user_details');
 
-					if($ses_data['user_type']==2){
+if($ses_data['user_type']==2){
 						?>
 
 						<div class="form-group">
@@ -97,7 +97,29 @@
 </div>
 </div>
 </div>
-</div><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</div>
+<style>
+	.title-border-line {
+		margin-bottom: 23px;
+		border-bottom: 1px solid #CCC;
+	}
+	.form-horizontal .control-label {
+		text-align: left;
+	}
+	table td, table th {
+		border: none;
+		text-align: left;
+	}
+	.student-title {
+		text-align: left;
+	}
+	input {
+		padding: 0px
+	}
+</style>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 	function pwdvalidation() {
 		var password = $("#password").val();
@@ -118,22 +140,3 @@
 		$("#txtConfirmPassword").keyup(pwdvalidation);
 	}); 
 </script>
-<style>
-	.title-border-line {
-		margin-bottom: 23px;
-		border-bottom: 1px solid #CCC;
-	}
-	.form-horizontal .control-label {
-		text-align: left;
-	}
-	table td, table th {
-		border: none;
-		text-align: left;
-	}
-	.student-title {
-		text-align: left;
-	}
-	input {
-		padding: 0px
-	}
-</style>

@@ -16,10 +16,10 @@
 									<a href="<?php echo site_url('admin'); ?>">Home</a>
 								</li>
 								<li>
-									<a href="<?php echo site_url('admin/coordinator'); ?>">outreach coordinator</a>
+									<a href="<?php echo site_url('admin/coordinator'); ?>">Outreach Coordinator</a>
 								</li>
 								<li>
-									Add new outreach coordinator
+									Add new Outreach Coordinator
 								</li>
 							</ul>
 							<?php if($this->session->flashdata('msg')!=NULL) {
@@ -31,7 +31,7 @@
 							<?php } ?>
 							<!-- /BREADCRUMBS -->
 							<div class="clearfix">
-								<h3 class="content-title pull-left">Add new outreach coordinator</h3>
+								<h3 class="content-title pull-left">Add new Outreach Coordinator</h3>
 							</div>
 							<div class="description"></div>
 						</div>
@@ -46,7 +46,7 @@
 							<div class="col-md-6">
 								<div class="box border dark gray">
 									<div class="box-title">
-										<h4><i class="fa fa-bars"></i>Add new outreach coordinator </h4>
+										<h4><i class="fa fa-bars"></i>Add new Outreach Coordinator </h4>
 									</div>
 									<div class="box-body big">
 										<span id="error" class='error'></span>
@@ -64,10 +64,12 @@
 											<div class="form-group">
 												<label class="col-sm-4 control-label">Email Id</label>
 												<div class="col-sm-8">
-													<input type="email" name = "email" id = "email" class="required form-control" value="<?php echo set_value('email'); ?>">
+													<input type="text" name = "email" id = "email" class="required form-control" value="<?php echo set_value('email'); ?>">
 													<?php echo "<span style='color:red'>" . form_error('email') . "</span>"; ?>
 												</div>
 											</div>
+
+											<?php /* */ ?>
 
 									</div>
 								</div>
@@ -81,11 +83,11 @@
 
 				<!-- Save -->
 				<p class="btn-toolbar">
-					<button class="btn btn-success">
-						Create Center
+					<button class="btn btn-success" style="color: #fff;background-color: #309CD1;padding: 9px;border-radius: 8px;">
+						Create coordinator
 					</button></form>
 					<a href="<?php echo site_url('admin/coordinators'); ?>">
-					<button class="btn">
+					<button class="btn" style="border-color: #7c7c7c;">
 						Cancel
 					</button> </a>
 				</p>

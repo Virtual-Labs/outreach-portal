@@ -1,7 +1,7 @@
 <?php
 class adminmodel extends  CI_Model {
 	function __construct() {
-		// Call the model constructor
+		// Call the Model constructor
 		parent::__construct();
 	}
 
@@ -39,7 +39,7 @@ class adminmodel extends  CI_Model {
 	}
 
 	/**
-	 * getcoordinator method: fetch the get outreach coordinator data
+	 * getcoordinator method: fatch the get  outreach coordinator  data
 	 * @return arry value
 	 */
 	public function getCoordinator() {
@@ -53,7 +53,7 @@ class adminmodel extends  CI_Model {
 	}
 
 	/**
-	 * addCoordinator method: insert the coordinator information to the table
+	 * addCoordinator method: insert the coordinator information  to the table
 	 * @param   array $postdata
 	 * @return object value or 0
 	 */
@@ -94,11 +94,10 @@ class adminmodel extends  CI_Model {
 	}
 
 	/**
-	 * getGuidanceMetirial method:  fetch the get guidan & cemetirial data
+	 * getGuidanceMetirial method:  fatch the get  guidan & cemetirial  data
 	 * @param  string $category
 	 * @return array  value or 0
 	 */
-
 	public function getGuidanceMetirial($category = "") {
 		$query = $this -> db -> get('workshopdocuments');
 		$query = $this -> db -> get_where('workshopdocuments', array('category' => 'guidance_metirial'));
@@ -111,7 +110,7 @@ class adminmodel extends  CI_Model {
 	}
 
 	/**
-	 * guidanceMetirialAdd method:  insert the guidan & cemetirial
+	 * guidanceMetirialAdd method:  insert the  guidan & cemetirial
 	 * @param array  $data
 	 * @return object value or 0
 	 */
@@ -126,7 +125,7 @@ class adminmodel extends  CI_Model {
 	}
 
 	/**
-	 * guidanceMetirialDelete method: delete the guidan & cemetirial
+	 * guidanceMetirialDelete method:  delete the  guidan & cemetirial
 	 * @param array  $id
 	 * @return object value or 0
 	 */
@@ -176,7 +175,7 @@ class adminmodel extends  CI_Model {
 	}
 
 	/**
-	 * workshop_material method:  fetch the workshop & material  data
+	 * workshop_material method:  fatch the workshop & material  data
 	 * @param  string $category
 	 * @return array  value
 	 */
@@ -253,7 +252,7 @@ class adminmodel extends  CI_Model {
 	}
 
 	/**
-	 * presentationReporting method:  fetch the presentation & reporting  data
+	 * presentationReporting method:  fatch the presentation & reporting  data
 	 * @param  varchar $category
 	 * @return array  value
 	 */

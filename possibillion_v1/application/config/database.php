@@ -50,11 +50,11 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 
-$db['default']['username'] = 'root';
+$db['default']['username'] = 'servdmsp_out';
 
-$db['default']['password'] = '';
+$db['default']['password'] = 'OutReacH@321!@#';
 
-$db['default']['database'] = 'outreachnew';
+$db['default']['database'] = 'servdmsp_outreach';
 
 $db['default']['dbdriver'] = 'mysql';
 

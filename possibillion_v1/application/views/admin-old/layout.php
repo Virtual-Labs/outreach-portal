@@ -21,14 +21,26 @@
 		<script type='text/javascript' src='<?php echo base_url(); ?>assests/site/js/bootstrap.js'></script>
 		<script type='text/javascript' src='<?php echo base_url(); ?>assests/site/js/common.js'></script>
 	</head>
-	
+	<style>
+		body{
+			margin-top:0px!important;
+		}
+		.navbar{
+			background-color:#fff;
+		}
+		.active{
+			background-color: #000;
+    		color: #fff!important;
+		}
+		
+	</style>
 	<body>
 		<!-- HEADER -->
 		<header class="navbar clearfix" id="header">
 			<div class="container"style="height: 76px;border-bottom: 1px Solid; ">
 				<div class="navbar-brand">
 					<!-- COMPANY LOGO -->
-					<a href="<?php echo base_url('admin'); ?>"> <img src="<?php echo base_url(); ?>assests/site/img/logo.png" alt="Cloud Admin Logo" class="img-responsive" height="66px" width="120"style="
+					<a href="<?php echo base_url('admin/home/dashboard'); ?>"> <img src="<?php echo base_url(); ?>assests/site/img/logo.png" alt="Cloud Admin Logo" class="img-responsive" height="66px" width="120"style="
 					height: 66px;
 					"> </a>
 
@@ -37,10 +49,20 @@
 				<ul class="nav navbar-nav pull-right">
 
 					<li class="dropdown user" style="float:right" id="header-user">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #fff ;color: #000;"> <?php $adminDetails = $this -> session -> userdata('adminDetails'); ?> <img alt="" src="<?php echo base_url(); ?>assests/img/avatars/avatar3.jpg" /> <span class="username"><?php echo $adminDetails['name']; ?></span> <i class="fa fa-angle-down"></i></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #fff ;color: #000;">
+						<?php $adminDetails = $this -> session -> userdata('adminDetails');
+							
+						?>
+
+						
+						<img alt="" src="<?php echo base_url(); ?>assests/img/avatars/avatar3.jpg" />
+						
+						<span class="username"><?php echo $adminDetails['name']; ?>
+						</span>
+						<i class="fa fa-angle-down"></i></a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="<?php echo site_url('admin/admin/changePassword'); ?>"><i class="fa fa-cog"></i>Change Password</a>
+								<a href="<?php echo site_url('admin/admin/changePassword'); ?>"><i class="fa fa-cog"></i> Account Settings</a>
 							</li>
 							<li>
 								<a href="<?php echo site_url('admin/admin/logout'); ?>"><i class="fa fa-power-off"></i> Log Out</a>
@@ -61,56 +83,28 @@
 						if ($menu && $menu == "dashboard") { echo "active";
 						}
 						?>">
-							<a class= "<?php
-							if ($content == "dashboard") { echo "active";
-							}
- ?>"href="<?php echo site_url('admin'); ?>"> </i> <span class="menu-text">Dashboard</span> <span class="selected"></span> </a>
+							<a class= "<?php if($content=="dashboard"){ echo "active"; } ?>"href="<?php echo site_url('admin'); ?>"> </i> <span class="menu-text">Dashboard</span> <span class="selected"></span> </a>
 						</li>
 
 						<li class="">
-							<a class="<?php
-							if ($content == "coordinator") { echo "active";
-							}
- ?>" href="<?php echo site_url('admin/coordinators'); ?>"> <span class="menu-text">Outreach Coordinators</span> <span class="selected"></span> </a>
+							<a class="<?php if($content=="coordinator"){ echo "active"; } ?>" href="<?php echo site_url('admin/coordinators'); ?>">  <span class="menu-text">Outreach Coordinators</span> <span class="selected"></span> </a>
 							<!--<a class="" href="<?php echo site_url('admin/addCoordinator'); ?>">  <span class="menu-text">Add Outreach Coordinator</span> <span class="selected"></span> </a>-->
 						</li>
-						<li>
-							<a class="<?php
-							if ($content == "guidanceMetirial") { echo "active";
-							}
- ?>" href="<?php echo site_url('admin/guidance_metirial'); ?>" ><span class="sub-menu-text"> Guidance & Material</span></a>
-						</li>
-						<li>
-							<a class="<?php
-							if ($content == "workshopMaterial") { echo "active";
-							}
- ?>" href="<?php echo site_url('admin/workshop_material'); ?>" ><span class="sub-menu-text"> Workshop Material</span></a>
-						</li>
-						<li>
-							<a class="<?php
-							if ($content == "presentationReporting") { echo "active";
-							}
- ?>" href="<?php echo site_url('admin/presentation_reporting'); ?>" ><span class="sub-menu-text"> Presentation & Reporting</span></a>
-						</li>
+								<li>
+									<a class="<?php if($content=="guidanceMetirial"){ echo "active"; } ?>" href="<?php echo site_url('admin/guidance_metirial'); ?>" ><span class="sub-menu-text"> Guidance & Material</span></a>
+								</li>
+								<li>
+									<a class="<?php if($content=="workshopMaterial"){ echo "active"; } ?>" href="<?php echo site_url('admin/workshop_material'); ?>" ><span class="sub-menu-text"> Workshop Material</span></a>
+								</li>
+								<li>
+									<a class="<?php if($content=="presentationReporting"){ echo "active"; } ?>" href="<?php echo site_url('admin/presentation_reporting'); ?>" ><span class="sub-menu-text"> Presentation & Reporting</span></a>
+								</li>
+						
+						
 
 					</ul>
 					<!-- /SIDEBAR MENU -->
 				</div>
 			</div>
-			<style>
-				body {
-					margin-top: 0px !important;
-				}
-				.navbar {
-					background-color: #fff;
-				}
-				.active, .active:hover {
-					background-color: #98CA3C !important;
-					color: #fff !important;
-				}
-				.sidebar-menu > ul > li > a {
-					text-transform: none !important;
-				}
-	         </style>
-
+			
 </html>

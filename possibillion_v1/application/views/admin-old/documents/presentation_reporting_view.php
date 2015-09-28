@@ -13,7 +13,7 @@
 									<ul class="breadcrumb">
 										<li>
 											<i class="fa fa-home"></i>
-											<a href="<?php echo site_url('admin');?>">Home</a>
+											<a href="<?php echo site_url('admin/admin/dashboard');?>">Home</a>
 										</li>
 										<li>Presentation & Reporting</li>
 									</ul>
@@ -45,7 +45,7 @@
 									<div class="box-title">
 										<h4><i class="fa fa-table"></i>Presentation & Reporting</h4>
 									<div class="tools hidden-xs">
-											<a href="<?php echo site_url('admin/presentation_reporting_add');?>" style="color: #fff;background-color: #309CD1;padding: 2px;border-radius: 8px;">Add New Presentation & Reporting</a>
+											<a href="<?php echo site_url('admin/presentation_reporting_add');?>"><button class="btn btn-xs btn-inverse">Add New Presentation & Reporting</button></a>
 										</div>
 									</div>
 									<div class="box-body">
@@ -64,7 +64,7 @@
 													<tr class="gradeX">
                                                     <td><?php echo $i;?></td>
 													<td><?php echo $row['name'];?></td>
-													<td><a target="_blank" href="<?php echo base_url()."assests/uploads/guidance_metirial/".$row['path'];
+													<td><a target="_blank" href="<?php echo base_url()."uploads/guidance_metirial/".$row['path'];
 													
 													?>">
 													<?PHP   $extension = pathinfo($row['path'], PATHINFO_EXTENSION); 
@@ -94,7 +94,7 @@
                                                 	<th>S.No</th>
 													<th>Name</th>
 													<th>Document</th>
-													<th>Actions</th>
+													<th>Action</th>
 												</tr>
 											</tfoot>
 										</table>

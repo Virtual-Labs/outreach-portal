@@ -13,10 +13,10 @@
 							<ul class="breadcrumb">
 								<li>
 									<i class="fa fa-home"></i>
-									<a href="<?php echo site_url('admin'); ?>">Home</a>
+									<a href="<?php echo site_url('admin/admin/dashboard'); ?>">Home</a>
 								</li>
 								<li>
-									<a href="<?php echo site_url('admin/coordinator'); ?>">Outreach Coordinator</a>
+									<a href="<?php echo site_url('admin/admin/coordinator'); ?>">Outreach Coordinator</a>
 								</li>
 								<li>
 									Edit Outreach Coordinator
@@ -74,9 +74,9 @@
 				<!-- Save -->
 				<p class="btn-toolbar">
 					<button class="btn btn-success">
-						Update
+						Save
 					</button></form>
-					<a href="<?php echo site_url('admin/coordinators'); ?>">
+					<a href="<?php echo site_url('admin/admin/coordinator'); ?>">
 					<button class="btn">
 						Cancel
 					</button> </a>

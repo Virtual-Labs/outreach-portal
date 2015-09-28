@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>assests/css/nodalco.css" />
 <!-- end fixedmenu -->
 		<?php $ses_data = $this -> session -> userdata('user_details'); ?>
           <!-- end servicesbox -->
@@ -47,6 +46,11 @@
 		</div>
         
 		</section>
+		
+		
+		
+		
+		<!-- end homerecentportfolio -->
         <div class="container" style="margin-top:30px;">
       
       <div role="tabpanel" class="tab-pane" id="profile">
@@ -76,18 +80,22 @@
 												
 											foreach($viewReports as $workshopdata){
 											
-																						?>
+												//echo "<pre>";
+												//print_r($workshopdata);
+												//die();												?>
 												
 												<tr class="gradeX">
 													<td><?php echo $workshopdata['workshop_id']; ?></td>
 													<td><?php echo $workshopdata['name']; ?></td>
 													<td><?php echo $workshopdata['location']; ?></td>
 													<td><?php echo $workshopdata['institute']; ?></td>
+													<!--<td><?php echo $workshopdata['date'];  ?></td>-->
 													<td><?php echo $workshopdata['no_of_participants']; ?></td>
 													<td><?php echo $workshopdata['no-of_sessions']; ?></td>
 													<td><?php echo $workshopdata['duration_of_session']; ?></td>
 												
 													<td><?php echo $workshopdata['labs_planned']; ?></td>
+													<!--<td><?php echo $workshopdata['upload_attend_sheet']; ?></td>-->
 													</tr>
 													<?php
 													}
@@ -95,6 +103,97 @@
 </table>
 <?php if($workshopdata['attendance_sheet']){
 													?>
+													<style>
+														tabs-below > .nav-tabs, .tabs-right > .nav-tabs, .tabs-left > .nav-tabs {
+															border-bottom: 0;
+														}
+
+														.tab-content > .tab-pane, .pill-content > .pill-pane {
+															display: none;
+														}
+
+														.tab-content > .active, .pill-content > .active {
+															display: block;
+														}
+
+														.tabs-below > .nav-tabs {
+															border-top: 1px solid #ddd;
+														}
+
+														.tabs-below > .nav-tabs > li {
+															margin-top: -1px;
+															margin-bottom: 0;
+														}
+
+														.tabs-below > .nav-tabs > li > a {
+															-webkit-border-radius: 0 0 4px 4px;
+															-moz-border-radius: 0 0 4px 4px;
+															border-radius: 0 0 4px 4px;
+														}
+
+														.tabs-below > .nav-tabs > li > a:hover, .tabs-below > .nav-tabs > li > a:focus {
+															border-top-color: #ddd;
+															border-bottom-color: transparent;
+														}
+
+														.tabs-below > .nav-tabs > .active > a, .tabs-below > .nav-tabs > .active > a:hover, .tabs-below > .nav-tabs > .active > a:focus {
+															border-color: transparent #ddd #ddd #ddd;
+														}
+
+														.tabs-left > .nav-tabs > li, .tabs-right > .nav-tabs > li {
+															float: none;
+														}
+
+														.tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a {
+															min-width: 74px;
+															margin-right: 0;
+															margin-bottom: 3px;
+														}
+
+														.tabs-left > .nav-tabs {
+															float: left;
+															margin-right: 19px;
+															border-right: 1px solid #ddd;
+														}
+
+														.tabs-left > .nav-tabs > li > a {
+															margin-right: -1px;
+															-webkit-border-radius: 4px 0 0 4px;
+															-moz-border-radius: 4px 0 0 4px;
+															border-radius: 4px 0 0 4px;
+														}
+
+														.tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+															border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+														}
+
+														.tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover, .tabs-left > .nav-tabs .active > a:focus {
+															border-color: #ddd transparent #ddd #ddd;
+															*border-right-color: #ffffff;
+														}
+
+														.tabs-right > .nav-tabs {
+															float: right;
+															margin-left: 19px;
+															border-left: 1px solid #ddd;
+														}
+
+														.tabs-right > .nav-tabs > li > a {
+															margin-left: -1px;
+															-webkit-border-radius: 0 4px 4px 0;
+															-moz-border-radius: 0 4px 4px 0;
+															border-radius: 0 4px 4px 0;
+														}
+
+														.tabs-right > .nav-tabs > li > a:hover, .tabs-right > .nav-tabs > li > a:focus {
+															border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+														}
+
+														.tabs-right > .nav-tabs .active > a, .tabs-right > .nav-tabs .active > a:hover, .tabs-right > .nav-tabs .active > a:focus {
+															border-color: #ddd #ddd #ddd transparent;
+															*border-left-color: #ffffff;
+														}
+													</style>
 													<form method="post" action="<?php echo site_url('approverepost'); ?>">
 													 <div class="tabbable tabs-left">
         <ul class="nav nav-tabs">
@@ -112,7 +211,7 @@
  foreach($nodalphoto[0] as $nodalphotos){
 	 ?>
 	 
-  <li><img src="<?php echo base_url(); ?>uploads/workshopphotos/<?php echo $nodalphotos; ?>"/></li>
+  <li><img src="<?php echo base_url(); ?>uploads/workshop_photos/<?php echo $nodalphotos; ?>"/></li>
  
 
 	 <?php
@@ -126,10 +225,10 @@
         <div class="tab-content">
 		
          <div class="tab-pane active" id="a"><div >
-		 	<object data="<?php echo base_url(); ?>uploads/attendsheet/<?php echo $workshopdata['attendance_sheet']; ?>" type="pdf" width="50%" height="100%">
-  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/attendsheet/<?php echo $workshopdata['attendance_sheet']; ?>">to the PDF!</a></p>
+		 	<object data="<?php echo base_url(); ?>uploads/attend_sheet/<?php echo $workshopdata['attendance_sheet']; ?>" type="application/pdf" width="50%" height="100%">
+  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/attend_sheet/<?php echo $workshopdata['attendance_sheet']; ?>">to the PDF!</a></p>
 </object>
- </div>
+  <!--<img src="http://ideativedigital.com/outreach/uploads/attend_sheet/<?php //echo $workshopdata['upload_attend_sheet']; ?>" width="250px" height="250px">--></div>
          	
          	<table>
 	<tr>
@@ -148,10 +247,10 @@
          	
          <div class="tab-pane" id="b">
          	<div >
-			<object data="<?php echo base_url(); ?>uploads/collegereport/<?php echo $workshopdata['college_report']; ?>" type="pdf" width="50%" height="100%">
-  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/collegereport/<?php echo $workshopdata['college_report']; ?>">to the PDF!</a></p>
+			<object data="<?php echo base_url(); ?>uploads/college_report/<?php echo $workshopdata['college_report']; ?>" type="application/pdf" width="50%" height="100%">
+  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/college_report/<?php echo $workshopdata['college_report']; ?>">to the PDF!</a></p>
 </object>
-         	</div>
+         		<!--<img src="http://ideativedigital.com/outreach/uploads/college_report/<?php echo $workshopdata['upload_attend_sheet']; ?>"width="250px" height="250px">--></div>
          		
 <table>
 	<tr>

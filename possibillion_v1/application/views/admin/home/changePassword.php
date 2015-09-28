@@ -13,7 +13,7 @@
 							<ul class="breadcrumb">
 								<li>
 									<i class="fa fa-home"></i>
-									<a href="<?php echo base_url(); ?>">Home</a>
+									<a href="<?php echo base_url(); ?>admin">Home</a>
 								</li>
 								<li>
 									Change Password
@@ -66,8 +66,8 @@
 													"class="form-control"  name="new_password" id="new_password" maxlength="12"  value="<?php  echo set_value('new_password'); ?>">
 													<span style="
 													float: right;
-													margin-top: -27px;
-													margin-right: 51px;
+													margin-top: -30px;
+
 													">Minimum 5 Characters</span>
 													<?php echo "<span style='color:red'>" . form_error('new_password') . "</span>"; ?>
 												</div>
@@ -91,14 +91,19 @@
 
 						<!-- Save -->
 						<p class="btn-toolbar">
-							<button class="btn btn-success">
+							<button class="btn btn-success" style="
+							color: #fff;
+							background-color: #309CD1;
+							padding: 9px;
+							border-radius: 8px;
+							">
 								Save
 							</button>
-							<button type="reset" class="btn btn-grey">
-								Reset
-							</button>
+
 							</form>&nbsp; <a href="<?php echo base_url('admin'); ?>">
-							<button class="btn">
+							<button class="btn" style="
+							border-color: #7c7c7c;
+							">
 								Cancel
 							</button> </a>
 						</p>
@@ -140,7 +145,7 @@
 							minlength : "Your password must be at least 5 characters long"
 						},
 						retype_password : {
-							required : "Please provide a password",
+							required : "Please provide a confirm  password",
 							minlength : "Your password must be at least 5 characters long",
 							equalTo : "Please enter the same password as above"
 						}

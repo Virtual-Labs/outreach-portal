@@ -49,7 +49,7 @@
 					<i class="fa fa-angle-down"></i><span class="username"><?php echo ucfirst($ses_data['name']); ?> </span>
 					
 					
-					<img alt="" style="border-radius: 50px;width: 30px;height: 30px;"src="<?php echo base_url(); ?>images/outreach-profile-images/<?php echo $ses_data['profile_image']; ?>"  style="border-radius: 50%;">
+					<img alt="" style="border-radius: 50px;width: 30px;height: 30px;"src="<?php echo base_url(); ?>assests/img/avatars/avatar2.jpg"  style="border-radius: 50%;">
 				</a>
 				
 <ul class="dropdown-menu">

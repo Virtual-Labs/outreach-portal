@@ -1,18 +1,20 @@
-<div id="main-content">
+     <div id="main-content">
          <div class="container-fluid" style="background-color: #fff; padding: 10px;height: 500px;">  
             <div class="row-fluid">
                <div class="span12">
                    <h3 class="page-title">
                      Dashboard
                    </h3>
-                   
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="<?php echo base_url(); ?>home_c/home">Home</a>
+                           <span class="divider"></span>
+                       </li>
+                       <li class="active">
+                           Dashboard
+                       </li>
+                   </ul>
                    <!-- END PAGE TITLE & BREADCRUMB-->
-				   	<?php if(isset($msg)) { ?>
-								<div class="alert alert-success display-none" style="display: block;">
-									<a data-dismiss="alert" href="#" aria-hidden="true" class="close">×</a>
-									<?php  echo $msg; ?>
-								</div>
-								<?php } ?>
                </div>
             </div>
 			   <!-- END PAGE HEADER-->
@@ -23,35 +25,35 @@
                     <div class="metro-nav-block nav-block-orange">
                         <a data-original-title="" href="#">
                             <i class="icon-user"></i>
-                            <div class="info"><?php echo $workshoprun; ?></div>
+                            <div class="info">122</div>
                             <div class="status">WORKSHOPS RUN</div>
                         </a>
                     </div>
                     <div class="metro-nav-block nav-olive">
                         <a data-original-title="" href="#">
                             <i class="icon-tags"></i>
-                            <div class="info">0</div>
+                            <div class="info">12</div>
                             <div class="status">LABS TAKEN</div>
                         </a>
                     </div>
                     <div class="metro-nav-block nav-block-yellow">
                         <a data-original-title="" href="#">
                             <i class="icon-comments-alt"></i>
-                            <div class="info"><?php echo $nodalcenters; ?></div>
+                            <div class="info">21</div>
                             <div class="status">NODAL CENTERS</div>
                         </a>
                     </div>
                     <div class="metro-nav-block nav-block-green">
                         <a data-original-title="" href="#">
                             <i class="icon-eye-open"></i>
-                            <div class="info"><?php echo $nodalcenters; ?></div>
+                            <div class="info">2</div>
                             <div class="status">NODAL COORDINATOR</div>
                         </a>
                     </div>
                     <div class="metro-nav-block nav-block-red">
                         <a data-original-title="" href="#">
                             <i class="icon-bar-chart"></i>
-                            <div class="info"><?php echo $outreachcount; ?></div>
+                            <div class="info">21</div>
                             <div class="status"style="
     bottom: 0px;
 ">OUTREACH COORDINATOR</div>

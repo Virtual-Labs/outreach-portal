@@ -1,61 +1,104 @@
-<?php $ses_data = $this -> session -> userdata('user_details'); ?> <!-- end servicesbox -->
-	<section class="strip-colors">
+ <meta name="content-type"           content="application/vnd.ms-powerpoint"/>
+ <meta name="content-type"           content="application/vnd.ms-word"/>
+ <meta name="content-type"           content="application/vnd.ms-word"/>
+<script src="<?php echo base_url(); ?>assests/site/js/jquery.counterup.min.js"></script>
+<script src="<?php echo base_url(); ?>assests/site/js/waypoints.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assests/site/js/jquery.simplyscroll.js"></script>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assests/site/css/jquery.simplyscroll.css" media="all" type="text/css">
+<script>
+	jQuery(document).ready(function($) {
+		$('.counter').counterUp({
+			delay : 10,
+			time : 1000
+		});
+		setTimeout(function() {
+			$('#divaid1').hide();
+		}, 5000);
+	});
+</script>
+<script type="text/javascript">
+	(function($) {
+		$(function() {
+			$("#scroller").simplyScroll({
+				orientation : 'vertical',
+				customClass : 'vert'
+			});
+			$("#scroller123").simplyScroll({
+				orientation : 'vertical',
+				customClass : 'vert'
+			});
+		});
+	})(jQuery); 
+</script>
+<style>
+	.counter1 {
+		font-size: 19px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		line-height: 0px;
+	}
+</style>
+	
+        <!-- end fixedmenu -->
+		<?php $ses_data = $this -> session -> userdata('user_details'); ?>
+          <!-- end servicesbox -->
+		<section class="strip-colors">
 		<div class="container">
 			<div>
 				<div class="col-md-3 text-center workshop-run">
 					<div class="icon-box-top">
-						<div class="value-disp">
-							<p align="left" class="value-list">
-								<span class="counter1" style="display:inline-block; color:#fff;"><?php echo $nodalcoordinatorcounthistroy[0]['participants']; ?>/<?php echo $nodalcoordinatorworkshop['experiments']; ?></span>
-								<span class="resu-top">EXPERIMENTS</span>
-							</p>
+					<div class="value-disp">
+						<p align="left" class="value-list">
+							<span class="counter1" style="display:inline-block; color:#fff;"><?php echo $nodalcoordinatorcounthistroy[0]['participants']; ?>/<?php echo $nodalcoordinatorworkshop['experiments']; ?></span><span class="resu-top">EXPERIMENTS</span>
+						</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 text-center labs-taken">
 					<div class="icon-box-top">
 						<div class="value-disp">
-							<p align="left" class="value-list">
-								<span class="counter1" style="display: inline-block;color:#fff;"><?php echo $nodalcoordinatorcounthistroy[0]['experiments']; ?>/<?php echo $nodalcoordinatorworkshop['participants']; ?></span>
-								<span class="resu-top">PARTICIPANTS</span>
-							</p>
-						</div>
-					</div>
+						<p align="left" class="value-list">
+							<span class="counter1" style="display: inline-block;color:#fff;"><?php echo $nodalcoordinatorcounthistroy[0]['experiments']; ?>/<?php echo $nodalcoordinatorworkshop['participants']; ?></span><span class="resu-top">PARTICIPANTS</span>
+						</p>
+					</div></div>
 				</div>
 				<div class="col-md-3 text-center workshop-run">
 					<div class="icon-box-top">
 					<div class="value-disp">
 						<p align="left" class="value-list">
-							<span class="counter1" style="display:inline-block; color:#fff;"><?php echo $nodalcoordinatorworkshopcount; ?>/<?php echo $nodalcoordinatorworkshop['workshop']; ?></span>
-							<span class="resu-top">WORKSHOPS</span>
+							<span class="counter1" style="display:inline-block; color:#fff;"><?php echo $nodalcoordinatorworkshopcount; ?>/<?php echo $nodalcoordinatorworkshop['workshop']; ?></span><span class="resu-top">WORKSHOPS</span>
 						</p>
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-md-3 text-center node-centers">
 					<div class="icon-box-top">
 						<div class="value-disp">
-							<p align="left" class="value-list">
-								<span class="counter1" style="display: inline-block;color:#fff;"><?php echo $nodalcoordinatorcount; ?></span>
-								<span class="resu-top">NODEL CENTERS</span>
-							</p>
-						</div>
-					</div>
-				</div>	
+						<p align="left" class="value-list">
+							<span class="counter1" style="display: inline-block;color:#fff;"><?php echo $nodalcoordinatorcount; ?></span><span class="resu-top">NODEL CENTERS
+
+</span>
+						</p>
+					</div></div>
+				</div>
+				
 			</div>
 		</div>
         
-	</section>
+		</section>
 		<!-- end homerecentportfolio -->
-    <div class="container" style="margin-top:30px;"> 
- 		<?php if($this->session->flashdata('msg')!=NULL)
-		 { ?>
-		<div class="alert col-md-12 alert-success display-none" style="display: block;">
-			<a data-dismiss="alert" href="#" aria-hidden="true" class="close">�</a>
-					<?php  echo $this -> session -> flashdata('msg'); ?>
-		</div>
-			
-	<?php } ?>
+        <div class="container" style="margin-top:30px;">
+      
+     
+ <?php if($this->session->flashdata('msg')!=NULL) { ?>
+								<div class="alert col-md-12 alert-success display-none" style="display: block;">
+									<a data-dismiss="alert" href="#" aria-hidden="true" class="close">�</a>
+									<?php  echo $this -> session -> flashdata('msg'); ?>
+								</div>
+								<?php
+								}
+ ?>
 		<div>
 
   <!-- Nav tabs -->
@@ -68,10 +111,18 @@
   </ul>
 
   <!-- Tab panes -->
- <div class="tab-content">
+  <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
- 		<div class="container placemetns-top">
- 			<div class="col-md-12 align-top-botm">
+ <div class="container placemetns-top">
+ 
+ 
+ 
+ <div>
+<!--<h2 class="head-events">Upcoming Workshops</h2>-->
+</div>
+
+ <div class="col-md-12 align-top-botm">
+				
 				<div class="col-md-2">
 					Date			
 				</div>
@@ -81,384 +132,654 @@
                 <div class="col-md-3">Participating Institutes</div>
 				<div class="col-md-3">Nodal Coordinator</div>
 			</div>
+
+			
+			
 			<?php
-				foreach($getActiveWorkshop as $workshopdata)
-				{
-					$newDate = strtoupper(date("M", strtotime($workshopdata['date'])));												
-					$newDated = date("d", strtotime($workshopdata['date']));	
-					$newyear = date("Y", strtotime($workshopdata['date']));		
-			?>									
+											foreach($getActiveWorkshop as $workshopdata){
+												$newDate = strtoupper(date("M", strtotime($workshopdata['date'])));												
+												$newDated = date("d", strtotime($workshopdata['date']));	
+												$newyear = date("Y", strtotime($workshopdata['date']));		
+														?>
+												
 			<div class="col-md-12 align-top-botm">
+				
 				<div class="col-md-2">
-					<div class="month-box">
-						<span><?php echo $newDated; ?> <?php echo $newDate; ?><br/><?php echo $newyear; ?></span>
-					</div>				
+					<div class="month-box"><span><?php echo $newDated; ?> <?php echo $newDate; ?><br/><?php echo $newyear; ?></span></div>				
 				</div>
+				
 				<div class="col-md-2 mid-align"><?php echo $workshopdata['location']; ?></div>
                 <div class="col-md-2 mid-align"><?php echo $workshopdata['no_of_participants']; ?></div>
-                <div class="col-md-3 mid-align">
-                	<p style="font-size: 12px;line-height: 20px;text-align: justify;"><?php
-					$workshopdataa = explode(",", $workshopdata['institutes']);
-					foreach ($workshopdataa as $workshopdataget) {
-						$workshopdatagetlen = strlen($workshopdataget);
-						if ($workshopdatagetlen >= 20) {
-							$institutesnames = substr($workshopdataget, 0, 20);
-							echo $institutesnames . "...";
-							echo "<br>";
-						} else {
-							echo $workshopdataget;
-						}
+                <div class="col-md-3 mid-align"><p style="font-size: 12px;line-height: 20px;text-align: justify;"><?php
+				$workshopdataa = explode(",", $workshopdata['institutes']);
+				foreach ($workshopdataa as $workshopdataget) {
+					$workshopdatagetlen = strlen($workshopdataget);
+					if ($workshopdatagetlen >= 20) {
+						$institutesnames = substr($workshopdataget, 0, 20);
+						echo $institutesnames . "...";
+						echo "<br>";
+					} else {
+						echo $workshopdataget;
 					}
-						?>
-					</p>
-				</div>
+				}
+				?></p></div>
+				
 				<div class="col-md-3 mid-align"><?php echo $workshopdata['name']; ?></div>
 			</div>
 			<?php
 			}
 			?>
+			
 		</div>
-	</div>
+       
+       
+
+</div>
+
     <div role="tabpanel" class="tab-pane" id="profile">
-     	<div class="container placemetns-top">
-		 	<div class="col-md-12 align-top-botm">
+     <div class="container placemetns-top">
+ 
+ 
+ 
+ <div>
+<h2 class="head-events"></h2>
+</div>
+										 <div class="col-md-12 align-top-botm">
             	<div class="col-md-1">
 					Date			
 				</div>
-				<div class="col-md-2">Location</div>
-		        <div class="col-md-1">Participants</div>
-		        <div class="col-md-1">Experiments</div>
-		        <div class="col-md-3 ">Participating Institutes</div>
-		        <div class="col-md-2">Nodal Coordinator</div>
+				
+			<div class="col-md-2">Location</div>
+                <div class="col-md-1">Participants</div>
+                <div class="col-md-1">Experiments</div>
+                <div class="col-md-3 ">Participating Institutes</div>
+                <div class="col-md-2">Nodal Coordinator</div>
 				<div class="col-md-2">&nbsp;</div>
 			</div>
-				<?php
-						foreach($getPendingWorkshopOutreach as $workshopdata)
-						{
-							$newDate = strtoupper(date("M", strtotime($workshopdata['date'])));												
-							$newDated = date("d", strtotime($workshopdata['date']));	
-							$newyear = date("Y", strtotime($workshopdata['date']));		
-						?>
-				            <div class="col-md-12 align-top-botm">
-								 <div class="col-md-1">
-									<div class="month-box">
-										<span><?php echo $newDated; ?> <?php echo $newDate; ?><br/><?php echo $newyear; ?></span>
-									</div>				
-								</div>
-								<div class="col-md-2"><?php echo $workshopdata['location']; ?></div>
-				                <div class="col-md-1"><?php echo $workshopdata['no_of_participants']; ?></div>
-				                <div class="col-md-1"><?php echo $workshopdata['participate_experiment']; ?></div>
-				                <div class="col-md-3 "
-									<p style="font-size: 12px;line-height: 20px;text-align: justify;">
-				                	<?php
-									$workshopdataa = explode(",", $workshopdata['institutes']);
-									foreach ($workshopdataa as $workshopdataget) {
-										$workshopdatagetlen = strlen($workshopdataget);
-										if ($workshopdatagetlen >= 20) {
-											$institutesnames = substr($workshopdataget, 0, 20);
-											echo $institutesnames . "...";
-											echo "<br>";
-										} else {
-											echo $workshopdataget;
-										}
-									}
-										?>
-									</p>
-								</div>
-				                <div class="col-md-2"><?php echo $workshopdata['name']; ?></div>
-				                <div class="col-md-2">
-				                	<a  href ="<?php echo site_url('viewReport'); ?>/<?php echo $workshopdata['workshop_id']; ?>"  style="cursor: pointer;">
-				                		<span id="mew1-<?php echo $workshopdata["workshop_id"]; ?>">►</span>
-				                		viewReport
-				                	</a
-								</div>         
-									<script type="text/javascript">
-										$("#feedback2-<?php echo $workshopdata["workshop_id"]; ?>
-											").click(function(){
-											if($('#frn_comment2-
-									<?php echo $workshopdata["workshop_id"]; ?>
-										').css('display
-										') == 'none'){
-										$('#frn_comment2-
-									<?php echo $workshopdata["workshop_id"]; ?>
-										').show('slow');
-										$('#mew2-
-									<?php echo $workshopdata["workshop_id"]; ?>
-										').html("▼");
-										} else {
-										$('#frn_comment2-
-									<?php echo $workshopdata["workshop_id"]; ?>
-										').hide('slow');
-										$('#mew2-
-									<?php echo $workshopdata["workshop_id"]; ?>
-										').html("►");
-										}
-										});
-									</script>
-				                
-							</div>
-							<div style="display:none" id="frn_comment2-<?php echo $workshopdata["workshop_id"]; ?>">
-								<table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover">
-									<thead>
-										<tr>
-											<th>S.No</th>
-											<th>Name</th>
-											<th>Location</th>
-											<th>Participating institutes</th>
-											<th>No of participants</th>
-											<th>No of sessions</th>
-											<th>Duration of sessions</th>
-											<th>Subject of sessions</th>
-											<th>Labs planned</th>
-										</tr>
-									</thead>
-										<?php
-												foreach($view_reports as $workshopdata)
-												{
-										?>
-																
-										<tr class="gradeX">
-											<td><?php echo $workshopdata['workshop_id']; ?></td>
-											<td><?php echo $workshopdata['name']; ?></td>
-											<td><?php echo $workshopdata['location']; ?></td>
-											<td><?php echo $workshopdata['institute']; ?></td>
-											<td><?php echo $workshopdata['number_of_participants']; ?></td>
-											<td><?php echo $workshopdata['no-of_sessions']; ?></td>
-											<td><?php echo $workshopdata['durationofsessions']; ?></td>
-											<td><?php echo $workshopdata['subject_of_session']; ?></td>
-											<td><?php echo $workshopdata['labs_plan']; ?></td>
-										</tr>
-										<?php
-										}
-										?>
-							</table>
-							<?php if($workshopdata['upload_attend_sheet'])
-									{
-							?>
-										<form method="post" action="<?php echo site_url('home/approverepost'); ?>">
-												<div class="tabbable tabs-left">
-								       					 	<ul class="nav nav-tabs">
-									      						<li class="active"><a href="#a" data-toggle="tab">Attendance sheets</a></li>
-									         					<li ><a href="#b" data-toggle="tab">College report</a></li>
-									        					<li><a href="#c" data-toggle="tab">Workshop Photos</a></li>
-									         					<li><a href="#d" data-toggle="tab">Comments</a></li>
-								        					</ul>
-								        			<div class="tab-content">
-										         			<div class="tab-pane active" id="a">
-											         			<div >
-														 			<object data="<?php echo base_url(); ?>uploads/attend_sheet/<?php echo $workshopdata['upload_attend_sheet']; ?>" type="pdf" width="50%" height="100%">
-												 						 <p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/attend_sheet/<?php echo $workshopdata['upload_attend_sheet']; ?>">to the PDF!</a></p>
-																	</object>
-											  
-											  					</div>
-													         	<table>
-																		<tr>
-																			<th>Checklist for approval</th>
-																			<th>yes &nbsp; no</th>
-																		</tr>
-																		<tr>
-																			<td>Total attendance matches the reported participants</td>
-																			<td><input type="radio" name="signed" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="signed" value="no"></td>
-																		</tr>
-														
-																</table>
-										       			 </div>
-										         		<div class="tab-pane" id="b">
-													         	<div >
-																	<object data="<?php echo base_url(); ?>uploads/college_report/<?php echo $workshopdata['college_report']; ?>" type="pdf" width="100%" height="100%">
-														  			<p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/college_report/<?php echo $workshopdata['college_report']; ?>">to the PDF!</a></p>
-																	</object>
-																	
-																</div>	
-																<table>
-																	<tr>
-																		<th>Checklist for approval</th>
-																		<th>yes &nbsp; no</th>
-																</tr>
-																<tr>
-																	<td>Report is on the college letterhead</td>
-																	<td><input type="radio" name="letterhead" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="letterhead" value="no"></td>
-																</tr>
-																<tr>
-																	<td>Report is signed by the college principal</td>
-																	<td><input type="radio" name="signed" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="signed" value="no"></td>
-																</tr>
-																<tr>
-																	<td>Report has the college seal stamped</td>
-																	<td><input type="radio" name="seal" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="seal" value="no"></td>
-																</tr>
-																</table>
-									        			</div>						
-											      		<div class="tab-pane" id="c">
-															<img src="<?php echo base_url(); ?>/uploads/workshop_photos/<?php echo $workshopdata['workshop_photos']; ?>" width="250px" height="250px">
-														</div>
-								        				<div class="tab-pane" id="d"><span>comments positive</span></br><?php echo $workshopdata['comments_positive']; ?>
-								        					<span>
-								        							</br> comments negative</br>	<?php echo $workshopdata['comments_negative']; ?>
-								        			 		</span>
-								        				</div>
-								        			</div>
-								     	 	 </div>
-							     			 <input type="hidden"name="workshort_report" value="<?php echo $this -> uri -> segment(3); ?>">
-								 			 <input type="submit" name="approve" value="approve">
-										</form>
-				
-								<?php
-
-								}
-				       			 ?>
-							</div>
+												<?php
+												
+											foreach($getPendingWorkshopOutreach as $workshopdata){
+												$newDate = strtoupper(date("M", strtotime($workshopdata['date'])));												
+												$newDated = date("d", strtotime($workshopdata['date']));	
+												$newyear = date("Y", strtotime($workshopdata['date']));		
+												
+												?>
                                                 
-        <?php
-		}
-		?>   
+                                                
+                                                 <div class="col-md-12 align-top-botm">
+				
+				
+                <div class="col-md-1">
+					<div class="month-box"><span><?php echo $newDated; ?> <?php echo $newDate; ?><br/><?php echo $newyear; ?></span></div>				
+				</div>
+				
+				 <div class="col-md-2"><?php echo $workshopdata['location']; ?></div>
+                <div class="col-md-1"><?php echo $workshopdata['no_of_participants']; ?></div>
+                <div class="col-md-1"><?php echo $workshopdata['participate_experiment']; ?></div>
+                <div class="col-md-3 "><p style="font-size: 12px;line-height: 20px;text-align: justify;">
+                <?php
+				$workshopdataa = explode(",", $workshopdata['institutes']);
+				foreach ($workshopdataa as $workshopdataget) {
+					$workshopdatagetlen = strlen($workshopdataget);
+					if ($workshopdatagetlen >= 20) {
+						$institutesnames = substr($workshopdataget, 0, 20);
+						echo $institutesnames . "...";
+						echo "<br>";
+					} else {
+						echo $workshopdataget;
+					}
+				}
+				?></p></div>
+                <div class="col-md-2"><?php echo $workshopdata['name']; ?></div>
+                  <div class="col-md-2"><a  href ="<?php echo site_url('viewReport'); ?>/<?php echo $workshopdata['workshop_id']; ?>"  style="cursor: pointer;"><span id="mew1-<?php echo $workshopdata["workshop_id"]; ?>">►</span>viewReport</a></div>
+				
+                
+<script type="text/javascript">
+	$("#feedback2-<?php echo $workshopdata["workshop_id"]; ?>
+		").click(function(){
+		if($('#frn_comment2-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').css('display
+	') == 'none'){
+	$('#frn_comment2-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').show('slow');
+	$('#mew2-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').html("▼");
+	} else {
+	$('#frn_comment2-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').hide('slow');
+	$('#mew2-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').html("►");
+	}
+	});
+</script>
+                
+			</div>
+			<div style="display:none" id="frn_comment2-<?php echo $workshopdata["workshop_id"]; ?>">
+										<table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover">
+
+											<thead>
+
+												<tr>
+
+													<th>S.No</th>
+
+													<th>Name</th>
+
+													<th>Location</th>
+													<th>Participating institutes</th>
+												<!--	<th>Date</th>-->
+													<th>No of participants</th>
+													<th>No of sessions</th>
+													<th>Duration of sessions</th>
+													<th>Subject of sessions</th>
+													<th>Labs planned</th>
+												<!--	<th>Other </th>-->
+													
+												</tr>
+											</thead>
+											
+												<?php
+												
+											foreach($view_reports as $workshopdata){
+																						?>
+												
+												<tr class="gradeX">
+													<td><?php echo $workshopdata['workshop_id']; ?></td>
+													<td><?php echo $workshopdata['name']; ?></td>
+													<td><?php echo $workshopdata['location']; ?></td>
+													<td><?php echo $workshopdata['institute']; ?></td>
+													<!--<td><?php echo $workshopdata['date'];  ?></td>-->
+													<td><?php echo $workshopdata['number_of_participants']; ?></td>
+													<td><?php echo $workshopdata['no-of_sessions']; ?></td>
+													<td><?php echo $workshopdata['durationofsessions']; ?></td>
+													<td><?php echo $workshopdata['subject_of_session']; ?></td>
+													<td><?php echo $workshopdata['labs_plan']; ?></td>
+													<!--<td><?php echo $workshopdata['upload_attend_sheet']; ?></td>-->
+													</tr>
+													<?php
+													}
+											 ?>
+</table>
+<?php if($workshopdata['upload_attend_sheet']){
+													?>
+													<style>
+														tabs-below > .nav-tabs, .tabs-right > .nav-tabs, .tabs-left > .nav-tabs {
+															border-bottom: 0;
+														}
+
+														.tab-content > .tab-pane, .pill-content > .pill-pane {
+															display: none;
+														}
+
+														.tab-content > .active, .pill-content > .active {
+															display: block;
+														}
+
+														.tabs-below > .nav-tabs {
+															border-top: 1px solid #ddd;
+														}
+
+														.tabs-below > .nav-tabs > li {
+															margin-top: -1px;
+															margin-bottom: 0;
+														}
+
+														.tabs-below > .nav-tabs > li > a {
+															-webkit-border-radius: 0 0 4px 4px;
+															-moz-border-radius: 0 0 4px 4px;
+															border-radius: 0 0 4px 4px;
+														}
+
+														.tabs-below > .nav-tabs > li > a:hover, .tabs-below > .nav-tabs > li > a:focus {
+															border-top-color: #ddd;
+															border-bottom-color: transparent;
+														}
+
+														.tabs-below > .nav-tabs > .active > a, .tabs-below > .nav-tabs > .active > a:hover, .tabs-below > .nav-tabs > .active > a:focus {
+															border-color: transparent #ddd #ddd #ddd;
+														}
+
+														.tabs-left > .nav-tabs > li, .tabs-right > .nav-tabs > li {
+															float: none;
+														}
+
+														.tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a {
+															min-width: 74px;
+															margin-right: 0;
+															margin-bottom: 3px;
+														}
+
+														.tabs-left > .nav-tabs {
+															float: left;
+															margin-right: 19px;
+															border-right: 1px solid #ddd;
+														}
+
+														.tabs-left > .nav-tabs > li > a {
+															margin-right: -1px;
+															-webkit-border-radius: 4px 0 0 4px;
+															-moz-border-radius: 4px 0 0 4px;
+															border-radius: 4px 0 0 4px;
+														}
+
+														.tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+															border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+														}
+
+														.tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover, .tabs-left > .nav-tabs .active > a:focus {
+															border-color: #ddd transparent #ddd #ddd;
+															*border-right-color: #ffffff;
+														}
+
+														.tabs-right > .nav-tabs {
+															float: right;
+															margin-left: 19px;
+															border-left: 1px solid #ddd;
+														}
+
+														.tabs-right > .nav-tabs > li > a {
+															margin-left: -1px;
+															-webkit-border-radius: 0 4px 4px 0;
+															-moz-border-radius: 0 4px 4px 0;
+															border-radius: 0 4px 4px 0;
+														}
+
+														.tabs-right > .nav-tabs > li > a:hover, .tabs-right > .nav-tabs > li > a:focus {
+															border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+														}
+
+														.tabs-right > .nav-tabs .active > a, .tabs-right > .nav-tabs .active > a:hover, .tabs-right > .nav-tabs .active > a:focus {
+															border-color: #ddd #ddd #ddd transparent;
+															*border-left-color: #ffffff;
+														}
+													</style>
+													<form method="post" action="<?php echo site_url('home/approverepost'); ?>">
+													 <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#a" data-toggle="tab">Attendance sheets</a></li>
+          <li ><a href="#b" data-toggle="tab">College report</a></li>
+          <li><a href="#c" data-toggle="tab">Workshop Photos</a></li>
+          <li><a href="#d" data-toggle="tab">Comments</a></li>
+        </ul>
+        <div class="tab-content">
+         <div class="tab-pane active" id="a"><div >
+		 	<object data="<?php echo base_url(); ?>uploads/attend_sheet/<?php echo $workshopdata['upload_attend_sheet']; ?>" type="application/pdf" width="50%" height="100%">
+  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/attend_sheet/<?php echo $workshopdata['upload_attend_sheet']; ?>">to the PDF!</a></p>
+</object>
+  
+  </div>
+         	
+         	<table>
+	<tr>
+		<th>Checklist for approval</th>
+		<th>yes &nbsp; no</th>
+	</tr>
+	<tr>
+		<td>Total attendance matches the reported participants</td>
+		<td><input type="radio" name="signed" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="signed" value="no"></td>
+	</tr>
+	
+</table>
+         	
+         	
+         	</div>
+         	
+         <div class="tab-pane" id="b">
+         	<div >
+			<object data="<?php echo base_url(); ?>uploads/college_report/<?php echo $workshopdata['college_report']; ?>" type="application/pdf" width="100%" height="100%">
+  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>uploads/college_report/<?php echo $workshopdata['college_report']; ?>">to the PDF!</a></p>
+</object>
+				
+				</div>
+         		
+<table>
+	<tr>
+		<th>Checklist for approval</th>
+		<th>yes &nbsp; no</th>
+	</tr>
+	<tr>
+		<td>Report is on the college letterhead</td>
+		<td><input type="radio" name="letterhead" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="letterhead" value="no"></td>
+	</tr>
+	<tr>
+		<td>Report is signed by the college principal</td>
+		<td><input type="radio" name="signed" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="signed" value="no"></td>
+	</tr>
+	<tr>
+		<td>Report has the college seal stamped</td>
+		<td><input type="radio" name="seal" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="seal" value="no"></td>
+	</tr>
+</table>
+         		</div>
+         <div class="tab-pane" id="c">
+		
+		 <img src="<?php echo base_url(); ?>/uploads/workshop_photos/<?php echo $workshopdata['workshop_photos']; ?>" width="250px" height="250px">
+
 		 </div>
-	</div>                      													
+         <div class="tab-pane" id="d"><span>comments positive</span></br><?php echo $workshopdata['comments_positive']; ?><span>
+        </br> comments negative</br>	<?php echo $workshopdata['comments_negative']; ?>
+         </span></div>
+        </div>
+      </div>
+      <input type="hidden"name="workshort_report" value="<?php echo $this -> uri -> segment(3); ?>">
+	<input type="submit" name="approve" value="approve">
+</form>
+<div class="reportsattached">
+	
+</div>
+
+<div class="signed">
+	
+</div>
+
+<div class="seal">
+	
+
+
+			</div>
+			<?php
+
+			}
+        ?>
+</div>
+                                                
+                    	<?php
+						}
+													?>    	</div>
+       
+       
+ 
+</div>                      
+												
+
+			
     <div role="tabpanel" class="tab-pane" id="messages">
-			<div class="col-md-12 align-top-botm">
+
+<style>
+	.padding-top-tag {
+		padding-top: 33px;
+	}
+</style>
+
+<div class="col-md-12 align-top-botm">
+				
 				<div class="col-md-1">
 					Date			
 				</div>
+				
 				<div class="col-md-1">Location</div>
                 <div class="col-md-2 ">Participants </div>
                 <div class="col-md-2 ">Sessions</div>
                 <div class="col-md-3">Participating Institutes</div>
 				<div class="col-md-2">Nodal Coordinator</div>
+				
 			</div>
-			<?php
-					foreach($getWorkshopHistory as $workshopdata)
-							{
-								$newDate = strtoupper(date("M", strtotime($workshopdata['date'])));												
-								$newDated = date("d", strtotime($workshopdata['date']));	
-								$newyear = date("Y", strtotime($workshopdata['date']));	
-			?>
-                                  <div class="col-md-12 align-top-botm">
-										<div class="col-md-1">
-												<div class="month-box"><span><?php echo $newDated; ?> <?php echo $newDate; ?><br/><?php echo $newyear; ?></span></div>				
-										</div>
-								 		<div class="col-md-1"><?php echo $workshopdata['location']; ?></div>
-                				 		<div class="col-md-2"><?php echo $workshopdata['no_of_participants']; ?>Participants</div>
-                				 		<div class="col-md-2"><?php echo $workshopdata['no-of_sessions']; ?>sessions</div>
-               							 <div class="col-md-3 ">
-               					 				<p style="font-size: 12px;line-height: 20px;text-align: justify;">
-				               					 	<?php
-															$workshopdataa = explode(",", $workshopdata['institutes']);
-															foreach ($workshopdataa as $workshopdataget)
-																 {
-																		$workshopdatagetlen = strlen($workshopdataget);
-																		if ($workshopdatagetlen >= 20)
-																		  {
-																				$institutesnames = substr($workshopdataget, 0, 20);
-																				echo $institutesnames . "...";
-																				echo "<br>";
-																		} else {
-																				echo $workshopdataget;
-																		}
-																}	
-													?>
-												</p>
-										</div>
-										<div class="col-md-2"><?php echo $workshopdata['name']; ?></div>
-                 						<div class="col-md-1"> <a id='feedback-<?php echo $workshopdata["workshop_id"]; ?>' style="cursor: pointer;"><span id="mew1-<?php echo $workshopdata["workshop_id"]; ?>">►</span>viewReport</a></div>
-             							<div style='display:none' id="frn_comment-<?php echo $workshopdata["workshop_id"]; ?>"></br></br></br>
-											<div class="tabbable tabs-left">
-								       			 <ul class="nav nav-tabs no-border">
-								         				 <li class="active"><a href="#a-<?php echo $workshopdata["workshop_id"]; ?>" data-toggle="tab" class="bgclr-nobg">Attendance sheets</a></li>
-								        				  <li ><a href="#b-<?php echo $workshopdata["workshop_id"]; ?>" data-toggle="tab" class="bgclr-nobg">College report</a></li>
-								         				  <li><a href="#c-<?php echo $workshopdata["workshop_id"]; ?>" data-toggle="tab" class="bgclr-nobg">Workshop Photos</a></li>
-								       			 </ul>
-				        						<div class="tab-content only-no-border">
-				         						<div class="tab-pane active" id="a-<?php echo $workshopdata["workshop_id"]; ?>">
-				         							<div style="float: right; margin-right: 50%;  ">
-														<object data="<?php echo base_url(); ?>assests/uploads/attendsheet/<?php echo $workshopdata['attendance_sheet']; ?>" type="pdf" width="80%" height="250px">
-					  										<p>Alternative text - include a link <a href="<?php echo base_url(); ?>assests/uploads/attendsheet/<?php echo $workshopdata['attendance_sheet']; ?>">to the PDF!</a></p>
-														</object>
-													</div>
-				         						</div>
-				         	
-				        						<div class="tab-pane" id="b-<?php echo $workshopdata["workshop_id"]; ?>">
-				         							<div style="float: right; margin-right: 50%;  ">
-														<object data="<?php echo base_url(); ?>assests/uploads/collegereport/<?php echo $workshopdata['college_report']; ?>" type="pdf" width="80%" height="250px">
-														  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>assests/uploads/collegereport/<?php echo $workshopdata['college_report']; ?>">to the PDF!</a></p>
-														</object>				
-								
-													</div>
-				         		
+ 
+									
+
+
+
+<style>
+	.tab-content {
+		border-bottom: none;
+	}
+	.nav-tabs > li > a {
+
+		text-transform: none;
+	}
+	tabs-below > .nav-tabs, .tabs-right > .nav-tabs, .tabs-left > .nav-tabs {
+		border-bottom: 0;
+	}
+
+	.tab-content > .tab-pane, .pill-content > .pill-pane {
+		display: none;
+	}
+
+	.tab-content > .active, .pill-content > .active {
+		display: block;
+	}
+
+	.tabs-below > .nav-tabs {
+		border-top: 1px solid #ddd;
+	}
+
+	.tabs-below > .nav-tabs > li {
+		margin-top: -1px;
+		margin-bottom: 0;
+	}
+
+	.tabs-below > .nav-tabs > li > a {
+		-webkit-border-radius: 0 0 4px 4px;
+		-moz-border-radius: 0 0 4px 4px;
+		border-radius: 0 0 4px 4px;
+	}
+
+	.tabs-below > .nav-tabs > li > a:hover, .tabs-below > .nav-tabs > li > a:focus {
+		border-top-color: #ddd;
+		border-bottom-color: transparent;
+	}
+
+	.tabs-below > .nav-tabs > .active > a, .tabs-below > .nav-tabs > .active > a:hover, .tabs-below > .nav-tabs > .active > a:focus {
+		border-color: transparent #ddd #ddd #ddd;
+	}
+
+	.tabs-left > .nav-tabs > li, .tabs-right > .nav-tabs > li {
+		float: none;
+	}
+
+	.tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a {
+		min-width: 74px;
+		margin-right: 0;
+		margin-bottom: 3px;
+	}
+
+	.tabs-left > .nav-tabs {
+		float: left;
+		margin-right: 19px;
+		border-right: 1px solid #ddd;
+	}
+
+	.tabs-left > .nav-tabs > li > a {
+		margin-right: -1px;
+		-webkit-border-radius: 4px 0 0 4px;
+		-moz-border-radius: 4px 0 0 4px;
+		border-radius: 4px 0 0 4px;
+	}
+
+	.tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+		border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+	}
+
+	.tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover, .tabs-left > .nav-tabs .active > a:focus {
+		border-color: #ddd transparent #ddd #ddd;
+		*border-right-color: #ffffff;
+		text-decoration: underline;
+	}
+
+	.tabs-right > .nav-tabs {
+		float: right;
+		margin-left: 19px;
+		border-left: 1px solid #ddd;
+	}
+
+	.tabs-right > .nav-tabs > li > a {
+		margin-left: -1px;
+		-webkit-border-radius: 0 4px 4px 0;
+		-moz-border-radius: 0 4px 4px 0;
+		border-radius: 0 4px 4px 0;
+	}
+
+	.tabs-right > .nav-tabs > li > a:hover, .tabs-right > .nav-tabs > li > a:focus {
+		border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+	}
+
+	.tabs-right > .nav-tabs .active > a, .tabs-right > .nav-tabs .active > a:hover, .tabs-right > .nav-tabs .active > a:focus {
+		border-color: #ddd #ddd #ddd transparent;
+		*border-left-color: #ffffff;
+	}
+
+	.bgclr-nobg {
+		background: none !important;
+		color: #000 !important;
+		border: none !important;
+	}
+
+	.no-border {
+		border: none !important;
+	}
+	.only-no-border {
+		border: none;
+	}
+													</style>
+												
+												
+												<?php
+												
+											foreach($getWorkshopHistory as $workshopdata){
+												$newDate = strtoupper(date("M", strtotime($workshopdata['date'])));												
+												$newDated = date("d", strtotime($workshopdata['date']));	
+												$newyear = date("Y", strtotime($workshopdata['date']));	
+												?>
+                                                
+                                                
+                                                 <div class="col-md-12 align-top-botm">
 				
-				         						</div>
-				        						<div class="tab-pane" id="c-<?php echo $workshopdata["workshop_id"]; ?>">
-						         						<img src="<?php echo base_url(); ?>assests/uploads/workshopphotos/<?php echo $workshopdata['college_report']; ?>" width="250px" height="250px">
 				
-												</div>
-				        
-				       						 	</div>
-		     						 		</div>
-			 							</div>
-        								<script type="text/javascript">
-													$("#feedback-<?php echo $workshopdata["workshop_id"]; ?>
-														").click(function(){
-														if($('#frn_comment-
-												<?php echo $workshopdata["workshop_id"]; ?>
-													').css('display
-													') == 'none'){
-													$('#frn_comment-
-												<?php echo $workshopdata["workshop_id"]; ?>
-													').show('slow');
-													$('#mew1-
-												<?php echo $workshopdata["workshop_id"]; ?>
-													').html("▼");
-													} else {
-													$('#frn_comment-
-												<?php echo $workshopdata["workshop_id"]; ?>
-													').hide('slow');
-													$('#mew1-
-												<?php echo $workshopdata["workshop_id"]; ?>
-													').html("►");
-													}
-													});
-										</script>
+                <div class="col-md-1">
+					<div class="month-box"><span><?php echo $newDated; ?> <?php echo $newDate; ?><br/><?php echo $newyear; ?></span></div>				
+				</div>
+				
+				 <div class="col-md-1"><?php echo $workshopdata['location']; ?></div>
+                <div class="col-md-2"><?php echo $workshopdata['no_of_participants']; ?>Participants</div>
+                <div class="col-md-2"><?php echo $workshopdata['no-of_sessions']; ?>sessions</div>
+                <div class="col-md-3 "><p style="font-size: 12px;line-height: 20px;text-align: justify;"><?php
+				$workshopdataa = explode(",", $workshopdata['institutes']);
+				foreach ($workshopdataa as $workshopdataget) {
+					$workshopdatagetlen = strlen($workshopdataget);
+					if ($workshopdatagetlen >= 20) {
+						$institutesnames = substr($workshopdataget, 0, 20);
+						echo $institutesnames . "...";
+						echo "<br>";
+					} else {
+						echo $workshopdataget;
+					}
+				}
+				?></p></div><div class="col-md-2"><?php echo $workshopdata['name']; ?></div>
+                 <div class="col-md-1"> <a id='feedback-<?php echo $workshopdata["workshop_id"]; ?>' style="cursor: pointer;"><span id="mew1-<?php echo $workshopdata["workshop_id"]; ?>">►</span>viewReport</a></div>
+             <div style='display:none' id="frn_comment-<?php echo $workshopdata["workshop_id"]; ?>"></br></br></br>
+			<div class="tabbable tabs-left">
+        <ul class="nav nav-tabs no-border">
+          <li class="active"><a href="#a-<?php echo $workshopdata["workshop_id"]; ?>" data-toggle="tab" class="bgclr-nobg">Attendance sheets</a></li>
+          <li ><a href="#b-<?php echo $workshopdata["workshop_id"]; ?>" data-toggle="tab" class="bgclr-nobg">College report</a></li>
+          <li><a href="#c-<?php echo $workshopdata["workshop_id"]; ?>" data-toggle="tab" class="bgclr-nobg">Workshop Photos</a></li>
+        </ul>
+        <div class="tab-content only-no-border">
+         <div class="tab-pane active" id="a-<?php echo $workshopdata["workshop_id"]; ?>"><div style="float: right; margin-right: 50%;  ">
+			
+			
+			    	    	 
+<object data="<?php echo base_url(); ?>assests/uploads/attend_sheet/<?php echo $workshopdata['attendance_sheet']; ?>" type="application/pdf" width="80%" height="250px">
+  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>assests/uploads/attend_sheet/<?php echo $workshopdata['attendance_sheet']; ?>">to the PDF!</a></p>
+</object>
+			
+			</div>
+         	
+		   	
+
+         	         	</div>
+         	
+         <div class="tab-pane" id="b-<?php echo $workshopdata["workshop_id"]; ?>">
+         	<div style="float: right; margin-right: 50%;  ">
+<object data="<?php echo base_url(); ?>assests/uploads/college_report/<?php echo $workshopdata['college_report']; ?>" type="application/pdf" width="80%" height="250px">
+  <p>Alternative text - include a link <a href="<?php echo base_url(); ?>assests/uploads/college_report/<?php echo $workshopdata['college_report']; ?>">to the PDF!</a></p>
+</object>				
+				
+				</div>
+         		
+
+         		</div>
+         <div class="tab-pane" id="c-<?php echo $workshopdata["workshop_id"]; ?>">
+		         <img src="<?php echo base_url(); ?>assests/uploads/workshop_photos/<?php echo $workshopdata['college_report']; ?>" width="250px" height="250px">
+
+	</div>
+        
+        </div>
+      </div>
+			 </div>
+			 
+			 
+        <script type="text/javascript">
+	$("#feedback-<?php echo $workshopdata["workshop_id"]; ?>
+		").click(function(){
+		if($('#frn_comment-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').css('display
+	') == 'none'){
+	$('#frn_comment-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').show('slow');
+	$('#mew1-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').html("▼");
+	} else {
+	$('#frn_comment-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').hide('slow');
+	$('#mew1-
+<?php echo $workshopdata["workshop_id"]; ?>
+	').html("►");
+	}
+	});
+</script>
   
                 
-								</div>
+			</div>
                                                 
-                    <?php
+                    	<?php
 						}
-					?>  													
+													?>  													
     
 
 	</div>
     <div role="tabpanel" class="tab-pane" id="settings">
 	<div class="col-md-12 align-top-botm">
+				
 			<table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover">
-						<thead>
-								<tr>
-										<th>S.No</th>
-										<th>Name</th>
-										<th>Location</th>								
-										<th>Duration</th> 
-										<th>Description</th>
-										<th>Invitees</th>
+											<thead>
+												<tr>
+													<th>S.No</th>
+													<th>Name</th>
+																<th>Location</th>								
+													 <th>Duration</th> 
+													<th>Description</th>
+													<th>Invitees</th>
 														
-								</tr>
-						</thead>
-						<tbody>
-						<?php   foreach($getTraininging as $displayTraininging)
-							    { ?>
-								<tr class="gradeX">
-										<td><?php echo $displayTraininging['id']; ?></td>
-										<td><?php echo ucfirst($displayTraininging['name']); ?>	</td>									
-										<td><?php echo $displayTraininging['location']; ?></td>													
-										<td><?php echo $displayTraininging['duration']; ?></td>																										
-										<td><?php echo $displayTraininging['description']; ?></td>													
-										<td><?php echo $displayTraininging['invitees']; ?></td>																									
+												</tr>
+											</thead>
+											<tbody>
+												<?php   foreach($getTraininging as $displayTraininging) { $i++ ?>
+												<tr class="gradeX">
+													<td><?php echo $i; ?></td>
+													<td><?php echo ucfirst($displayTraininging['name']); ?>	</td>									
+													<td><?php echo $displayTraininging['location']; ?></td>													
+													<td><?php echo $displayTraininging['duration']; ?></td>																										
+													<td><?php echo $displayTraininging['description']; ?></td>													
+													<td><?php echo $displayTraininging['invitees']; ?></td>																									
 													
-								</tr>
-						<?php  } ?>
+												</tr>
+												<?php  } ?>
 
-						</tbody>
-							
-		</table>
-	</div>
+											</tbody>
+											<tfoot>
+											</tfoot>
+										</table>
+			</div>
+			
 	<a id="addnodaltraininglink" style="cursor: pointer;"><span id="trainingiconform">►</span>+Submit Training Report</a>
 	<!---add nodal training---->
 	<div  id="addnodaltraining" style="display:none">
@@ -473,8 +794,8 @@
 												<h4></h4>
 											</div>
 											<div class="box-body big">
-												<span id="error" class='error'></span>	
-													<form class="form-horizontal" method="POST"  action="<?php echo site_url('welcome/traininging'); ?>"  enctype="multipart/form-data">
+											<span id="error" class='error'></span>	
+<form class="form-horizontal" method="POST"  action="<?php echo site_url('welcome/traininging'); ?>"  enctype="multipart/form-data">
 												  
 												  <!-- Product Name -->
 												  <div class="form-group">
@@ -526,11 +847,9 @@
 												  </div>
 												  
 												  <div class="form-group">
-												  	<label class="col-sm-4">&nbsp;</label>
-												  	<div class="col-sm-6">
-													<button class="btn btn-success" id="add_nodal_traininging">Add Traininging</button>
-												  	</div>
-												  	<div class="col-sm-2">
+												  <label class="col-sm-4">&nbsp;</label><div class="col-sm-6">
+										<button class="btn btn-success" id="add_nodal_traininging">Add Traininging</button>
+												  </div><div class="col-sm-2">
 												  
 												 
 												  </div> <a href="<?php echo base_url('dashboard')?>" style="    float: right;    background-color: #000;    color: #fff; padding: 5px;"> Cancel	</a>
@@ -652,7 +971,7 @@
 												  </div> 
 												<?php /* */ ?>
 												  </form>
-												    <a id= "hide_form_nodal"style="float: right;    background-color: #000; color: #fff;padding: 5px;">Cancel	</a>
+												    <a id= "hide_form_nodal"style="float: right;    background-color: #000; color: #fff;padding: 5px;     cursor: pointer;">Cancel	</a>
 												  
 											</div>
 											
@@ -691,13 +1010,16 @@
 												</tr>
 											</thead>
 											<tbody>
-												<?php   foreach($getNodalCoordinator as $coordinator) { ?>
+												<?php   foreach($getNodalCoordinator as $coordinator) { $j++ ?>
 												<tr class="gradeX">
-													<td><?php echo $coordinator['nodal_id']; ?></td>
+													<td><?php echo $j; ?></td>
 													<td><?php echo ucfirst($coordinator['name']); ?>	</td>									
 													<td><?php echo $coordinator['location']; ?></td>													
 													<td><?php echo $coordinator['email']; ?></td>													
-													<td><?php echo $coordinator['created']; ?></td>													
+													<td><?php
+														$newDate = strtoupper(date("Y-M-d", strtotime($coordinator['created'])));
+														echo $newDate;
+ ?></td>													
 													<td><?php echo $coordinator['target_workshops']; ?></td>													
 													<td><?php echo $coordinator['target_participants']; ?></td>													
 													<td><?php echo $coordinator['target_expriments']; ?></td>													
@@ -736,7 +1058,7 @@
 
 		$('#displaynodalform').hide('slow');
 		$('#iconform').html("►");
-	}); 
+	});
 </script>
 <script type="text/javascript">
 	$("#addnodaltraininglink").click(function() {
@@ -747,7 +1069,7 @@
 			$('#addnodaltraining').hide('slow');
 			$('#trainingiconform').html("►");
 		}
-	});
+	}); 
 </script>
  
         
@@ -757,7 +1079,7 @@
         </div>
         
 		<script>
-																										$("#add_nodal_center").click(function(){
+											$("#add_nodal_center").click(function(){
    	$.ajax({
 						type: "POST",
 						url: "<?php echo site_url('welcome/addNodalcenter'); ?>
@@ -773,7 +1095,6 @@
 							"target_expriments" : $("#target_expriments").val()
 							},
 							success: function(data) {
-							alert(data);
 							if($.trim(data) == 'success'){
 							location.reload();
 							}else{
@@ -792,23 +1113,5 @@
         <div class="container placemetns-top">
 		
 
-<script src="<?php echo base_url(); ?>assests/site/js/jquery.counterup.min.js"></script>
-<script src="<?php echo base_url(); ?>assests/site/js/waypoints.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assests/site/js/jquery.simplyscroll.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assests/site/css/jquery.simplyscroll.css" media="all" type="text/css">
-
-<style>
-	.counter1 {
-		font-size: 19px;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 700;
-		line-height: 0px;
-	}
-</style>
-<style>
-	.padding-top-tag {
-		padding-top: 33px;
-	}
-	</style>
 		</div>
         </section>

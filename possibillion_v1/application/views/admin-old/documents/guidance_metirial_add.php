@@ -13,10 +13,10 @@
 							<ul class="breadcrumb">
 								<li>
 									<i class="fa fa-home"></i>
-									<a href="<?php echo site_url('admin'); ?>">Home</a>
+									<a href="<?php echo site_url('admin/home/dashboard'); ?>">Home</a>
 								</li>
 								<li>
-									<a href="<?php echo site_url('admin/guidance_metirial'); ?>">Guidance & Material</a>
+									<a href="<?php echo site_url('admin/home/guidance_metirial'); ?>">Guidance & Material</a>
 								</li>
 								<li>
 									Add New Guidance & Material
@@ -43,7 +43,7 @@
 									</div>
 									<div class="box-body big">
 										<span id="error" class='error'></span>
-										<form class="form-horizontal" method="post" name="addguidance" id="addguidance" action="<?php echo site_url('admin/guidance_metirial_add'); ?>" role="form"  onsubmit="return Checkfiles();" enctype="multipart/form-data">
+										<form class="form-horizontal" method="post" name="addguidance" id="addguidance" action="<?php echo site_url('admin/guidance_metirial_add'); ?>" role="form" enctype="multipart/form-data">
 
 											<!-- Product Name -->
 											<div class="form-group">
@@ -75,11 +75,11 @@
 
 				<!-- Save -->
 				<p class="btn-toolbar">
-					<button class="btn btn-success" style="color: #fff;background-color: #309CD1;padding: 9px;border-radius: 8px;">
-						Create
+					<button class="btn btn-success">
+						Save
 					</button></form>
 					<a href="<?php echo base_url('admin/guidance_metirial')?>">
-					<button class="btn" style="border-color: #7c7c7c;">
+					<button class="btn">
 						Cancel
 					</button> </a>
 				</p>
@@ -89,21 +89,3 @@
 		</div>
 	</div>
 </div>
-<script language="javascript">
-function Checkfiles()
-{
-var fup = document.getElementById('document_path');
-var fileName = fup.value;
-var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
-if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "pdf")
-{
-return true;
-} 
-else
-{
-alert("Upload Gif or Jpg images and pdf only");
-fup.focus();
-return false;
-}
-}
-</script>

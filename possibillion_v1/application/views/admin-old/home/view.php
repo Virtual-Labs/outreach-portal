@@ -13,7 +13,7 @@
 									<ul class="breadcrumb">
 										<li>
 											<i class="fa fa-home"></i>
-											<a href="<?php echo site_url('admin'); ?>">Home</a>
+											<a href="<?php echo site_url('admin/home/dashboard');?>">Home</a>
 										</li>
 										<li>Guidance & Material</li>
 									</ul>
@@ -24,7 +24,7 @@
                                 <?php if($this->session->flashdata('msg')!=NULL) { ?>
 								<div class="alert alert-success display-none" style="display: block;">
 									<a data-dismiss="alert" href="#" aria-hidden="true" class="close">×</a>
-									<?php  echo $this -> session -> flashdata('msg'); ?>
+									<?php  echo $this->session->flashdata('msg');?>
 								</div>
 								<?php } ?>
 									<div class="description"></div>
@@ -45,7 +45,7 @@
 									<div class="box-title">
 										<h4><i class="fa fa-table"></i>Guidance & Material</h4>
 									<div class="tools hidden-xs">
-											<a href="<?php echo site_url('admin/guidance_metirial/add'); ?>"><button class="btn btn-xs btn-inverse">Add New Guidance & Material</button></a>
+											<a href="<?php echo site_url('admin/guidance_metirial/add');?>"><button class="btn btn-xs btn-inverse">Add New Guidance & Material</button></a>
 										</div>
 									</div>
 									<div class="box-body">
@@ -63,37 +63,36 @@
                      <?php $i=0; if(!empty($guidance_metirial_details)) {
 								foreach ($guidance_metirial_details as $row) {$i++;  ?>
 													<tr class="gradeX">
-                                                    <td><?php echo $i; ?></td>
-													<td><?php echo $row['document_name']; ?></td>
-													<td><a target="_blank" href="<?php echo base_url() . "uploads/guidance_metirial/" . $row['document_path']; ?>">
+                                                    <td><?php echo $i;?></td>
+													<td><?php echo $row['document_name'];?></td>
+													<td><a target="_blank" href="<?php echo base_url()."uploads/guidance_metirial/".$row['document_path'];
+													
+													?>">
 													<?PHP   $extension = pathinfo($row['document_path'], PATHINFO_EXTENSION); 
 													if($extension=="doc"){ ?>
-													<img src="<?php echo base_url(); ?>images/word.jpg"></img>
-													<?php }elseif($extension=="pdf"){ ?>
-													<img src="<?php echo base_url(); ?>images/pdf.jpg"></img>
+													<img src="<?php echo base_url();?>images/word.jpg"></img>
+													<?php }elseif($extension=="pdf"){?>
+													<img src="<?php echo base_url();?>images/pdf.jpg"></img>
 													<?php
-													//echo "PDF";
-													}elseif($extension=="JPEG"){
- ?>
-													<img src="<?php echo base_url(); ?>images/notepad.png"></img>
+														//echo "PDF";
+													}elseif($extension=="JPEG"){ ?>
+													<img src="<?php echo base_url();?>images/notepad.png"></img>
 													<?php
-													echo "JPEG";
-													}
- ?>
+														echo "JPEG";
+													} ?>
 													</a></td>
-													<td><?php echo date('M jS Y', strtotime($row['created_on'])); ?></td>
+													<td><?php echo date('M jS Y',strtotime($row['created_on']));?></td>
 													<td>
                           <!--  <a href="<?php //echo site_url('admin/guidance_metirial/detailview/'.base64_encode($row['document_id']));?>">
                                 <button class="btn btn-xs btn-success"><i class="fa fa-check"></i> View</button></a>&nbsp;
                                 -->
-                                <a href="<?php echo site_url('admin/guidance_metirial/edit/' . base64_encode($row['document_id'])); ?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;
+                                <a href="<?php echo site_url('admin/guidance_metirial/edit/'.base64_encode($row['document_id']));?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;
 &nbsp;
-								<a onclick = "return confirm('are you sure want to delete the guidance metirial ?');" href="<?php echo site_url('admin/guidance_metirial/Delete/' . base64_encode($row['document_id'])); ?>"><button class="btn btn-xs btn-danger"><i class="fa fa-exclamation-circle"></i> Delete</button></a>
+								<a onclick = "return confirm('are you sure want to delete the guidance metirial ?');" href="<?php echo site_url('admin/guidance_metirial/Delete/'.base64_encode($row['document_id']));?>"><button class="btn btn-xs btn-danger"><i class="fa fa-exclamation-circle"></i> Delete</button></a>
 													</td>
 												</tr>
 								<?php }
-													} else {echo '<tr class="gradeX"><td colspan="6" align="left">No guidance metirial Records found</td></tr>'; }
-												?>
+					 } else {echo '<tr class="gradeX"><td colspan="6" align="left">No guidance metirial Records found</td></tr>'; }?>
 											</tbody>
 											<tfoot>
 												<tr>
@@ -108,7 +107,7 @@
 									</div>
 								</div>
                                        <div class="row" style="float:right">
-                                        <?php echo $pagination; ?>
+                                        <?php echo $pagination;?>
                              		   </div>
 								<!-- /BOX -->
 							</div>
@@ -125,7 +124,7 @@
 		</div>
 
 <script>
-	$(document).ready(function(){	});
+$(document).ready(function(){	});
     $(".activeclass").click(function(){
     var staidstr   = $(this).attr('document_id');
 
@@ -137,49 +136,47 @@ if(confirm('are you sure want to change the status?')) {
     if(staid>0){
 		$.ajax({ 	
                     type: "POST",
-                    url: "<?php echo base_url(); ?>
-						guidance_metirial / Status",
-						data: {"status_bus_id" : staid
-						},
-						success: function(data) {
+                    url: "<?php echo base_url();?>guidance_metirial/Status",
+                    data: {"status_bus_id" : staid            
+                          },
+                    success: function(data) {
 						//	alert(data);
-
-						if(data == 1)
-						{
-						if(staobj.search("btn-success") > -1)
-						{
-						$('#'+staidstr).removeClass('btn-success');
-						$('#'+staidstr).addClass('btn-danger');
-						$('#'+staidstr).html('In Active');
-						}
-						if(staobj.search("btn-danger") > -1)
-						{
-						$('#'+staidstr).removeClass('btn-danger');
-						$('#'+staidstr).addClass('btn-success');
-						$('#'+staidstr).html('Active');
-						}
-						}
-
-						}
-
-						});
-
-						}
-						}
-
-						});
+                            
+							if(data == 1)
+                            {
+                                    if(staobj.search("btn-success") > -1)
+                                    {
+                                        $('#'+staidstr).removeClass('btn-success');
+                                        $('#'+staidstr).addClass('btn-danger');
+                                        $('#'+staidstr).html('In Active');
+                                    }
+                                    if(staobj.search("btn-danger") > -1)
+                                    {
+                                        $('#'+staidstr).removeClass('btn-danger');
+                                        $('#'+staidstr).addClass('btn-success');
+                                        $('#'+staidstr).html('Active');
+                                    }
+                            }
+                            
+                        }
+                        
+            });
+            
+            }
+}
+    
+    
+    });
 
 </script>
 
 <!--Date Range picker-->
 <script>
-	$(document).ready(function() {
-		$('#date_range').daterangepicker({
-			timePicker : true,
-			timePickerIncrement : 30,
-			format : 'DD-MM-YYYY hh:mm:ss',
-			timePicker12Hour : false,
-			separator : '_'
-		});
-	}); 
+$(document).ready(function(){
+	$('#date_range').daterangepicker({
+		timePicker: true, timePickerIncrement: 30,
+		format: 'DD-MM-YYYY hh:mm:ss',
+		timePicker12Hour: false, 
+		separator: '_'});
+	});
 </script>

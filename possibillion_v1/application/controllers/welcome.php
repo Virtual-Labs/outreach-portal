@@ -29,7 +29,7 @@ class welcome extends CI_Controller {
 	/**
 	 * Index (outreach home page)
 	 * @param string $data
-	 * @return object if success redirect to homepage
+	 * @return object if success  redirect to  Homepage
 	 */
 	public function index($data = "") {
 		if ($this -> session -> flashdata('msg')) {
@@ -48,13 +48,13 @@ class welcome extends CI_Controller {
 	/**
 	 * login method:  Authenticating coordinator
 	 * Submits an HTTP POST method to server
-	 * @param   $postdata $data values
-	 * @return object  if success coordinator dashboard else login view
+	 * @param   $postdata $data Values
+	 * @return object  if success coordinator Dashboard else Login View
 	 */
 	public function login($data = "", $postdata = "") {
 		$this -> load -> view('site/header', $data);
-		$this -> form_validation -> set_rules('email', 'email', 'required|xss_clean|valid_email');
-		$this -> form_validation -> set_rules('password', 'password', 'required|xss_clean|min_length[6]|max_length[12]');
+		$this -> form_validation -> set_rules('email', 'E-Mail', 'required|xss_clean');
+		$this -> form_validation -> set_rules('password', 'Password', 'required|xss_clean');
 		if ($this -> form_validation -> run() == FALSE) {
 			$this -> session -> set_flashdata('msg', validation_errors());
 			redirect('', 'refresh');
@@ -67,7 +67,7 @@ class welcome extends CI_Controller {
 				if ($Nodalresult) {
 					redirect('NodalDashboard', 'refresh');
 				} else {
-					$this -> session -> set_flashdata('msg', 'Invalid user name or password');
+					$this -> session -> set_flashdata('msg', 'Invalid User Name or password');
 					redirect('', 'refresh');
 				}
 			} else {
@@ -79,75 +79,9 @@ class welcome extends CI_Controller {
 	}
 
 	/**
-	 * forgot password  sending mail to register user
-	 * @param string $data
-	 * @param string $email
-	 * @param string $pwd
-	 * @param string $message
-	 * @return object if success redirect to the view  with status
-	 */
-	public function forgotPassword($data = "", $email = "", $message = "") {
-
-		$this -> load -> view('site/header', $data);
-		$this -> form_validation -> set_rules('email', 'user name', 'required|xss_clean|valid_email');
-		if ($this -> form_validation -> run() == FALSE) {
-			$this -> session -> set_flashdata('msg', validation_errors());
-			$this -> load -> view('site/home/forgot_password', $data);
-		} elseif ($this -> input -> post()) {
-			$email = $this -> input -> post('email');
-			$emailResult = $this -> homesitemodel -> checkEmail($email);
-			if ($emailResult == 0) {
-				$this -> session -> set_flashdata('msg', 'Invalid user name');
-				$this -> load -> view('site/home/forgot_password', $data);
-			} else {
-				$pwd = rand(000000, 999999);
-				$postvalues = array('email' => $email, 'password' => md5($pwd));
-				$result = $this -> homesitemodel -> forgotPassword($postvalues);
-				if ($result > 0) {
-					$message = "<html><head><META http-equiv='Content-Type' content='text/html; charset=utf-8'>
-									   </head><body>
-										  <div style='margin:0;padding:0'>
-										<table border='0' cellspacing='0' cellpadding='0'>
-									   <tbody>
-									   <tr>
-											<td valign='top'><p>" . $res['name'] . " please click bellow link to activate your outreach Account.</p></td>
-									   </tr>
-									  <tr>
-										   <td valign='top'><p><strong>User Name :</strong> " . $email . "</p></td>
-									  </tr>
-									  <tr>
-										   <td valign='top'><p><strong>Password :</strong> " . $pwd . "</p></td>
-									  </tr>
-								</tbody>
-							</table>  
-						 </div>
-						</body></html>";
-					$to = $email;
-					$subject = "Your Nodal  account Password";
-					$headers = 'MIME-Version: 1.0' . "\r\n";
-					$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-					if (mail($to, $subject, $message, $headers)) {
-						$this -> session -> set_flashdata('msg', 'Please check your email to receive password');
-						redirect('', 'refresh');
-					} else {
-						echo "iam here forgot password page";
-						die();
-						$this -> session -> set_flashdata('msg', 'Your request failed. please Re-Try.');
-						$this -> load -> view('site/home/forgot_password', $data);
-					}
-				} else {
-					$this -> session -> set_flashdata('msg', 'Your request failed. please Re-Try.');
-					$this -> load -> view('site/home/forgot_password', $data);
-				}
-			}
-		}
-		$this -> load -> view('site/footer');
-	}
-
-	/**
 	 * dashboard method:   outreach coordinator dashboard
 	 * @param   $value $data Values
-	 * @return object  if success coordinator dashboard else login view
+	 * @return object  if success coordinator Dashboard else Login View
 	 */
 	public function dashboard($value = '') {
 		$this -> load -> view('site/header', $data);
@@ -155,16 +89,53 @@ class welcome extends CI_Controller {
 		$data['getActiveWorkshop'] = $this -> homesitemodel -> getActiveWorkshopOutreach();
 		$data['getPendingWorkshopOutreach'] = $this -> homesitemodel -> getPendingWorkshopOutreach();
 		$data['getWorkshopHistory'] = $this -> homesitemodel -> getWorkshopHistory();
-		$data['getNodalCoordinator'] = $this -> homesitemodel -> fetchNodalCoordinator();
-		$data['getTraininging'] = $this -> homesitemodel -> fetchTrainingingCoordinator();
+		$data['getNodalCoordinator'] = $this -> homesitemodel -> fatchNodalCoordinator();
+		$data['getTraininging'] = $this -> homesitemodel -> fatchTrainingingCoordinator();
 		$this -> load -> view('site/outreachcoordinator/manageWorkshop', $data);
 		$this -> load -> view('site/footer');
 	}
 
 	/**
-	 * Nodal coordinator dashboard
+	 * viewReport    If user session exist redirecting to detail view page else Login Page
+	 * @param string $inputdata
+	 * @param string $data
+	 * @return object detail view  Listing   else Login View
+	 */
+	public function viewReport($inputdata = "", $data = "") {
+		$ses_data = $this -> session -> userdata('user_details');
+		if (empty($ses_data)) {
+			redirect('Login');
+		}
+		$inputdata = $this -> uri -> segment(2);
+		$data['viewReports'] = $this -> homesitemodel -> getViewReport($inputdata);
+		$this -> load -> view('site/header', $data);
+		$this -> load -> view('site/outreachcoordinator/viewReport', $data);
+		$this -> load -> view('site/footer');
+	}
+
+	/**
+	 * approverepost   (changing workshop status)
+	 * @param string $inputdata
+	 * @return object  if success redirect to workshop page
+	 */
+
+	public function approverepost($inputdata = "") {
+		$ses_data = $this -> session -> userdata('user_details');
+		if (empty($ses_data)) {
+			redirect('Login');
+		}
+		$inputdata = $this -> input -> post();
+		$res = $this -> homesitemodel -> approverepost($inputdata);
+		if ($res) {
+			$this -> session -> set_flashdata('msg', 'approve workshop successfully ');
+			redirect('dashboard', 'refresh');
+		}
+	}
+
+	/**
+	 * Nodal coordinator Dashboard
 	 *  @param string $data
-	 * @return object  if success redirect to nodalcoordinator dashboard page
+	 * @return object  if success redirect to Nodal coordinator Dashboard page
 	 */
 	public function NodalDashboard($data = '') {
 		$ses_data = $this -> session -> userdata('user_details');
@@ -182,7 +153,7 @@ class welcome extends CI_Controller {
 	/**
 	 * addWorkshop
 	 * @param string $inputdata
-	 * @return object if success redirect to addWorkshop listing view with success message else create add workshop view
+	 * @return object  if success redirect to addWorkshop Listing View with Success Message else Create addWorkshop View
 	 */
 	public function addWorkshop($inputdata = "") {
 		$ses_data = $this -> session -> userdata('user_details');
@@ -212,45 +183,43 @@ class welcome extends CI_Controller {
 		}
 	}
 
-	/** editWorkshop updating edit workshop page
+	/** editWorkshop   Updating edit Workshop Page
 	 * @param string $inputdata
 	 * @param string $data
-	 * @return object  if success redirect to editWorkshop view
+	 * @return object  if success redirect to editWorkshop View
 	 */
 	public function editWorkshop($inputdata, $data) {
 		$ses_data = $this -> session -> userdata('user_details');
 		if (empty($ses_data)) {
 			redirect('Login');
 		}
-		$this -> form_validation -> set_rules('name', 'name ', 'xss_clean|required|alpha|min_length[5]|max_length[50]');
-		$this -> form_validation -> set_rules('location', 'location', 'required|xss_clean|alpha|min_length[5]|max_length[100]');
-		$this -> form_validation -> set_rules('institutes', 'institutes', 'xss_clean|required|alpha|min_length[5]');
-		$this -> form_validation -> set_rules('date', 'date', 'required');
-		$this -> form_validation -> set_rules('no_of_participants', 'no participants', 'xss_clean|required|is_natural');
-		$this -> form_validation -> set_rules('no-of_sessions', 'no sessions', 'xss_clean|required|is_natural');
-		$this -> form_validation -> set_rules('duration_of_session', 'duration of session', 'xss_clean|required|is_natural');
-		$this -> form_validation -> set_rules('discipline', 'discipline', 'xss_clean|required|alpha|min_length[5]');
-		$this -> form_validation -> set_rules('labs_planned', 'labs planned', 'xss_clean|required|alpha|min_length[5]');
-		$this -> form_validation -> set_rules('other_details', 'other details', 'xss_clean|required|min_length[5]');
-		if ($this -> form_validation -> run() == FALSE) {
-			$this -> session -> set_flashdata('msg', validation_errors());
-			redirect('NodalDashboard', "refresh");
-		} elseif ($this -> input -> post()) {
-			$inputdata = $this -> input -> post();
-			$res = $this -> homesitemodel -> updateWorkshop($inputdata);
-			if ($res) {
-				$this -> session -> set_flashdata('msg', 'Update successfully ');
-				redirect('NodalDashboard', "refresh");
-			}
-		}
-		$data = $this -> uri -> segment(2);
-		$inputdata = $this -> input -> post();
-		$data['Workshopedit'] = $this -> homesitemodel -> editWorkshop($inputdata, $inputdata);
+		$inputdata = $this -> uri -> segment(2);
+		$data['Workshopedit'] = $this -> homesitemodel -> editWorkshop($inputdata);
 		if ($data) {
 			$this -> load -> view('site/header', $data);
 			$this -> load -> view('site/nodal-coordinator/editWorkshop', $data);
 			$this -> load -> view('site/footer');
 		} else {
+			redirect('NodalDashboard', "refresh");
+		}
+
+	}
+
+	/**
+	 * updateWorkshop
+	 * @param string $inputdata
+	 * @return object  if success redirect to Workshop  Listing View with Success Message else editWorkshop View
+	 */
+
+	public function updateWorkshop($inputdata = '') {
+		$ses_data = $this -> session -> userdata('user_details');
+		if (empty($ses_data)) {
+			redirect('Login');
+		}
+		$inputdata = $this -> input -> post();
+		$res = $this -> homesitemodel -> updateWorkshop($inputdata);
+		if ($res) {
+			$this -> session -> set_flashdata('msg', 'Update successfully ');
 			redirect('NodalDashboard', "refresh");
 		}
 	}
@@ -260,29 +229,24 @@ class welcome extends CI_Controller {
 	 * @param string $postval
 	 * @return object  if success redirect to workshop page
 	 */
+
 	public function cancelWorkshop($postval = "") {
 		$ses_data = $this -> session -> userdata('user_details');
 		if (empty($ses_data)) {
 			redirect('Login');
 		}
-		$this -> form_validation -> set_rules('reason', 'reason', 'xss_clean|required|min_length[5]');
-		if ($this -> form_validation -> run() == FALSE) {
-			$this -> session -> set_flashdata('msg', validation_errors());
+		$inputdata = $this -> input -> post();
+		$res = $this -> homesitemodel -> cancelWorkshop($inputdata);
+		if ($res) {
+			$this -> session -> set_flashdata('msg', 'cancel workshopp successfully ');
 			redirect('NodalDashboard', "refresh");
-		} elseif ($this -> input -> post()) {
-			$inputdata = $this -> input -> post();
-			$res = $this -> homesitemodel -> cancelWorkshop($inputdata);
-			if ($res) {
-				$this -> session -> set_flashdata('msg', 'Cancel workshopp successfully ');
-				redirect('NodalDashboard', "refresh");
-			}
 		}
 	}
 
 	/**
-	 * submitReport (changing workshop status)
+	 * submitReport   (changing workshop status)
 	 * @param string $filea
-	 * @return object if success redirect to workshop page else submit reports page
+	 * @return object  if success redirect to workshop page else submit Reports  page
 	 */
 	public function submitReport($filea = "") {
 		$ses_data = $this -> session -> userdata('user_details');
@@ -323,7 +287,7 @@ class welcome extends CI_Controller {
 					move_uploaded_file($tmp_name, "$uploads_dir/$name");
 				}
 			}
-			$filea = array('upload_attend_sheet' => $upload_attend_sheet, 'college_report' => $college_report, 'workshop_photos' => $workshop_photos, 'participate_attend' => $inputdata['participate_attend'], 'participate_experiment' => $inputdata['participate_experiment'], 'comments_positive' => $inputdata['comments_positive'], 'comments_negative' => $inputdata['comments_negative'], 'workshop_id' => $inputdata['workshop_id']);
+			$filea = array('upload_attend_sheet' => $target_file, 'college_report' => $target_file1, 'workshop_photos' => $workshop_photos, 'participate_attend' => $inputdata['participate_attend'], 'participate_experiment' => $inputdata['participate_experiment'], 'comments_positive' => $inputdata['comments_positive'], 'comments_negative' => $inputdata['comments_negative'], 'workshop_id' => $inputdata['workshop_id']);
 			if ($inputdata['submit'] == "save") {
 				$res = $this -> homesitemodel -> editReport($filea);
 				if ($res > 0) {
@@ -341,32 +305,98 @@ class welcome extends CI_Controller {
 			}
 		}
 	}
+	/**
+	 * forgot password  sending mail to register user
+	 * @param string $data
+	 * @param string $email
+	 * @param string $pwd
+	 * @param string $message
+	 * @return object if success redirect to the view  with status
+	 */
+	public function forgotPassword($data = "", $email = "", $message = "") {
+
+		$this -> load -> view('site/header', $data);
+		$this -> form_validation -> set_rules('email', 'email', 'email|required|xss_clean');
+		if ($this -> form_validation -> run() == FALSE) {
+			$this -> session -> set_flashdata('msg', validation_errors());
+			redirect('forgotPassword', "refresh");
+		} elseif ($this -> input -> post()) {
+			$email = $this -> input -> post('email');
+			$emailResult = $this -> homesitemodel -> checkEmail($email);
+			if ($emailResult == 0) {
+				$this -> session -> set_flashdata('msg', 'Invalid email');
+				$this -> load -> view('site/home/forgot_password', $data);
+			} else {
+				$this -> load -> helper('string');
+				$pwd = random_string('alnum', 6);
+				$postvalues = array('email' => $email, 'password' => md5($pwd));
+				$result = $this -> homesitemodel -> forgotPassword($postvalues);
+				if ($result > 0) {
+					$message = "<html><head><META http-equiv='Content-Type' content='text/html; charset=utf-8'>
+									   </head><body>
+										  <div style='margin:0;padding:0'>
+										<table border='0' cellspacing='0' cellpadding='0'>
+									   <tbody>
+									   <tr>
+											<td valign='top'><p>" . $res['name'] . " Hi,</p></td>
+									   </tr>
+									  <tr>
+										   <td valign='top'><p><strong>User Name :</strong> " . $email . "</p></td>
+									  </tr>
+									  <tr>
+										   <td valign='top'><p><strong>Password :</strong> " . $pwd . "</p></td>
+									  </tr>
+								</tbody>
+							</table>  
+						 </div>
+						</body></html>";
+					$to = $email;
+					$subject = "Your Nodal  account Password";
+					$headers = 'MIME-Version: 1.0' . "\r\n";
+					$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+					if (mail($to, $subject, $message, $headers)) {
+						$this -> session -> set_flashdata('msg', 'Please check Your Email to receive Password');
+						redirect('', 'refresh');
+					} else {
+						echo "iam here forgot password page";
+						die();
+						$this -> session -> set_flashdata('msg', 'Your Request Failed.Please Re-Try.');
+						$this -> load -> view('site/home/forgot_password', $data);
+					}
+				} else {
+					$this -> session -> set_flashdata('msg', 'Your Request Failed.Please Re-Try.');
+					$this -> load -> view('site/home/forgot_password', $data);
+				}
+			}
+		}
+		$this -> load -> view('site/footer');
+	}
 
 	/*
 	 *@method traininging
-	 *@param  post values
-	 *@return object if success redirect to nodal coordinator page
+	 *@param  Post Values
+	 *@return object  if success redirect to nodal-coordinator page
 	 */
 	public function traininging($traininginputs = "") {
 		$ses_data = $this -> session -> userdata('user_details');
 		if (empty($ses_data)) {
 			redirect('login');
 		}
-		$this -> form_validation -> set_rules('name', 'name ', 'required|alpha|min_length[5]|max_length[50]');
+		$this -> form_validation -> set_rules('name', 'Name ', 'required|alpha');
 		$this -> form_validation -> set_rules('date', 'date', 'required');
-		$this -> form_validation -> set_rules('location', 'location', 'required|xss_clean|alpha|min_length[5]|max_length[100]');
+		$this -> form_validation -> set_rules('location', 'location', 'required|xss_clean|alpha');
 		$this -> form_validation -> set_rules('duration', 'duration', 'required|is_natural');
-		$this -> form_validation -> set_rules('description', 'description', 'required|alpha|min_length[5]');
-		$this -> form_validation -> set_rules('invitees', 'invitees', 'required|min_length[5]');
+		$this -> form_validation -> set_rules('description', 'description', 'required|alpha');
+		$this -> form_validation -> set_rules('invitees', 'invitees', 'required');
 		if ($this -> form_validation -> run() == FALSE) {
 			$this -> session -> set_flashdata('msg', validation_errors());
-			redirect('dashboard', "refresh");
+			redirect('dashboard', 'refresh');
 		} elseif ($this -> input -> post()) {
 			$postdata = $this -> input -> post();
 			$postdata['outreach_id'] = $ses_data['outreach_id'];
 			$res = $this -> homesitemodel -> traininging($postdata);
 			if ($res > 0) {
-				$this -> session -> set_flashdata('msg', 'Submit reports successfully');
+				$this -> session -> set_flashdata('msg', 'Submit Reports successfully');
 				redirect('dashboard', 'refresh');
 			}
 			redirect('dashboard', 'refresh');
@@ -379,7 +409,7 @@ class welcome extends CI_Controller {
 	 * @param string $to
 	 * @param string $subject
 	 * @param string $message,$headers
-	 * @return object  if success redirect to create nodal listing view with success message else create create nodal view
+	 * @return object  if success redirect to addNodal Listing View with Success Message else Create addNodal View
 	 */
 	public function addNodalcenter($postdata = "", $to, $subject, $message, $headers) {
 		$ses_data = $this -> session -> userdata('user_details');
@@ -436,46 +466,9 @@ class welcome extends CI_Controller {
 				echo "success";
 				exit ;
 			} else {
-				echo "Nodalcenter already exists";
+				echo "Nodalcenter already Exists";
 				exit ;
 			}
-		}
-	}
-
-	/**
-	 * viewReport    If user session exist redirecting to detail view page else login page
-	 * @param string $inputdata
-	 * @param string $data
-	 * @return object detail view listing else login view
-	 */
-	public function viewReport($inputdata = "", $data = "") {
-		$ses_data = $this -> session -> userdata('user_details');
-		if (empty($ses_data)) {
-			redirect('Login');
-		}
-		$inputdata = $this -> uri -> segment(2);
-		$data['viewReports'] = $this -> homesitemodel -> getViewReport($inputdata);
-		$this -> load -> view('site/header', $data);
-		$this -> load -> view('site/outreachcoordinator/viewReport', $data);
-		$this -> load -> view('site/footer');
-	}
-
-	/**
-	 * Approverepost (changing workshop status)
-	 * @param string $inputdata
-	 * @return object if success redirect to workshop page
-	 */
-
-	public function approverepost($inputdata = "") {
-		$ses_data = $this -> session -> userdata('user_details');
-		if (empty($ses_data)) {
-			redirect('Login');
-		}
-		$inputdata = $this -> input -> post();
-		$res = $this -> homesitemodel -> approverepost($inputdata);
-		if ($res) {
-			$this -> session -> set_flashdata('msg', 'approve workshop successfully ');
-			redirect('dashboard', 'refresh');
 		}
 	}
 

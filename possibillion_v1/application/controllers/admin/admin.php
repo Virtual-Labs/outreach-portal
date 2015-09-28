@@ -16,12 +16,14 @@ class admin extends MY_Controller {
 	public function __construct() {
 		error_reporting(0);
 		parent::__construct();
+		//$this->loggedIn();
 		$this -> output -> set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
 		$this -> output -> set_header('Cache-Control: no-store, no-cache, must-revalidate');
 		$this -> output -> set_header('Cache-Control: post-check=0, pre-check=0', false);
 		$this -> output -> set_header('Pragma: no-cache');
 		$this -> load -> library('form_validation');
 		$this -> load -> model(array('adminModel'));
+		$this -> load -> model('homesitemodel');
 		$this -> load -> helper(array('form', 'url'));
 	}
 
@@ -41,7 +43,10 @@ class admin extends MY_Controller {
 		} else {
 			$content = "dashboard";
 			$this -> render($content);
-			$data['workshoprun'] = $this -> load -> view('admin/home/dashboard', $data);
+			$data['nodalcenters'] = $this -> homesitemodel -> nodalcenterscount();
+			$data['workshoprun'] = $this -> homesitemodel -> workshopruncount();
+			$data['outreachcount'] = $this -> homesitemodel -> outreachcount();
+			$this -> load -> view('admin/home/dashboard', $data);
 		}
 	}
 
@@ -50,6 +55,7 @@ class admin extends MY_Controller {
 	 *  admin login successfully it rediret to admin dashboard.
 	 * */
 	public function checkLogin($login_post_values = "") {
+
 		$content = "dashboard";
 		$this -> form_validation -> set_rules('email', 'email', 'required', 'trim|xss_clean');
 		$this -> form_validation -> set_rules('password', 'password', 'required', 'trim|xss_clean');
@@ -191,7 +197,7 @@ class admin extends MY_Controller {
 
 	/**
 	 * addCoordinator
-	 * @param string $message
+	 * @param string $home_page_data
 	 * @param string $postdata
 	 * @return  object  if success redirect to outreach coordinator Listing  else add outreach coordinator View
 	 */
@@ -217,20 +223,35 @@ class admin extends MY_Controller {
 			$postdata['password'] = random_string('alnum', 6);
 			$result = $this -> adminModel -> addCoordinator($postdata);
 			if ($result > 0) {
-				$message = "Hi	
-				Please login here URL:  " . base_url() . "
-				Your Outreach Admin Email-id is : " . $postdata['email'] . "
-				Your Outreach Admin Password is : " . $postdata['password'] . "
-				Thanks & Regards ,
-				Thub Team ";
+				$message = "<html><head><META http-equiv='Content-Type' content='text/html; charset=utf-8'>
+                                   </head><body>
+                                      <div style='margin:0;padding:0'>
+ 	                                <table border='0' cellspacing='0' cellpadding='0'>
+    	                           <tbody>
+								   <tr>
+				                        <td valign='top'><p> Hi Outreach  Coordinator,</p></td>
+		                           </tr>
+		                           <tr>
+				                        <td valign='top'><p> Your   follow the below details to login here " . base_url() . "</p></td>
+		                           </tr>
+		                          <tr>
+				                       <td valign='top'><p><strong>Outreach Admin Email-id :</strong> " . $postdata['email'] . "</p></td>
+		                          </tr>
+								  <tr>
+				                       <td valign='top'><p><strong>Outreach Admin Password :</strong> " . $postdata['password'] . "</p></td>
+		                          </tr>
+		                    </tbody>
+	                    </table>  
+                     </div>
+                    </body></html>";
+
 				$to = $postdata['email'];
 				$subject = "Your Outreach  account Password";
-				//$txt = "Hello world!";
-				$headers = "From: webmaster@example.com" . "\r\n" . "CC: somebodyelse@example.com";
-				mail($to, $subject, $message);
+				$headers = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+				mail($to, $subject, $message, $headers);
 				$this -> session -> set_flashdata('msg', 'Outreach coordinator added successfully');
 				redirect('admin/coordinators', 'refresh');
-				//on success, redirect to view page.
 			} else {
 				$this -> session -> set_flashdata('msg', 'Outreach coordinator already exists');
 				redirect('admin/coordinators', 'refresh');
@@ -555,19 +576,16 @@ class admin extends MY_Controller {
 
 			}
 		}
-	}
+	}/* check the session in admin user
 
-	/**
-	 * loggedIn   check if admin session exists or not
-	 * @param Null
-	 * @return  object  redirect to index method if session not exits
-	 */
-
+	 *
+	 * If no session, redirect to login page
+	 * */
 	public function loggedIn() {
 		$logged = $this -> session -> userdata('adminDetails');
 		if ($logged === FALSE) {
 
-			redirect("admin", 'refresh');
+			redirect("admin");
 		}
 	}
 

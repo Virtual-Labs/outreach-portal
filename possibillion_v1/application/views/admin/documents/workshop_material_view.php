@@ -31,6 +31,13 @@
 								</div>
 							</div>
 						</div>
+						<!-- /PAGE HEADER -->
+             
+           <!-- Filter -->
+                     
+        
+      <!-- /Filter -->
+						<!-- EXPORT TABLES -->
 						<div class="row">
 							<div class="col-md-12">
 								<!-- BOX -->
@@ -45,7 +52,7 @@
 										<table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover">
 											<thead>
 												<tr>
-                                                	<th>S.No</th>
+                                                	<th>S.no</th>
 													<th>Name</th>
 													<th>Document</th>
 													<th>Actions</th>
@@ -53,7 +60,7 @@
 											</thead>
 											<tbody>
                      <?php $i=0; if(!empty($workshop_material_details)) {
-								foreach ($workshop_material_details as $row) {$i++;  ?>
+								foreach ($workshop_material_details as $row) { $i++;  ?>
 													<tr class="gradeX">
                                                     <td><?php echo $i; ?></td>
 													<td><?php echo $row['name']; ?></td>
@@ -84,14 +91,7 @@
 													} else {echo '<tr class="gradeX"><td colspan="6" align="left">No Workshop Material Records found</td></tr>'; }
 												?>
 											</tbody>
-											<tfoot>
-												<tr>
-                                                	<th>S.No</th>
-													<th>Name</th>
-													<th>Document</th>
-													<th>Actions</th>
-												</tr>
-											</tfoot>
+											
 										</table>
 									</div>
 								</div>
