@@ -57,10 +57,7 @@
 			<div id="sidebar" class="sidebar">
 				<div class="sidebar-menu nav-collapse" style="margin-top: -15px;">
 					<ul>
-						<li class="<?php
-						if ($menu && $menu == "dashboard") { echo "active";
-						}
-						?>">
+						<li class="">
 							<a class= "<?php
 							if ($content == "dashboard") { echo "active";
 							}

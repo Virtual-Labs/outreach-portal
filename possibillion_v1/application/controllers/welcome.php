@@ -86,6 +86,10 @@ class welcome extends CI_Controller {
 	public function dashboard($value = '') {
 		$this -> load -> view('site/header', $data);
 		$data[''] = $this -> homesitemodel -> getActiveWorkshopOutreach();
+		$data['nodalcoordinatorcount']=$this->homesitemodel->nodalcoordinatorcount();
+		$data['nodalcoordinatorworkshop']=$this->homesitemodel->nodalcoordinatorworkshop();	
+		$data['nodalcoordinatorcounthistory']=$this->homesitemodel->nodalcoordinatorcounthistory();	
+		$data['outreachcoordinatorworkshopcount']=$this->homesitemodel->outreachcoordinatorworkshopcount();		
 		$data['getActiveWorkshop'] = $this -> homesitemodel -> getActiveWorkshopOutreach();
 		$data['getPendingWorkshopOutreach'] = $this -> homesitemodel -> getPendingWorkshopOutreach();
 		$data['getWorkshopHistory'] = $this -> homesitemodel -> getWorkshopHistory();
@@ -106,6 +110,10 @@ class welcome extends CI_Controller {
 		if (empty($ses_data)) {
 			redirect('Login');
 		}
+		$data['nodalcoordinatorcount']=$this->homesitemodel->nodalcoordinatorcount();
+		$data['nodalcoordinatorworkshop']=$this->homesitemodel->nodalcoordinatorworkshop();	
+		$data['nodalcoordinatorcounthistory']=$this->homesitemodel->nodalcoordinatorcounthistory();	
+		$data['outreachcoordinatorworkshopcount']=$this->homesitemodel->outreachcoordinatorworkshopcount();	
 		$inputdata = $this -> uri -> segment(2);
 		$data['viewReports'] = $this -> homesitemodel -> getViewReport($inputdata);
 		$this -> load -> view('site/header', $data);
@@ -141,6 +149,7 @@ class welcome extends CI_Controller {
 		$ses_data = $this -> session -> userdata('user_details');
 		$this -> load -> view('site/header', $data);
 		$data['getActiveWorkshop'] = $this -> homesitemodel -> getActiveWorkshop();
+		$data['participatecount'] = $this -> homesitemodel -> participatecount();
 		$data['nodalcoordinatorworkshopcount'] = $this -> homesitemodel -> nodalcoordinatorworkshopcount();
 		$data['getGuidesMaterial'] = $this -> homesitemodel -> getGuidesMaterial();
 		$data['getWorkshopMetirial'] = $this -> homesitemodel -> getWorkshopMetirial();
@@ -161,15 +170,15 @@ class welcome extends CI_Controller {
 			redirect('login');
 		}
 		$this -> form_validation -> set_rules('name', 'name ', 'required|alpha|min_length[5]|max_length[50]');
-		$this -> form_validation -> set_rules('location', 'location', 'required|xss_clean|alpha|min_length[5]|max_length[100]');
-		$this -> form_validation -> set_rules('institutes', 'institutes', 'required|alpha|min_length[5]');
+		$this -> form_validation -> set_rules('location', 'location', 'required|xss_clean|callback_alpha_dash_space|min_length[5]|max_length[100]');
+		$this -> form_validation -> set_rules('institutes', 'institutes', 'required|callback_alpha_dash_space|min_length[5]');
 		$this -> form_validation -> set_rules('date', 'date', 'required');
 		$this -> form_validation -> set_rules('no_of_participants', 'no participants', 'required|is_natural');
 		$this -> form_validation -> set_rules('no-of_sessions', 'no sessions', 'required|is_natural');
 		$this -> form_validation -> set_rules('duration_of_session', 'duration of session', 'required|is_natural');
-		$this -> form_validation -> set_rules('discipline', 'discipline', 'required|alpha|min_length[5]');
-		$this -> form_validation -> set_rules('labs_planned', 'labs planned', 'required|alpha|min_length[5]');
-		$this -> form_validation -> set_rules('other_details', 'other details', 'required|min_length[5]');
+		$this -> form_validation -> set_rules('discipline', 'discipline', 'required|callback_alpha_dash_space|min_length[5]');
+		$this -> form_validation -> set_rules('labs_planned', 'labs planned', 'required|callback_alpha_dash_space|min_length[5]');
+		$this -> form_validation -> set_rules('other_details', 'other details', 'required|min_length[5]|callback_alpha_dash_space');
 		if ($this -> form_validation -> run() == FALSE) {
 			$this -> session -> set_flashdata('msg', validation_errors());
 			redirect('NodalDashboard', "refresh");
@@ -193,7 +202,9 @@ class welcome extends CI_Controller {
 		if (empty($ses_data)) {
 			redirect('Login');
 		}
+		
 		$inputdata = $this -> uri -> segment(2);
+		
 		$data['Workshopedit'] = $this -> homesitemodel -> editWorkshop($inputdata);
 		if ($data) {
 			$this -> load -> view('site/header', $data);
@@ -202,6 +213,7 @@ class welcome extends CI_Controller {
 		} else {
 			redirect('NodalDashboard', "refresh");
 		}
+		
 
 	}
 
@@ -255,8 +267,8 @@ class welcome extends CI_Controller {
 		}
 		$this -> form_validation -> set_rules('participate_attend', 'no participants', 'xss_clean|required|is_natural');
 		$this -> form_validation -> set_rules('participate_experiment', 'participate_experiment', 'xss_clean|required|is_natural');
-		$this -> form_validation -> set_rules('comments_positive', 'comment positive', 'xss_clean|required|alpha|min_length[5]');
-		$this -> form_validation -> set_rules('comments_negative', 'comment negative', 'xss_clean|required|alpha|min_length[5]');
+		$this -> form_validation -> set_rules('comments_positive', 'comment positive', 'xss_clean|required|min_length[5]');
+		$this -> form_validation -> set_rules('comments_negative', 'comment negative', 'xss_clean|required|min_length[5]');
 		if ($this -> form_validation -> run() == FALSE) {
 			$this -> session -> set_flashdata('msg', validation_errors());
 			redirect('NodalDashboard', "refresh");
@@ -280,13 +292,11 @@ class welcome extends CI_Controller {
 				$college_report = $report_data[0]['college_report'];
 			}
 			$uploads_dir = 'assests/uploads/workshopphotos/';
-			foreach ($_FILES["file_name"]["error"] as $key => $error) {
-				if ($error == UPLOAD_ERR_OK) {
+			foreach ($_FILES["workshop_photos"]["name"] as $key => $error) {
 					$tmp_name = $_FILES["workshop_photos"]["tmp_name"][$key];
 					$name = $_FILES["workshop_photos"]["name"][$key];
-					move_uploaded_file($tmp_name, "$uploads_dir/$name");
-				}
-			}
+					move_uploaded_file($tmp_name, $uploads_dir.$name);
+			}	
 			$filea = array('upload_attend_sheet' => $target_file, 'college_report' => $target_file1, 'workshop_photos' => $workshop_photos, 'participate_attend' => $inputdata['participate_attend'], 'participate_experiment' => $inputdata['participate_experiment'], 'comments_positive' => $inputdata['comments_positive'], 'comments_negative' => $inputdata['comments_negative'], 'workshop_id' => $inputdata['workshop_id']);
 			if ($inputdata['submit'] == "save") {
 				$res = $this -> homesitemodel -> editReport($filea);
@@ -305,6 +315,7 @@ class welcome extends CI_Controller {
 			}
 		}
 	}
+
 	/**
 	 * forgot password  sending mail to register user
 	 * @param string $data
@@ -314,12 +325,11 @@ class welcome extends CI_Controller {
 	 * @return object if success redirect to the view  with status
 	 */
 	public function forgotPassword($data = "", $email = "", $message = "") {
-
 		$this -> load -> view('site/header', $data);
 		$this -> form_validation -> set_rules('email', 'email', 'email|required|xss_clean');
 		if ($this -> form_validation -> run() == FALSE) {
 			$this -> session -> set_flashdata('msg', validation_errors());
-			redirect('forgotPassword', "refresh");
+			$this -> load -> view('site/home/forgot_password', $data);
 		} elseif ($this -> input -> post()) {
 			$email = $this -> input -> post('email');
 			$emailResult = $this -> homesitemodel -> checkEmail($email);
@@ -372,6 +382,10 @@ class welcome extends CI_Controller {
 		$this -> load -> view('site/footer');
 	}
 
+	function alpha_dash_space($str) {
+		return (!preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
+	}
+
 	/*
 	 *@method traininging
 	 *@param  Post Values
@@ -382,24 +396,26 @@ class welcome extends CI_Controller {
 		if (empty($ses_data)) {
 			redirect('login');
 		}
-		$this -> form_validation -> set_rules('name', 'Name ', 'required|alpha');
-		$this -> form_validation -> set_rules('date', 'date', 'required');
-		$this -> form_validation -> set_rules('location', 'location', 'required|xss_clean|alpha');
-		$this -> form_validation -> set_rules('duration', 'duration', 'required|is_natural');
-		$this -> form_validation -> set_rules('description', 'description', 'required|alpha');
-		$this -> form_validation -> set_rules('invitees', 'invitees', 'required');
+		$this -> form_validation -> set_rules('name', 'Name ', 'required|xss_clean|alpha');
+		$this -> form_validation -> set_rules('date', 'date', 'required|xss_clean');
+		$this -> form_validation -> set_rules('location', 'location', 'required|xss_clean|callback_alpha_dash_space');
+		$this -> form_validation -> set_rules('duration', 'duration', 'required|xss_clean|is_natural');
+		$this -> form_validation -> set_rules('description', 'description', 'required|xss_clean|callback_alpha_dash_space');
+		$this -> form_validation -> set_rules('invitees', 'invitees', 'required|xss_clean|callback_alpha_dash_space');
 		if ($this -> form_validation -> run() == FALSE) {
-			$this -> session -> set_flashdata('msg', validation_errors());
-			redirect('dashboard', 'refresh');
+			echo validation_errors();
 		} elseif ($this -> input -> post()) {
 			$postdata = $this -> input -> post();
 			$postdata['outreach_id'] = $ses_data['outreach_id'];
 			$res = $this -> homesitemodel -> traininging($postdata);
 			if ($res > 0) {
-				$this -> session -> set_flashdata('msg', 'Submit Reports successfully');
-				redirect('dashboard', 'refresh');
+				$this -> session -> set_flashdata('msg', 'Manage Nodal Coordinators create successfully ');
+				echo "success";
+			}else{
+				echo "Please try agin";
+			exit ;
 			}
-			redirect('dashboard', 'refresh');
+			
 		}
 	}
 
@@ -416,8 +432,8 @@ class welcome extends CI_Controller {
 		if (empty($ses_data)) {
 			redirect('Login');
 		}
-		$this -> form_validation -> set_rules('location', 'Name of the Center', 'required|alpha');
-		$this -> form_validation -> set_rules('name', 'Name of Coordinator', 'required|alpha');
+		$this -> form_validation -> set_rules('location', 'Name of the Center', 'required|callback_alpha_dash_space');
+		$this -> form_validation -> set_rules('name', 'Name of Coordinator', 'required|callback_alpha_dash_space');
 		$this -> form_validation -> set_rules('email', 'email', 'required|xss_clean|valid_email');
 		$this -> form_validation -> set_rules('target_workshops', 'No of Workshops', 'required|is_natural');
 		$this -> form_validation -> set_rules('target_participants', 'No of Participants', 'required|is_natural');

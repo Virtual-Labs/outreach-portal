@@ -23,7 +23,7 @@
                     <div class="metro-nav-block nav-block-orange">
                         <a data-original-title="" href="#">
                             <i class="icon-user"></i>
-                            <div class="info"><?php echo $workshoprun; ?></div>
+                            <div class="info"><?php if(!empty($workshoprun)){ echo $workshoprun; } ?></div>
                             <div class="status">WORKSHOPS RUN</div>
                         </a>
                     </div>
@@ -37,21 +37,21 @@
                     <div class="metro-nav-block nav-block-yellow">
                         <a data-original-title="" href="#">
                             <i class="icon-comments-alt"></i>
-                            <div class="info"><?php echo $nodalcenters; ?></div>
+                            <div class="info"><?php  if(!empty($nodalcenters)){ echo $nodalcenters; } ?></div>
                             <div class="status">NODAL CENTERS</div>
                         </a>
                     </div>
                     <div class="metro-nav-block nav-block-green">
                         <a data-original-title="" href="#">
                             <i class="icon-eye-open"></i>
-                            <div class="info"><?php echo $nodalcenters; ?></div>
+                            <div class="info"><?php  if(!empty($nodalcenters)){ echo $nodalcenters; } ?></div>
                             <div class="status">NODAL COORDINATOR</div>
                         </a>
                     </div>
                     <div class="metro-nav-block nav-block-red">
                         <a data-original-title="" href="#">
                             <i class="icon-bar-chart"></i>
-                            <div class="info"><?php echo $outreachcount; ?></div>
+                            <div class="info"><?php if(!empty($outreachcount)){ echo $outreachcount; } ?></div>
                             <div class="status"style="
     bottom: 0px;
 ">OUTREACH COORDINATOR</div>

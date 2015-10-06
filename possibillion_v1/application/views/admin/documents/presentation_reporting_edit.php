@@ -53,6 +53,7 @@
 													<div class="col-sm-8">
 													  <input type="file" name = "document_path" id = "document_path" class=" form-control" value="">
 													  <?php if($this->session->flashdata('msg')!=NULL) { echo "<span style='color:red'>".$this->session->flashdata('msg')."</span>"; } ?>
+													<img src="<?php echo base_url()."assests/uploads/presentationreporting/".$presentation_reporting_data[0]['path'];?>" width="130" height="150">
 													</div>
 												  </div>
 											</div>
@@ -69,7 +70,7 @@
 						<p class="btn-toolbar">							
 							<button class="btn btn-success">Update</button></form>
 					<a href="<?php echo base_url('admin/presentation_reporting')?>">
-					<button class="btn">Cancel</button>	</a>
+					<button class="btn" style="border: 1px solid #000;">Cancel</button>	</a>
 						</p>
 						<!-- /Save -->												
 						</form>

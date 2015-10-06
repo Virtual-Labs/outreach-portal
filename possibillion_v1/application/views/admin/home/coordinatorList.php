@@ -59,7 +59,7 @@
 													<td><?php echo ucfirst($coordinator['name']); ?>	</td>
 																									
 													<td><?php echo $coordinator['email']; ?></td>													
-													<td><?php echo $coordinator['created']; ?></td>													
+													<td><?php echo  $newDate = strtoupper(date("Y-m-d", strtotime($coordinator['created']))); ?></td>													
 													
 													<td>
 														<a href="<?php echo site_url('admin/editCoordinator/' . base64_encode($coordinator['outreach_id'])); ?>"><button class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</button></a>&nbsp;

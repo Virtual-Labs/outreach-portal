@@ -34,7 +34,7 @@
 
 						<div class="row">
 							<!-- product details -->
-							<div class="col-md-6">
+							<div class="col-md-7">
 								<div class="box border dark gray">
 									<div class="box-title">
 										<h4><i class="fa fa-bars"></i>Change Password</h4>
@@ -66,7 +66,7 @@
 													"class="form-control"  name="new_password" id="new_password" maxlength="12"  value="<?php  echo set_value('new_password'); ?>">
 													<span style="
 													float: right;
-													margin-top: -30px;
+													margin-top: -43px;
 
 													">Minimum 5 Characters</span>
 													<?php echo "<span style='color:red'>" . form_error('new_password') . "</span>"; ?>
@@ -147,7 +147,7 @@
 						retype_password : {
 							required : "Please provide a confirm  password",
 							minlength : "Your password must be at least 5 characters long",
-							equalTo : "Please enter the same password as above"
+							equalTo : "New and confirmation password does not match"
 						}
 					}
 				});

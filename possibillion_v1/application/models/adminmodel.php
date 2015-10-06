@@ -219,7 +219,12 @@ class adminmodel extends  CI_Model {
 		}
 
 	}
-
+/**
+	 * editWorkshopMetirial method: update the workshop & material
+	 * @param   array $postdata
+	 * @param   string $id
+	 * @return object value or 0
+	 */
 	public function editWorkshopMetirial($id = '') {
 		$query = $this -> db -> get('workshopdocuments');
 		$query = $this -> db -> get_where('workshopdocuments', array('id' => $id));
@@ -296,7 +301,11 @@ class adminmodel extends  CI_Model {
 			return 0;
 		}
 	}
-
+	/**
+	 * editPresentationReporting method:  insert the presentation & reporting
+	 * @param array  $data
+	 * @return object value or 0
+	 */
 	public function editPresentationReporting($id = '') {
 		$query = $this -> db -> get('workshopdocuments');
 		$query = $this -> db -> get_where('workshopdocuments', array('id' => $id));

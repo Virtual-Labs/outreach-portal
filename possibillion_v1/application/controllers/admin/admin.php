@@ -14,7 +14,6 @@ class admin extends MY_Controller {
 	 * Since this controller is set as the default controller in
 	 */
 	public function __construct() {
-		error_reporting(0);
 		parent::__construct();
 		//$this->loggedIn();
 		$this -> output -> set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
@@ -55,7 +54,6 @@ class admin extends MY_Controller {
 	 *  admin login successfully it rediret to admin dashboard.
 	 * */
 	public function checkLogin($login_post_values = "") {
-
 		$content = "dashboard";
 		$this -> form_validation -> set_rules('email', 'email', 'required', 'trim|xss_clean');
 		$this -> form_validation -> set_rules('password', 'password', 'required', 'trim|xss_clean');
@@ -83,6 +81,7 @@ class admin extends MY_Controller {
 	 * @return object  if success Dashboard else Change Password View
 	 */
 	public function changePassword($home_page_data = "", $postdata = "", $notification = "") {
+		
 		$this -> loggedIn();
 		$content = "dashboard";
 		$home_page_data['menu'] = "dashboard";
@@ -289,7 +288,7 @@ class admin extends MY_Controller {
 			$this -> render($content);
 			$this -> load -> view('admin/documents/guidance_metirial_add');
 		} else if ($this -> input -> post()) {
-			$target_dir = 'assests/uploads/';
+			$target_dir = 'assests/uploads/guidancemetirial/';
 			$target_file = $target_dir . basename($_FILES["document_path"]["name"]);
 			if (move_uploaded_file($_FILES["document_path"]["tmp_name"], $target_file)) {
 				$guidance_metirial = $_FILES["document_path"]["name"];
@@ -348,7 +347,7 @@ class admin extends MY_Controller {
 			$this -> load -> view('admin/documents/guidance_metirial_edit', $guidance_metirialData);
 		} else if ($this -> input -> post()) {
 			$session_data = $this -> session -> userdata('adminDetails');
-			$target_dir = 'assests/uploads/';
+			$target_dir = 'assests/uploads/guidancemetirial/';
 			$target_file = $target_dir . basename($_FILES["document_path"]["name"]);
 			if (move_uploaded_file($_FILES["document_path"]["tmp_name"], $target_file)) {
 				$guidance_metirial = $_FILES["document_path"]["name"];
@@ -398,7 +397,7 @@ class admin extends MY_Controller {
 			$this -> render($content);
 			$this -> load -> view('admin/documents/workshop_material_add');
 		} else if ($this -> input -> post()) {
-			$target_dir = 'assests/uploads/';
+			$target_dir = 'assests/uploads/workshopmaterial/';
 			$target_file = $target_dir . basename($_FILES["document_path"]["name"]);
 			if (move_uploaded_file($_FILES["document_path"]["tmp_name"], $target_file)) {
 				$guidance_metirial = $_FILES["document_path"]["name"];
@@ -456,7 +455,7 @@ class admin extends MY_Controller {
 			$this -> load -> view('admin/documents/workshop_metirial_edit', $guidance_metirialData);
 		} else if ($this -> input -> post()) {
 			$session_data = $this -> session -> userdata('adminDetails');
-			$target_dir = 'assests/uploads/';
+			$target_dir = 'assests/uploads/workshopmaterial/';
 			$target_file = $target_dir . basename($_FILES["document_path"]["name"]);
 			if (move_uploaded_file($_FILES["document_path"]["tmp_name"], $target_file)) {
 				$guidance_metirial = $_FILES["document_path"]["name"];
@@ -521,7 +520,7 @@ class admin extends MY_Controller {
 			$this -> render($content);
 			$this -> load -> view('admin/documents/presentation_reporting_add');
 		} else if ($this -> input -> post()) {
-			$target_dir = 'assests/uploads/';
+			$target_dir = 'assests/uploads/presentationreporting/';
 			$target_file = $target_dir . basename($_FILES["document_path"]["name"]);
 			if (move_uploaded_file($_FILES["document_path"]["tmp_name"], $target_file)) {
 				$guidance_metirial = $_FILES["document_path"]["name"];
@@ -560,7 +559,7 @@ class admin extends MY_Controller {
 			$this -> load -> view('admin/documents/presentation_reporting_edit', $presentation_reportingData);
 		} else if ($this -> input -> post()) {
 			$session_data = $this -> session -> userdata('adminDetails');
-			$target_dir = 'assests/uploads/';
+			$target_dir = 'assests/uploads/presentationreporting/';
 			$target_file = $target_dir . basename($_FILES["document_path"]["name"]);
 			if (move_uploaded_file($_FILES["document_path"]["tmp_name"], $target_file)) {
 				$presentation_reporting = $_FILES["document_path"]["name"];

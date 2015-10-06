@@ -76,7 +76,6 @@ class homesitemodel extends CI_Model {
 	 */
 
 	public function forgotPassword($data) {
-
 		$this -> db -> where('outreachcoordinators.email', $data['email']);
 		$this -> db -> update('outreachcoordinators', array('password' => $data['password']));
 		if ($this -> db -> affected_rows() > 0) {
@@ -171,7 +170,7 @@ class homesitemodel extends CI_Model {
 		return $this -> db -> affected_rows();
 	}
 
-	/**editWorkshop method  facth the workshop data where workshop id
+	/**editWorkshop method  fatch the workshop data where workshop id
 	 * @param   integer $value
 	 * @return array value
 	 */
@@ -330,7 +329,7 @@ class homesitemodel extends CI_Model {
 		return $this -> db -> affected_rows();
 	}
 
-	/**getViewReport method  facth the workshop reports
+	/**getViewReport method  fatch the workshop reports
 	 * @param   string $value1
 	 * @return array values
 	 */
@@ -345,7 +344,7 @@ class homesitemodel extends CI_Model {
 
 	}
 
-	/**approverepost_m method  facth the workshop reports
+	/**approverepost_m method  fatch the workshop reports
 	 * @param   string $value1
 	 * @return array values
 	 */
@@ -356,7 +355,7 @@ class homesitemodel extends CI_Model {
 		return $this -> db -> affected_rows();
 	}
 
-	/**workshopruncount method  facth the workshop run count
+	/**workshopruncount method  fatch the workshop run count
 	 * @param  integer $status
 	 * @return integer values
 	 */
@@ -365,7 +364,7 @@ class homesitemodel extends CI_Model {
 		return $query -> num_rows();
 	}
 
-	/**nodalcenterscount method  facth the nodal centers count
+	/**nodalcenterscount method  fatch the nodal centers count
 	 * @param  integer $status
 	 * @return integer values
 	 */
@@ -375,7 +374,7 @@ class homesitemodel extends CI_Model {
 	}
 
 	
-	/**outreachcount method  facth the outreach coordinators count
+	/**outreachcount method  fatch the outreach coordinators count
 	 * @param  integer $status
 	 * @return integer values
 	 */
@@ -383,6 +382,12 @@ class homesitemodel extends CI_Model {
 		$query = $this -> db -> get('outreachcoordinators');
 		return $query -> num_rows();
 	}
+	
+	/**cancelWorkshop method  cancel Workshop
+	 * @param  integer $status
+	 * @return integer values
+	 */
+
 	public function cancelWorkshop($inputdata = "") {
 		$value = array('status' => 3, 'reason' => $inputdata['reason']);
 		$this -> db -> where('workshops.workshop_id', $inputdata['workshop_id']);
@@ -391,42 +396,128 @@ class homesitemodel extends CI_Model {
 
 	}
 
+	/**cancelWorkshop method  insert the workshop training data
+	 * @param   string $postdata
+	 * @return integer insert id
+	 */
+
 	public function traininging($postdata) {
 		$this -> db -> insert('nodalcoordinatorstraining', $postdata);
 		return $submitreportid1 = $this -> db -> insert_id();
 	}
 
+	/**fatchTrainingingCoordinator method  fatch the nodal coordinators traininging
+	 * @param  integer $outreach_id
+	 * @return array values
+	 */
 	public function fatchTrainingingCoordinator() {
 		$ses_data = $this -> session -> userdata("user_details");
 		$outreachid = $ses_data['outreach_id'];
 		$query = $this -> db -> get_where('nodalcoordinatorstraining', array('outreach_id' => $outreachid));
 		return $query -> result_array();
 	}
-
+	/**nodalcoordinatorworkshopcount method  fatch the nodal coordinator workshop count
+	 * @param  integer $nodal_id
+	 * @return integer values
+	 */
 	public function nodalcoordinatorworkshopcount() {
 		$ses_data = $this -> session -> userdata("user_details");
 		$nodal_id = $ses_data['nodal_id'];
 		$query = $this -> db -> get_where('workshops', array('nodal_id' => $nodal_id));
 		return $query -> num_rows();
 	}
-
+	/**getGuidesMaterial method  fatch the get Guides Material
+	 * 
+	 * @return array values
+	 */
 	public function getGuidesMaterial() {
 		$query = $this -> db -> get_where('workshopdocuments', array('category' => guidance_metirial));
 		$query = $this -> db -> get('workshopdocuments');
 		return $query -> result_array();
 	}
-
+	/**getWorkshopMetirial method  fatch the get Workshop Metirial
+	 * 
+	 * @return array values
+	 */
 	public function getWorkshopMetirial() {
 		$query = $this -> db -> get_where('workshopdocuments', array('category' => workshop_material));
 		$query = $this -> db -> get('workshopdocuments');
 		return $query -> result_array();
 	}
-
+	/**getPresentationReporting method  fatch the getPresentationReporting
+	 * 
+	 * @return array values
+	 */
 	public function getPresentationReporting() {
 		$query = $this -> db -> get_where('workshopdocuments', array('category' => workshop_material));
 		$query = $this -> db -> get('workshopdocuments');
 		return $query -> result_array();
 	}
+	
+	/**nodalcoordinatorcount method  nodal coordinator count
+	 * @param  integer $outreach_id
+	 * @return integer values
+	 */
+	public function nodalcoordinatorcount(){
+			$ses_data= $this->session->userdata("user_details"); 
+			$outreachid = $ses_data['outreach_id'];
+			$query = $this->db->get_where('nodalcoordinators',array('outreach_id'=>$outreachid));	
+		 return  $query->num_rows(); 
+	}
+	/**nodalcoordinatorworkshop method  nodal coordinator workshop
+	 * @param  integer $outreach_id
+	 * @return integer values
+	 */
+	public function nodalcoordinatorworkshop(){
+		$ses_data= $this->session->userdata("user_details"); 
+		$query = $this->db->query("SELECT SUM( target_expriments ) AS experiments, SUM( target_participants ) AS participants, SUM( target_workshops ) AS workshop
+FROM nodalcoordinators
+WHERE  `outreach_id`=".$ses_data['outreach_id']); 
+ return $query->row_array();
+	}
 
+	/**participatecount method  get the participate count
+	 * @param  integer $nodal_id
+	 * @return integer values
+	 */
+	public function participatecount(){
+				$ses_data=$this->session->userdata('user_details');
+				$nodal_id = $ses_data['nodal_id']; 
+				$ses_data= $this->session->userdata("user_details"); 
+				$this->db->select('SUM(workshopreports.participants_attended) as participants,SUM(workshopreports.expriments_conducted) as experiments');
+				$this->db->from('workshops');
+				$this->db->join('workshopreports', 'workshops.workshop_id = workshopreports.workshop_id', 'left'); 
+				$this->db->where('workshops.nodal_id',$nodal_id);
+				$query = $this->db->get();
+			return $query->result_array();
+			
+	}
+	/**nodalcoordinatorcounthistroy method  nodal coordinator count history
+	 * @param  integer $outreach_id
+	 * @return integer values
+	 */
+	public function nodalcoordinatorcounthistory(){
+			 $ses_data= $this->session->userdata("user_details"); 
+			 $this->db->select('SUM(workshopreports.participants_attended) as participants,SUM(workshopreports.expriments_conducted) as experiments');
+			 $this->db->from('workshops');
+			 $this->db->join('workshopreports', 'workshops.workshop_id = workshopreports.workshop_id', 'left'); 
+			 $this->db->join('nodalcoordinators', 'workshops.nodal_id = nodalcoordinators.nodal_id', 'left'); 
+			 $this->db->where('nodalcoordinators.outreach_id',$ses_data['outreach_id']);
+		 	 $query = $this->db->get();
+			 return $query->result_array();	 
+}
+	/**nodalcoordinatorworkshopcount method  nodal coordinator workshop count
+	 * @param  integer $outreach_id
+	 * @return integer values
+	 */
+	public function outreachcoordinatorworkshopcount(){
+			 $ses_data= $this->session->userdata("user_details"); 
+			 $this->db->select('workshops.*,nodalcoordinators.*');
+			 $this->db->from('workshops');
+			 $this->db->join('nodalcoordinators', 'workshops.nodal_id = nodalcoordinators.nodal_id', 'left'); 
+			 $this->db->where('nodalcoordinators.outreach_id',$ses_data['outreach_id']);
+		 	 $query = $this->db->get();
+	return  $query->num_rows();	 
+}
 }
 ?>

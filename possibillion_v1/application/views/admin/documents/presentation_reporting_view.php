@@ -64,7 +64,7 @@
 													<tr class="gradeX">
                                                     <td><?php echo $i;?></td>
 													<td><?php echo $row['name'];?></td>
-													<td><a target="_blank" href="<?php echo base_url()."assests/uploads/guidance_metirial/".$row['path'];
+													<td><a target="_blank" href="<?php echo base_url()."assests/uploads/presentationreporting/".$row['path'];
 													
 													?>">
 													<?PHP   $extension = pathinfo($row['path'], PATHINFO_EXTENSION); 
@@ -73,8 +73,8 @@
 													<?php }elseif($extension=="pdf"){?>
 													<img src="<?php echo base_url();?>assests/img/pdf.jpg"></img>
 													<?php
-													}elseif($extension=="docx"){ ?>
-													<img src="<?php echo base_url();?>assests/img/notepad.png"></img>
+													}elseif($extension=="jpg"){ ?>
+													<img src="<?php echo base_url();?>assests/img/pdf.png"></img>
 													<?php
 													} ?>
 													</a></td>
@@ -101,7 +101,7 @@
 									</div>
 								</div>
                                        <div class="row" style="float:right">
-                                        <?php echo $pagination;?>
+                                        <?php if(isset($pagination)){ echo $pagination; } ?>
                              		   </div>
 								<!-- /BOX -->
 							</div>

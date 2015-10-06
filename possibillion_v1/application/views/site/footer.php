@@ -32,14 +32,14 @@
 		</footer>
 		<!-- END FOOTER -->
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/bootstrap.js'></script>
-		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/jquery.fitvids.js'></script>
+		
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/jquery.easing.1.3.js'></script>		
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/common.js'></script>
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/flexslider.js'></script>
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/flexsliderhome.js'></script>
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/carouselrecentportfolio.js'></script>
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/carousel.js'></script>
-		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/prettyPhoto.js'></script>
+		
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/isotope.js'></script>
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/flexslidertestimonials.js'></script>
 		<script type='text/javascript' src='<?php echo base_url();?>assests/site/js/testimonial.js'></script>

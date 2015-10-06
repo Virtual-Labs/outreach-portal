@@ -1,4 +1,4 @@
-	<div id="main-content">
+<div id="main-content">
 			<div class="container">
 				<div class="row">
 					<div id="content" class="col-lg-12">
@@ -31,13 +31,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- /PAGE HEADER -->
-             
-           <!-- Filter -->
-                     
-        
-      <!-- /Filter -->
-						<!-- EXPORT TABLES -->
 						<div class="row">
 							<div class="col-md-12">
 								<!-- BOX -->
@@ -64,17 +57,17 @@
 													<tr class="gradeX">
                                                     <td><?php echo $i; ?></td>
 													<td><?php echo $row['name']; ?></td>
-													<td><a target="_blank" href="<?php echo base_url() . "assests/uploads/" . $row['path']; ?>">
+													<td><a target="_blank" href="<?php echo base_url() . "assests/uploads/guidancemetirial/" . $row['path']; ?>">
 													<?PHP   $extension = pathinfo($row['path'], PATHINFO_EXTENSION); 
 													if($extension=="doc"){ ?>
-													<img src="<?php echo base_url(); ?>assests/img/word.jpg"></img>
+													<img src="<?php echo base_url(); ?>assests/img/notepad.png"></img>
 													<?php }elseif($extension=="pdf"){ ?>
 													<img src="<?php echo base_url(); ?>assests/img/pdf.jpg"></img>
 													<?php
 													//echo "PDF";
 													}elseif($extension=="jpg"){
  ?>
-													<img src="<?php echo base_url(); ?>assests/img/notepad.png"></img>
+													<img src="<?php echo base_url(); ?>assests/img/word.jpg"></img>
 													<?php
 													//echo "JPEG";
 													}
@@ -96,18 +89,17 @@
 									</div>
 								</div>
                                        <div class="row" style="float:right">
-                                        <?php echo $pagination; ?>
+                                        <?php   if(isset($pagination)){echo $pagination; } ?>
                              		   </div>
-								<!-- /BOX -->
+							
 							</div>
 						</div>
-						<!-- /EXPORT TABLES -->
 						<div class="footer-tools">
 							<span class="go-top">
 								<i class="fa fa-chevron-up"></i> Top
 							</span>
 						</div>
-					</div><!-- /CONTENT-->
+					</div>
 				</div>
 			</div>
 		</div>
