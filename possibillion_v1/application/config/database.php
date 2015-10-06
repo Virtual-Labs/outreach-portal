@@ -54,7 +54,11 @@ $db['default']['username'] = 'root';
 
 $db['default']['password'] = '';
 
+<<<<<<< HEAD
 $db['default']['database'] = 'outreachnew';
+=======
+$db['default']['database'] = '';
+>>>>>>> origin/develop
 
 $db['default']['dbdriver'] = 'mysql';
 
