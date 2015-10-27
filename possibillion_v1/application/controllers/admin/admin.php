@@ -167,6 +167,8 @@ class admin extends MY_Controller {
 		$content = "coordinator";
 		$this -> form_validation -> set_rules('first_name', 'name', 'required|alpha|xss_clean|min_length[5]|max_length[50]');
 		$this -> form_validation -> set_rules('email', 'email', 'required|xss_clean|valid_email');
+		$this -> form_validation -> set_rules('phone', 'phone', 'required|xss_clean');
+		$this -> form_validation -> set_rules('institute_name', 'institute_name', 'required|xss_clean|min_length[3]|max_length[256]');
 		$this -> form_validation -> set_error_delimiters('<span class="error">', '</span>');
 		if ($this -> input -> post())
 			$hidden_coordinator_id = $this -> input -> post('outreach_id');
@@ -181,6 +183,7 @@ class admin extends MY_Controller {
 		} else {
 			$session_data = $this -> session -> userdata('adminDetails');
 			$postdata = $this -> input -> post();
+			
 			$result = $this -> adminModel -> editCoordinator($postdata);
 			if ($result >= 0) {
 				$this -> session -> set_flashdata('msg', 'Coordinator updated successfully');
@@ -209,6 +212,8 @@ class admin extends MY_Controller {
 		$home_page_data['menu'] = "Coordinator";
 		$this -> form_validation -> set_rules('last_name', 'name', 'required|alpha|xss_clean|min_length[5]|max_length[50]');
 		$this -> form_validation -> set_rules('email', 'email', 'required|xss_clean|valid_email');
+		$this -> form_validation -> set_rules('phone', 'phone', 'required|xss_clean|min_length[10]|max_length[15]');
+		$this -> form_validation -> set_rules('institute_name', 'institute_name', 'required|xss_clean|min_length[3]|max_length[256]');
 
 		if ($this -> form_validation -> run() == FALSE)//if validates,  adding.
 		{
@@ -582,6 +587,12 @@ class admin extends MY_Controller {
 	 * */
 	public function loggedIn() {
 		$logged = $this -> session -> userdata('adminDetails');
+		if($logged['email']!="admin@outreach.com"){
+			$this -> session -> set_flashdata('msg', 'you dont have permission to access this page');
+			$this -> session -> unset_userdata('adminDetails');
+		$this -> session -> sess_destroy();
+		redirect('admin', 'refresh');
+		}
 		if ($logged === FALSE) {
 
 			redirect("admin");

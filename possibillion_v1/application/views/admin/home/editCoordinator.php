@@ -61,6 +61,20 @@
 													<?php echo "<span style='color:red'>" . form_error('email') . "</span>"; ?>
 												</div>
 											</div>
+											<div class="form-group">
+												<label class="col-sm-4 control-label">Phone Number</label>
+												<div class="col-sm-8">
+													<input type="phone" name = "phone" id = "phone"  class=" form-control" value="<?php echo $coordinatorList['phone']; ?>">
+													<?php echo "<span style='color:red'>" . form_error('phone') . "</span>"; ?>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-4 control-label">Institute Name</label>
+												<div class="col-sm-8">
+													<input type="institute_name" name = "institute_name" id = "institute_name"  class=" form-control" value="<?php echo $coordinatorList['institute_name']; ?>">
+													<?php echo "<span style='color:red'>" . form_error('institute_name') . "</span>"; ?>
+												</div>
+											</div>
 
 									</div>
 								</div>

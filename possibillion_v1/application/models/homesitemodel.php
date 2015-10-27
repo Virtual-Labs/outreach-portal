@@ -144,7 +144,7 @@ class homesitemodel extends CI_Model {
 		$this -> db -> where('email', $postdata['email']);
 		$query = $this -> db -> get('nodalcoordinators');
 		if ($query -> num_rows == 0) {
-			$data = array('email' => $postdata['email'], 'name' => $postdata['name'], 'target_workshops' => $postdata['target_workshops'], 'target_participants' => $postdata['target_participants'], 'target_expriments' => $postdata['target_expriments'], 'outreach_id' => $ses_data['outreach_id'], 'image' => $postdata['mou'], 'password' => md5($postdata['password']));
+			$data = array('email' => $postdata['email'], 'phone' => $postdata['phone'], 'name' => $postdata['name'], 'target_workshops' => $postdata['target_workshops'], 'target_participants' => $postdata['target_participants'], 'target_expriments' => $postdata['target_expriments'], 'outreach_id' => $ses_data['outreach_id'], 'image' => $postdata['mou'], 'password' => md5($postdata['password']));
 			$this -> db -> insert('nodalcoordinators', $data);
 			$insert_id = $this -> db -> insert_id();
 			if ($insert_id) {
@@ -519,5 +519,26 @@ WHERE  `outreach_id`=".$ses_data['outreach_id']);
 		 	 $query = $this->db->get();
 	return  $query->num_rows();	 
 }
+	 public function change_password($postvalues) {
+		$ses_data = $this->session->userdata("user_details"); 
+		  $email = $ses_data['email'];
+		 $data = array(
+				"password"=>$postvalues
+		 );
+		$this -> db -> where(array("email" => $email));
+		$this->db->update('outreachcoordinators', $data); 
+		 $query = $this -> db -> affected_rows();
+		if ($query  > 0) {
+			return 1;
+		} else {
+			 $data = array(
+				"password"=>$postvalues
+		 );
+		$this -> db -> where(array("email" => $email));
+		$this->db->update('nodalcoordinators', $data); 
+		return  $this -> db -> affected_rows();
+			
+		} 
+	} 
 }
 ?>

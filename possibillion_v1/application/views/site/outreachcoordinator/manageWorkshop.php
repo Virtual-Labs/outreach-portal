@@ -58,7 +58,8 @@
 	    <li role="presentation" class="active tab-workshop"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" >Upcoming Workshops</a></li>
 	    <li role="presentation" class="tab-workshop"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Pending for Approval</a></li>
 	    <li role="presentation" class="tab-workshop"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Workshop History</a></li>
-	    <li role="presentation" class="tab-workshop"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Nodal Coordinator Training</a></li>
+	    <li role="presentation" class="tab-workshop"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Manage Institute Workshops
+</a></li>
 	    <li role="presentation" class="tab-workshop"><a href="#addnewnodal" aria-controls="addnewnodal" role="tab" data-toggle="tab">Manage Nodal Centers</a></li>
 	 </ul>
   <div class="tab-content">
@@ -394,7 +395,7 @@
 	</div>
     <div role="tabpanel" class="tab-pane" id="settings">
 	
-	<h4>Manage Nodal Coordinators</h4>
+	
 										<div  style="color: #0B8422;"></div>		
 	<a id="addnodaltraininglink" style="cursor: pointer;float: right;"><span id="trainingiconform" >►</span>+Submit Training Report</a>
 	
@@ -525,7 +526,7 @@
 								<!-- BOX -->
 								<div class="box solid gray">
 									<div class="box-title">
-										<h4>Manage Nodal Centers</h4>
+										
 										<div  style="color: #0B8422;"></div>
 										<div class="tools hidden-xs" style="margin-top: -49px; float: right;">
 											<a id="addnodalcenterdrop" style="cursor: pointer;"><span id="iconform">►</span>+New Nodal Center</a>
@@ -539,7 +540,7 @@
 											<div class="col-md-12 col-centered" >
 										<div class="box border dark gray">
 											<div class="box-title">
-												<h4>Add  Nodal Center</h4>
+												
 											</div>
 											<div class="box-body big">
 											<span id="error" class='error'></span>
@@ -568,6 +569,12 @@
 													<input type="email" name="email" id="email" class="required email default" title="Enter Your Email Address">												  <?php echo "<span style='color:red'>" . form_error('email') . "</span>"; ?>
 													</div>
 												  </div>
+												  <div class="form-group">
+													<label class="col-sm-4">Phone</label>
+													<div class="col-sm-6">
+													<input type="email" name="phone" id="phone" class="required phone default" title="Enter Your phone ">												  <?php echo "<span style='color:red'>" . form_error('email') . "</span>"; ?>
+													</div>
+												  </div>
 												  
 												  <div class="form-group">
 													<label class="col-sm-4">Upload MOU</label>
@@ -581,7 +588,7 @@
 												  </div>
 												  
 												  <div class="box-title">
-												<h4>Targets of Nodal Coordinator</h4>
+												
 											</div>
 												  
 												  <div class="form-group">
@@ -639,6 +646,7 @@
 													<th>Nodal Coordinator</th>
 																<th>Nodal Center</th>								
 													 <th>Email id</th> 
+													 <th>Phone Number</th> 
 													<th>Date registered</th>
 													<th>Workshops</th>
 													<th>Participants</th>
@@ -653,6 +661,7 @@
 													<td><?php echo ucfirst($coordinator['name']); ?>	</td>									
 													<td><?php echo $coordinator['location']; ?></td>													
 													<td><?php echo $coordinator['email']; ?></td>													
+													<td><?php echo $coordinator['phone']; ?></td>													
 													<td><?php
 													$newDate = strtoupper(date("Y-M-d", strtotime($coordinator['created'])));
 													echo $newDate; ?></td>													

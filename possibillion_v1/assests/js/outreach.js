@@ -35,11 +35,12 @@ jQuery(document).ready(function($) {
 		if ($('span.error').length == "0") {
 				$.ajax({
 						type: "POST",
-						url: "http://localhost/possibillionnew6/welcome/addNodalcenter",
+						url: "http://localhost/outreach/welcome/addNodalcenter",
 							data: {
 							"location" : $("#location11").val(),
 							"name" : $("#name11").val(),
 							"email" : $("#email").val(),
+							"phone" : $("#phone").val(),
 							"mou" : $("#mou").val(),
 							"target_workshops" : $("#target_workshops").val(),
 							"target_participants" : $("#target_participants").val(),
@@ -80,7 +81,7 @@ jQuery(document).ready(function($) {
 		if ($('span.error').length == "0") {
 				$.ajax({
 						type: "POST",
-						url: "http://localhost/possibillionnew6/welcome/traininging",
+						url: "http://localhost/outreach/welcome/traininging",
 							data: {
 							"name" : $("#name").val(),
 							"date" : $("#date").val(),

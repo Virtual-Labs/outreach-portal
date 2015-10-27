@@ -54,6 +54,7 @@
 				
 <ul class="dropdown-menu">
 					
+					<li><a href="<?php echo base_url(); ?>welcome/profile"><i class="fa fa-power-off"></i> Profile</a></li>
 					<li><a href="<?php echo base_url(); ?>welcome/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
 				</ul>
 				</li>

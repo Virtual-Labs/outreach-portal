@@ -61,7 +61,7 @@ class adminmodel extends  CI_Model {
 		$this -> db -> where('email', $postdata['email']);
 		$query = $this -> db -> get('outreachcoordinators');
 		if ($query -> num_rows == 0) {
-			$data = array('email' => $postdata['email'], 'name' => $postdata['last_name'], 'password' => md5($postdata['password']), 'created' => date('Y-m-d H:i:s'));
+			$data = array('email' => $postdata['email'], 'name' => $postdata['last_name'], 'phone' => $postdata['phone'], 'institute_name' => $postdata['institute_name'], 'password' => md5($postdata['password']), 'created' => date('Y-m-d H:i:s'));
 			$this -> db -> insert('outreachcoordinators', $data);
 			$insert_id = $this -> db -> insert_id();
 			return $insert_id;
@@ -78,10 +78,11 @@ class adminmodel extends  CI_Model {
 	 */
 
 	public function editCoordinator($postdata = "") {
-		$data = array('name' => $postdata['first_name'], 'email' => $postdata['email']);
+		$data = array('name' => $postdata['first_name'], 'email' => $postdata['email'], 'phone' => $postdata['phone'], 'institute_name' => $postdata['institute_name']);
 		if (isset($postdata['image'])) {
 			$data['image'] = $postdata['image'];
 		}
+		
 		$query = $this -> db -> where('outreach_id', $postdata['outreach_id']);
 		$this -> db -> update('outreachcoordinators', $data);
 		$update_id = $this -> db -> affected_rows();

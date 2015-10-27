@@ -434,6 +434,7 @@ class welcome extends CI_Controller {
 		$this -> form_validation -> set_rules('location', 'Name of the Center', 'required|callback_alpha_dash_space');
 		$this -> form_validation -> set_rules('name', 'Name of Coordinator', 'required|callback_alpha_dash_space');
 		$this -> form_validation -> set_rules('email', 'email', 'required|xss_clean|valid_email');
+		$this -> form_validation -> set_rules('phone', 'phone', 'required|xss_clean');
 		$this -> form_validation -> set_rules('target_workshops', 'No of Workshops', 'required|is_natural');
 		$this -> form_validation -> set_rules('target_participants', 'No of Participants', 'required|is_natural');
 		$this -> form_validation -> set_rules('target_expriments', 'No of experiments', 'required|is_natural');
@@ -486,6 +487,34 @@ class welcome extends CI_Controller {
 			}
 		}
 	}
+	public function profile(){
+		
+		$this -> load -> view('site/header', $data);
+		$this -> form_validation -> set_rules('password', 'password', 'password|required|xss_clean');
+		if ($this -> form_validation -> run() == FALSE) {
+			$this -> session -> set_flashdata('msg', validation_errors());
+			$this -> load -> view('site/home/change_profile', $data);
+		} elseif ($this -> input -> post()) {
+			$password = $this -> input -> post('password');
+				$postvalues =  md5($password);
+				
+				$result = $this->homesitemodel->change_password($postvalues);
+				if ($result > 0) {
+					
+						$this -> session -> set_flashdata('msg', 'Pass change successfully');
+						$this -> load -> view('site/home/change_profile', $data);
+						
+					}else{
+						$this -> session -> set_flashdata('msg', 'Pass change successfully');
+					$this -> load -> view('site/home/change_profile', $data);
+					}
+				$this -> load -> view('site/footer');
+			}
+			
+		}
+		
+	
+	
 
 	/**
 	 * logout   killing admin session data
